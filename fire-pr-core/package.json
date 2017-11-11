@@ -1,0 +1,17 @@
+{
+  "name": "fire-pr-core",
+  "version": "0.0.1-beta.1",
+  "description": "A JavaScript package to provide functionality to create texts for pull requests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bitbucket",
+    "pull",
+    "request",
+    "helper"
+  ],
+  "author": "3YOURMIND GmbH",
+  "license": "MIT"
+}
