@@ -5,30 +5,35 @@ const prTypeConfiguration = [{
   label: 'Bugfix',
   description: {
     enabled: false,
+    prefix: '',
   }
 }, {
   checked: false,
   label: 'Feature',
   description: {
     enabled: false,
+    prefix: '',
   }
 }, {
   checked: false,
   label: 'Code style update',
   description: {
     enabled: false,
+    prefix: '',
   }
 }, {
   checked: false,
   label: 'Refactor',
   description: {
     enabled: false,
+    prefix: '',
   }
 }, {
   checked: false,
   label: 'Build-related changes',
   description: {
     enabled: false,
+    prefix: '',
   }
 }, {
   checked: true,
