@@ -12,7 +12,16 @@ const renderMarkdown = (descriptions) => {
   let markdown = `${heading}` + '\n\n';
   defaultConfiguration.forEach((entry) => {
     const checkedIcon = entry.checked ? '✔' : '✖';
-    markdown += `* [${checkedIcon}] ${entry.label}` + '\n';
+    markdown += `* [${checkedIcon}] ${entry.label}`;
+    if (entry.description.enabled) {
+      if (entry.description.prefix) {
+        markdown += entry.description.prefix;
+      }
+      if (entry.label in descriptions) {
+        markdown += `: ${descriptions[entry.label]}`;
+      }
+    }
+    markdown += '\n';
   });
   return markdown;
 };
