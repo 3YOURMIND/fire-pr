@@ -10,19 +10,22 @@ const renderMarkdown = (descriptions) => {
     return heading;
   }
   let markdown = `${heading}` + '\n\n';
+  const types = [];
   defaultConfiguration.forEach((entry) => {
     const checkedIcon = entry.checked ? '✔' : '✖';
-    markdown += `* [${checkedIcon}] ${entry.label}`;
+    let typeMarkdown = '';
+    typeMarkdown += `* [${checkedIcon}] ${entry.label}`;
     if (entry.description.enabled) {
       if (entry.description.prefix) {
-        markdown += entry.description.prefix;
+        typeMarkdown += entry.description.prefix;
       }
       if (entry.label in descriptions) {
-        markdown += `: ${descriptions[entry.label]}`;
+        typeMarkdown += `: ${descriptions[entry.label]}`;
       }
     }
-    markdown += '\n';
+    types.push(typeMarkdown);
   });
+  markdown += types.join('\n');
   return markdown;
 };
 
