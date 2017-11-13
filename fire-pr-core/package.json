@@ -13,5 +13,8 @@
     "helper"
   ],
   "author": "3YOURMIND GmbH",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^21.2.1"
+  }
 }
