@@ -1,4 +1,5 @@
 const PrType = require('./pr-type');
+const PrBreaking = require('./pr-breaking');
 
 const prTypeConfiguration = [{
   checked: false,
@@ -51,3 +52,11 @@ const descriptions = {
 PrType.initialize(prTypeConfiguration);
 const prTyperMarkdown = PrType.renderMarkdown(descriptions);
 console.log(prTyperMarkdown);
+
+const breakingChange = {
+  exists: false,
+  description: 'waddawadw',
+};
+
+const prBreakingMarkdown = PrBreaking.renderMarkdown(breakingChange);
+console.log(prBreakingMarkdown);
