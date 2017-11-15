@@ -7,7 +7,7 @@ const renderMarkdown = (configuration) => {
   if (configuration.exists) {
     result += '[✖] No\n';
     if (!configuration.description) {
-      return new Error('If there is a breaking change a description for this error should be provided.');
+      throw new Error('If there is a breaking change a description for this error should be provided.');
     }
     result += `[✔] Yes: ${configuration.description}`;
   }
