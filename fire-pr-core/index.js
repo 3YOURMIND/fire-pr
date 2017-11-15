@@ -1,6 +1,7 @@
 const PrType = require('./pr-type');
 const PrBreaking = require('./pr-breaking');
 const PrTestingProcedure = require('./pr-testing-procedure');
+const PrOtherInformation = require('./pr-other-information');
 
 const prTypeConfiguration = [
   {
@@ -74,6 +75,16 @@ const testingProcedure = [
   ['First step', 'Second step', 'Third step'],
 ];
 
-const prTestingProcedureMarkdown = PrTestingProcedure.renderMarkdown(testingProcedure);
+const prTestingProcedureMarkdown = PrTestingProcedure.renderMarkdown(
+  testingProcedure,
+);
 
 console.log(prTestingProcedureMarkdown);
+
+const otherInformation = ['First information', 'Second information'];
+
+const otherInformationRepresentation = PrOtherInformation.renderMarkdown(
+  otherInformation,
+);
+
+console.log(otherInformationRepresentation);
