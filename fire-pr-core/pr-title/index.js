@@ -1,4 +1,4 @@
-const renderMarkdown = (payload) => {
+const renderMarkdown = payload => {
   return `${payload.heading} [${payload.issueNumber}]`;
 };
 
