@@ -3,6 +3,7 @@ const PrBreaking = require('./pr-breaking');
 const PrTestingProcedure = require('./pr-testing-procedure');
 const PrOtherInformation = require('./pr-other-information');
 const PrChangelog = require('./pr-changelog');
+const PrTitle = require('./pr-title');
 
 const prTypeConfiguration = [
   {
@@ -106,3 +107,12 @@ const changelogPayload = {
 const changelogRepresentation = PrChangelog.renderMarkdown(changelogPayload);
 
 console.log(changelogRepresentation);
+
+const titlePayload = {
+  heading: 'Pull Request Title 101',
+  issueNumber: 3059,
+};
+
+const titleRepresentation = PrTitle.renderMarkdown(titlePayload);
+
+console.log(titleRepresentation);
