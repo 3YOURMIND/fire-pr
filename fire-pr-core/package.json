@@ -1,21 +1,24 @@
 {
   "name": "fire-pr-core",
   "version": "0.0.1-beta.1",
-  "description": "A JavaScript package to provide functionality to create texts for pull requests",
+  "description":
+    "A JavaScript package to provide functionality to create texts for pull requests",
   "main": "index.js",
   "scripts": {
     "test": "node node_modules/.bin/jest",
-    "test-windows": "node node_modules/jest/bin/jest"
+    "test-windows": "node node_modules/jest/bin/jest",
+    "precommit": "lint-staged"
   },
-  "keywords": [
-    "bitbucket",
-    "pull",
-    "request",
-    "helper"
-  ],
+  "lint-staged": {
+    "*.{js,json,css,md}": ["prettier --write", "git add"]
+  },
+  "keywords": ["bitbucket", "pull", "request", "helper"],
   "author": "3YOURMIND GmbH",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^21.2.1"
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.2"
   }
 }
