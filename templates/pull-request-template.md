@@ -51,6 +51,21 @@ Lorem ipsum test.
 
 ---
 
+## Review and Merge ##
+
+**Who**
+
+ * [] Last approver merges
+ * [] PR creator merges
+
+**When**
+
+ * [] Merge after > 51% of the reviewers approved (tony suggests default)
+ * [] Merge after 100%  of the reviewers approved
+ * [] Merge after 1 reviewer approves
+
+---
+
 ## Other information ##
 
 - lorem ipsum
