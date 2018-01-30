@@ -16,8 +16,10 @@
       />No
     </p>
     <button
-      class="next-button"
-      @click="saveBreakingOptions">
+      :class="nextClasses"
+      @click="saveBreakingOptions"
+      :disabled="disableNext"
+    >
       Next
     </button>
   </div>
@@ -27,8 +29,19 @@
 export default {
   data() {
     return {
-      breaking: false,
+      breaking: null,
     };
+  },
+  computed: {
+    disableNext() {
+      return this.breaking === null;
+    },
+    nextClasses() {
+      return {
+        'next-button': true,
+        'disabled': this.disableNext,
+      }
+    }
   },
   methods: {
     updateBreaking(breaking) {
@@ -37,8 +50,8 @@ export default {
     saveBreakingOptions() {
       this.$store.dispatch('saveBreakingOptions', this.breaking);
       this.$router.push('/testing');
-    }
-  }
+    },
+  },
 }
 </script>
 

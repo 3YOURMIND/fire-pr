@@ -39,8 +39,10 @@
       />Merge after 1 reviewer approves
     </p>
     <button
-      class="next-button"
-      @click="saveMergeOptions">
+      :class="nextClasses"
+      @click="saveMergeOptions"
+      :disabled="disableNext"
+    >
       Finish
     </button>
   </div>
@@ -55,6 +57,17 @@ export default {
         mergeTime: '',
       },
     };
+  },
+  computed: {
+    disableNext() {
+      return this.options.merger === '' || this.options.mergeTime === '';
+    },
+    nextClasses() {
+      return {
+        'next-button': true,
+        'disabled': this.disableNext,
+      }
+    }
   },
   methods: {
     updateMerger(merger) {

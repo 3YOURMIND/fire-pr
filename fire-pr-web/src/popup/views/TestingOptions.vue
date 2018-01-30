@@ -27,8 +27,9 @@
       @click="addTestCase"
     >Add Test Case</button>
     <button
-      class="next-button"
+      :class="nextClasses"
       @click="saveTestingOptions"
+      :disabled="disableNext"
     >Next</button>
   </div>
 </template>
@@ -41,6 +42,17 @@ export default {
       testCaseTitle: '',
       testCaseSteps: [],
     };
+  },
+  computed: {
+    disableNext() {
+      return this.testCases.length < 1;
+    },
+    nextClasses() {
+      return {
+        'next-button': true,
+        'disabled': this.disableNext,
+      }
+    }
   },
   methods: {
     saveTestingOptions() {
