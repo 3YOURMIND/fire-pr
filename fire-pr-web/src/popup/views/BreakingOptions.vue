@@ -7,7 +7,11 @@
     <p>
       No <input type="radio" @click="breaking = false"/>
     </p>
-    <button class="breaking-options__next-button">Next</button>
+    <button
+      class="breaking-options__next-button"
+      @click="saveBreakingOptions">
+      Next
+    </button>
   </div>
 </template>
 
@@ -19,8 +23,8 @@ export default {
     };
   },
   methods: {
-    saveChangeOptions() {
-      this.store.dispatch('saveBreakingOptions', this.breaking);
+    saveBreakingOptions() {
+      this.$store.dispatch('saveBreakingOptions', this.breaking);
     }
   }
 }
