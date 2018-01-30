@@ -2,6 +2,7 @@
   "name": "fire-pr-extension",
   "description": "The official fire-pr extension for Chrome",
   "version": "1.0.0",
+  "content_security_policy": "script-src 'self' http://localhost:8098; object-src 'self'",
   "manifest_version": 2,
   "icons": {
     "48": "icons/icon_48.png",
