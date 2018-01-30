@@ -1,8 +1,13 @@
-import Welcome from './views/Welcome.vue';
+import ChangeOptions from '../views/ChangeOptions.vue';
+import BreakingOptions from '../views/BreakingOptions.vue';
 
 export default [
   {
     path: '/',
-    component: Welcome
+    component: ChangeOptions,
+  },
+  {
+    path: '/breaking',
+    component: BreakingOptions,
   },
 ];
