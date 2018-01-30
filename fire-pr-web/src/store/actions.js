@@ -1,4 +1,7 @@
 export default {
+  saveTitle(context, payload) {
+    context.commit('UPDATE_TITLE', payload);
+  },
   saveChangeOptions(context, payload) {
     context.commit('UPDATE_CHANGE_OPTIONS', payload);
   },

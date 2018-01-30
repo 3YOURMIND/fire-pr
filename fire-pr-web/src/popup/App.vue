@@ -7,11 +7,9 @@
       type="text"
       class="fire-app__title-input"
       v-model="title"
+      @input="updateTitle"
     >
     <router-view></router-view>
-    <div id="debug-div">
-      <code v-text="debugInfo"/>
-    </div>
   </div>
 </template>
 
@@ -22,6 +20,11 @@
         title: '',
       };
     },
+    methods: {
+      updateTitle() {
+        this.$store.dispatch('saveTitle', this.title);
+      }
+    }
   }
 </script>
 
