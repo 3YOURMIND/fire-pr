@@ -3,20 +3,40 @@
     <h3>Review and Merge</h3>
     <h4>Who</h4>
     <p>
-      Last approver merges <input type="radio" name="merger" @click="options.merger = 'last'"/>
+      <input
+        type="radio"
+        name="merger"
+        @click="updateMerger('last')"
+      /> Last approver merges
     </p>
     <p>
-      PR creator merges <input type="radio" name="merger" @click="options.merger = 'creator'"/>
+      <input
+        type="radio"
+        name="merger"
+        @click="updateMerger('creator')"
+      />PR creator merges
     </p>
     <h4>When</h4>
     <p>
-      Merge after > 51% of the reviewers approved <input type="radio" name="mergeTime" @click="options.mergeTime = 'half'"/>
+      <input
+        type="radio"
+        name="mergeTime"
+        @click="updateMergeTime('half')"
+      />Merge after > 51% of the reviewers approved
     </p>
     <p>
-      Merge after 100% of the reviewers approved <input type="radio" name="mergeTime" @click="options.mergeTime = 'all'"/>
+      <input
+        type="radio"
+        name="mergeTime"
+        @click="updateMergeTime('all')"
+      />Merge after 100% of the reviewers approved
     </p>
     <p>
-      Merge after 1 reviewer approves <input type="radio" name="mergeTime" @click="options.mergeTime = 'one'"/>
+      <input
+        type="radio"
+        name="mergeTime"
+        @click="updateMergeTime('one')"
+      />Merge after 1 reviewer approves
     </p>
     <button
       class="breaking-options__next-button"
@@ -37,6 +57,12 @@ export default {
     };
   },
   methods: {
+    updateMerger(merger) {
+      this.options.merger = merger;
+    },
+    updateMergeTime(mergeTime) {
+      this.options.mergeTime = mergeTime;
+    },
     saveMergeOptions() {
       this.$store.dispatch('saveMergeOptions', this.options);
       // this.$router.push('/finish');
