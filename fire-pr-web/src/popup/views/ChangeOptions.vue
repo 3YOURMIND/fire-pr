@@ -1,5 +1,5 @@
 <template>
-  <div class="change-options__main-container">
+  <div class="main-container">
     <h3>What kind of change does this PR introduce?</h3>
     <p>
       <input type="checkbox" v-model="options.bugfix"/>Bugfix
@@ -25,7 +25,7 @@
       />
     </p>
     <button
-      class="change-options__next-button"
+      class="next-button"
       @click="saveChangeOptions"
     >Next</button>
   </div>
@@ -56,16 +56,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.change-options__main-container {
-  width: 80%;
-  margin: auto;
-}
-
-.change-options__next-button {
-  width: 40%;
-  margin: auto;
-  display: block;
-}
 
 </style>

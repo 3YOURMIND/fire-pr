@@ -1,5 +1,5 @@
 <template>
-  <div class="testing-options__main-container">
+  <div class="main-container">
     <h3>Testing Procedure</h3>
     <div v-for="testCase in testCases" :key="testCase.title">
       <p v-text="testCase.title" />
@@ -11,14 +11,23 @@
         />
       </ul>
     </div>
-    <input type="text" v-model="testCaseTitle" placeholder="Test Case Title" />
-    <textarea v-model="testCaseSteps" placeholder="Test Case Steps" />
+    <input
+      class="testing-options__test-case-title"
+      type="text"
+      v-model="testCaseTitle"
+      placeholder="Test Case Title"
+    />
+    <textarea
+      class="testing-options__test-case-steps"
+      v-model="testCaseSteps"
+      placeholder="Test Case Steps"
+    />
     <button
-      class="change-options__add-test-case-button"
+      class="testing-options__add-test-case-button"
       @click="addTestCase"
     >Add Test Case</button>
     <button
-      class="change-options__next-button"
+      class="next-button"
       @click="saveTestingOptions"
     >Next</button>
   </div>
@@ -52,18 +61,15 @@ export default {
 
 <style lang="scss" scoped>
 
-.testing-options__main-container {
-  width: 80%;
-  margin: auto;
+.testing-options__test-case-title {
+  width: 100%;
 }
 
-.change-options__add-test-case-button {
-  width: 40%;
-  margin: auto;
-  display: block;
+.testing-options__test-case-steps {
+  width: 100%;
 }
 
-.testing-options__next-button {
+.testing-options__add-test-case-button {
   width: 40%;
   margin: auto;
   display: block;

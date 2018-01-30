@@ -1,5 +1,5 @@
 <template>
-  <div class="breaking-options__main-container">
+  <div class="main-container">
     <h3>Review and Merge</h3>
     <h4>Who</h4>
     <p>
@@ -39,9 +39,9 @@
       />Merge after 1 reviewer approves
     </p>
     <button
-      class="breaking-options__next-button"
+      class="next-button"
       @click="saveMergeOptions">
-      Next
+      Finish
     </button>
   </div>
 </template>
@@ -72,10 +72,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.brekaing-options__main-container {
-  width: 80%;
-  margin: auto;
-}
 
 </style>

@@ -1,17 +1,13 @@
 <template>
-  <div class="fire-app__main-container">
-    <header>wow i am making things big</header>
+  <div class="fire-app__body-container">
+    <header>
+      <h4>fire-pr template</h4>
+    </header>
     <input
       type="text"
       class="fire-app__title-input"
       v-model="title"
     >
-    <textarea
-      type="textarea"
-      class="fire-app__template-input"
-      v-model="prTemplate"
-      rows="10"
-    />
     <router-view></router-view>
     <div id="debug-div">
       <code v-text="debugInfo"/>
@@ -24,17 +20,8 @@
     data () {
       return {
         title: '',
-        prTemplate: this.$store.getters.prTemplate,
       };
     },
-    computed: {
-      debugInfo() {
-        return this.$store.getters.debugInfo;
-      }
-    },
-    mounted() {
-      console.log('hello');
-    }
   }
 </script>
 
@@ -44,7 +31,7 @@ header {
   text-align: center;
 }
 
-.fire-app__main-container {
+.fire-app__body-container {
   width: 400px;
 }
 
@@ -60,6 +47,11 @@ header {
   width: 80%;
   margin: auto;
   display: block;
+}
+
+.main-container {
+  width: 80%;
+  margin: auto;
 }
 
 </style>

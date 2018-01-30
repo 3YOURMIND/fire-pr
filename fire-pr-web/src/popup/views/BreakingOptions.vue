@@ -1,5 +1,5 @@
 <template>
-  <div class="breaking-options__main-container">
+  <div class="main-container">
     <h3>Does this PR introduce a breaking change?</h3>
     <p>
       <input
@@ -16,7 +16,7 @@
       />No
     </p>
     <button
-      class="breaking-options__next-button"
+      class="next-button"
       @click="saveBreakingOptions">
       Next
     </button>
@@ -43,10 +43,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.brekaing-options__main-container {
-  width: 80%;
-  margin: auto;
-}
 
 </style>
