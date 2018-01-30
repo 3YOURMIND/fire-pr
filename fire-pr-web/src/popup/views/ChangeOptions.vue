@@ -2,22 +2,22 @@
   <div class="change-options__main-container">
     <h3>What kind of change does this PR introduce?</h3>
     <p>
-      Bugfix <input type="checkbox" v-model="options.bugfix"/>
+      <input type="checkbox" v-model="options.bugfix"/>Bugfix
     </p>
     <p>
-      Feature <input type="checkbox" v-model="options.feature"/>
+      <input type="checkbox" v-model="options.feature"/>Feature
     </p>
     <p>
-      Code style update <input type="checkbox" v-model="options.codeStyle"/>
+      <input type="checkbox" v-model="options.codeStyle"/>Code style update
     </p>
     <p>
-      Refactor <input type="checkbox" v-model="options.refactor"/>
+      <input type="checkbox" v-model="options.refactor"/>Refactor
     </p>
     <p>
-      Build-related changes <input type="checkbox" v-model="options.build"/>
+      <input type="checkbox" v-model="options.build"/>Build-related changes
     </p>
     <p>
-      Other: Please describe <input type="checkbox" v-model="options.other"/>
+      <input type="checkbox" v-model="options.other"/>Other: Please describe
       <input
         type="text"
         v-if="options.other"
