@@ -1,8 +1,8 @@
-import PageIndex from './pages/Index.vue';
+import Welcome from './views/Welcome.vue';
 
 export default [
   {
     path: '/',
-    component: PageIndex
+    component: Welcome
   },
 ];

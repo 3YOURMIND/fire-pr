@@ -1,1 +1,1 @@
-export const foo = (state) => state.foo;
+export const prTemplate = (state) => state.prTemplate;

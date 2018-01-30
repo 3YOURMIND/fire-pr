@@ -1,5 +1,6 @@
 <template>
   <div class="main-container">
+    <header>fire-pr i changed something</header>
     <router-view></router-view>
   </div>
 </template>
@@ -13,6 +14,10 @@
 </script>
 
 <style lang="scss" scoped>
+
+header {
+  text-align: center;
+}
 
 .main-container {
   min-height: 400px;

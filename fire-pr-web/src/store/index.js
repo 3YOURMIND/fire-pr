@@ -5,11 +5,13 @@ import * as getters from './getters'
 import mutations from './mutations'
 import * as actions from './actions'
 
+import PrTemplate from '../assets/PrTemplate'
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    foo: 'bar'
+    prTemplate: PrTemplate,
   },
   getters,
   mutations,
