@@ -1,5 +1,6 @@
 <template>
   <div class="main-container">
+    <BackButton />
     <h3>Does this PR introduce a breaking change?</h3>
     <p>
       <input
@@ -26,7 +27,12 @@
 </template>
 
 <script>
+import BackButton from '../components/BackButton.vue';
+
 export default {
+  components: {
+    BackButton,
+  },
   data() {
     return {
       breaking: null,

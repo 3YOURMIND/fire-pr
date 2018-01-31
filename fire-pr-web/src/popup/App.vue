@@ -45,13 +45,6 @@ header {
   display: block;
 }
 
-.fire-app__template-input {
-  margin-top: 10px;
-  width: 80%;
-  margin: auto;
-  display: block;
-}
-
 .main-container {
   width: 80%;
   margin: auto;
