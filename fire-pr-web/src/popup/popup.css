@@ -1,0 +1,9 @@
+.main-container {
+  width: 80%;
+  margin: auto;
+}
+
+.next-button {
+  width: 40%;
+  display: block;
+}
