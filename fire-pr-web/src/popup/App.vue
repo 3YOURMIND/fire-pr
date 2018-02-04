@@ -31,9 +31,10 @@
         return selectBox.options[selectBox.selectedIndex].text;
       }
       chrome.tabs.executeScript({
-          code: '(' + getSelectedBranch + ')();',
+        code: '(' + getSelectedBranch + ')();',
       }, (branchTitle) => {
-          this.title = branchTitle;
+        const jiraIssue = branchTitle.toString().match(/B3-([0-9])*/gi)[0];
+        this.$store.dispatch('saveJiraIssue', jiraIssue);
       });
     }
   }

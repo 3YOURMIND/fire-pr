@@ -14,4 +14,7 @@ export default {
   saveMergeOptions(context, payload) {
     context.commit('UPDATE_MERGE_OPTIONS', payload);
   },
+  saveJiraIssue(context, payload) {
+    context.commit('UPDATE_JIRA_ISSUE', payload);
+  },
 };

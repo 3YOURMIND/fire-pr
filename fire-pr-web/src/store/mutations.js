@@ -14,4 +14,7 @@ export default {
   UPDATE_MERGE_OPTIONS(state, payload) {
     state.options.merge = payload;
   },
+  UPDATE_JIRA_ISSUE(state, payload) {
+    state.jiraIssue = payload;
+  },
 }
