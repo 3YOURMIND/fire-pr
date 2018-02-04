@@ -3,6 +3,7 @@ import PrBreakingUtility from './pr-breaking';
 import PrTestingUtility from './pr-testing';
 import PrMergerUtility from './pr-merger';
 import PrOtherInformationUtility from './pr-other-information';
+import PrChangelogUtility from './pr-changelog';
 
 const createTypeMarkdown = (state) => {
   const options = state.options.change;
@@ -90,6 +91,19 @@ const createOtherInformationMarkdown = (state) => {
   return PrOtherInformationUtility.renderMarkdown(state.otherInformations);
 };
 
+const createChangelogMarkdown = (state) => {
+  const splittedIssues = state.jiraIssue.split('-');
+  return PrChangelogUtility.renderMarkdown({
+    note: {
+      description: state.changelog.text,
+      issueNumber: splittedIssues[1],
+      baseUrl: 'https://jira.3yourmind.com',
+      projectAbbreviation: splittedIssues[0],
+    },
+    pictures: [],
+  });
+};
+
 const render = (state) => {
   const splitter = '\n\n---\n\n';
   const typeMarkdown = createTypeMarkdown(state);
@@ -97,7 +111,8 @@ const render = (state) => {
   const testingMarkdown = createTestingMarkdown(state);
   const mergerMarkdown = createMergerMarkdown(state);
   const otherInformationMarkdown = createOtherInformationMarkdown(state);
-  return `${typeMarkdown}${splitter}${breakingMarkdown}${splitter}${testingMarkdown}${splitter}${mergerMarkdown}${splitter}${otherInformationMarkdown}`;
+  const changelogMarkdown = createChangelogMarkdown(state);
+  return `${typeMarkdown}${splitter}${breakingMarkdown}${splitter}${testingMarkdown}${splitter}${mergerMarkdown}${splitter}${otherInformationMarkdown}${splitter}${changelogMarkdown}`;
 };
 
 export default {

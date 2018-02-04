@@ -20,4 +20,7 @@ export default {
   saveOtherInformations(context, payload) {
     context.commit('UPDATE_OTHER_INFORMATIONS', payload);
   },
+  saveChangelog(context, payload) {
+    context.commit('UPDATE_CHANGELOG', payload);
+  },
 };

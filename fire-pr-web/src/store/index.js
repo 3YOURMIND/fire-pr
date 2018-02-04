@@ -13,6 +13,10 @@ export default new Vuex.Store({
     jiraIssue: null,
     options: {},
     otherInformations: [],
+    changelog: {
+      text: '',
+      pictures: [],
+    },
   },
   getters,
   mutations,

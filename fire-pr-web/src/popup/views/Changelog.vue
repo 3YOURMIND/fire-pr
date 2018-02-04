@@ -2,7 +2,8 @@
   <div>
     <input type="text" v-model="changelogText" />
     <label>Note</label>
-    <button @click="finish">Finish</button>
+    <button @click="addNote">Add Note</button>
+    <button @click="finish">✨ Create Pull Request</button>
   </div>
 </template>
 
@@ -27,6 +28,10 @@ export default {
     },
   },
   methods: {
+    addNote() {
+      this.$store.dispatch('saveChangelog', {text: this.changelogText});
+      this.changelogText = '';
+    },
     finish() {
       const calculatedTitle = PrTitleUtility.renderMarkdown({heading: this.$store.state.title, issueNumber: this.$store.state.jiraIssue});
       let scriptToExecute = `document.getElementById('id_title').value = '${calculatedTitle}'`;

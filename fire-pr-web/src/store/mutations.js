@@ -20,4 +20,7 @@ export default {
   UPDATE_OTHER_INFORMATIONS(state, payload) {
     state.otherInformations = payload;
   },
+  UPDATE_CHANGELOG(state, payload) {
+    state.changelog.text = payload.text;
+  },
 }
