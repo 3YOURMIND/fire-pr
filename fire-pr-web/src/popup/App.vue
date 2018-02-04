@@ -26,6 +26,11 @@
       },
     },
     mounted() {
+      const scriptToExecute = `document.getElementById('id_description').style.height = '500px'`;
+      chrome.tabs.executeScript({
+        code: scriptToExecute,
+      });
+
       function getSelectedBranch() {
         const selectBox = document.querySelector('#id_source_group > div.branch-field-container > select');
         return selectBox.options[selectBox.selectedIndex].text;
