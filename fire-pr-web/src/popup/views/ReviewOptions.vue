@@ -4,40 +4,25 @@
     <h3>Review and Merge</h3>
     <h4>Who</h4>
     <p>
-      <input
-        type="radio"
-        name="merger"
-        @click="updateMerger('last')"
-      /> Last approver merges
+      <input type="radio" name="merger" @click="updateMerger('last')" />
+      <label>Last approver merges</label>
     </p>
     <p>
-      <input
-        type="radio"
-        name="merger"
-        @click="updateMerger('creator')"
-      />PR creator merges
+      <input type="radio" name="merger" @click="updateMerger('creator')" />
+      <label>PR creator merges</label>
     </p>
     <h4>When</h4>
     <p>
-      <input
-        type="radio"
-        name="mergeTime"
-        @click="updateMergeTime('half')"
-      />Merge after > 51% of the reviewers approved
+      <input type="radio" name="mergeTime" @click="updateMergeTime('half')" />
+      <label>Merge after > 51% of the reviewers approved</label>
     </p>
     <p>
-      <input
-        type="radio"
-        name="mergeTime"
-        @click="updateMergeTime('all')"
-      />Merge after 100% of the reviewers approved
+      <input type="radio" name="mergeTime" @click="updateMergeTime('all')" />
+      <label>Merge after 100% of the reviewers approved</label>
     </p>
     <p>
-      <input
-        type="radio"
-        name="mergeTime"
-        @click="updateMergeTime('one')"
-      />Merge after 1 reviewer approves
+      <input type="radio" name="mergeTime" @click="updateMergeTime('one')" />
+      <label>Merge after 1 reviewer approves</label>
     </p>
     <button
       :class="nextClasses"
@@ -55,6 +40,7 @@ import PrTitleUtility from '../util/pr-title';
 import PrTypeUtility from '../util/pr-type';
 import PrBreakingUtility from '../util/pr-breaking';
 import PrTestingUtility from '../util/pr-testing';
+import PrMergerUtility from '../util/pr-merger';
 
 export default {
   components: {
@@ -70,6 +56,10 @@ export default {
   },
   computed: {
     disableNext() {
+      const title = this.$store.state.title;
+      if (title === '') {
+        return true;
+      }
       return this.options.merger === '' || this.options.mergeTime === '';
     },
     nextClasses() {
@@ -156,6 +146,14 @@ export default {
       const testSteps = this.$store.state.options.testing;
       return PrTestingUtility.renderMarkdown(testSteps);
     },
+    createMergerMarkdown() {
+      const storeMerge = this.$store.state.options.merge;
+      const payload = {
+        merger: storeMerge.merger,
+        mergeTime: storeMerge.mergeTime,
+      };
+      return PrMergerUtility.renderMarkdown(payload);
+    },
     saveMergeOptions() {
       this.$store.dispatch('saveMergeOptions', this.options);
       const calculatedTitle = PrTitleUtility.renderMarkdown({heading: this.$store.state.title, issueNumber: this.$store.state.jiraIssue});
@@ -167,8 +165,13 @@ export default {
       const typeMarkdown = this.createTypeMarkdown();
       const breakingMarkdown = this.createBreakingChangeMarkdown();
       const testingMarkdown = this.createTestingMarkdown();
-      const markdown = `${typeMarkdown}${splitter}${breakingMarkdown}${splitter}${testingMarkdown}`;
+      const mergerMarkdown = this.createMergerMarkdown();
+      const markdown = `${typeMarkdown}${splitter}${breakingMarkdown}${splitter}${testingMarkdown}${splitter}${mergerMarkdown}`;
       scriptToExecute = `document.getElementById('id_description').value = \`${markdown}\``;
+      chrome.tabs.executeScript({
+        code: scriptToExecute,
+      });
+      scriptToExecute = `document.getElementById('id_close_anchor_branch').checked = true`;
       chrome.tabs.executeScript({
         code: scriptToExecute,
       });
