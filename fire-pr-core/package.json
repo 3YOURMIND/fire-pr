@@ -5,6 +5,7 @@
     "A JavaScript package to provide functionality to create texts for pull requests",
   "main": "index.js",
   "scripts": {
+    "example": "node example.js",
     "test": "node node_modules/.bin/jest",
     "test-windows": "node node_modules/jest/bin/jest",
     "precommit": "lint-staged"
