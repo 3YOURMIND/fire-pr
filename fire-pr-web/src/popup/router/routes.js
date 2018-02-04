@@ -2,7 +2,8 @@ import PullRequestType from '../views/PullRequestType.vue';
 import BreakingOptions from '../views/BreakingOptions.vue';
 import TestingOptions from '../views/TestingOptions.vue';
 import ReviewOptions from '../views/ReviewOptions.vue';
-
+import OtherInformation from '../views/OtherInformation.vue';
+import Changelog from '../views/Changelog.vue';
 
 export default [
   {
@@ -21,4 +22,11 @@ export default [
     path: '/review-merge',
     component: ReviewOptions,
   },
+  {
+    path: '/other-information',
+    component: OtherInformation,
+  },{
+    path: '/changelog',
+    component: Changelog,
+  }
 ];

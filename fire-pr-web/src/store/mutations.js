@@ -17,4 +17,7 @@ export default {
   UPDATE_JIRA_ISSUE(state, payload) {
     state.jiraIssue = payload;
   },
+  UPDATE_OTHER_INFORMATIONS(state, payload) {
+    state.otherInformations = payload;
+  },
 }

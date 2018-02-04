@@ -17,4 +17,7 @@ export default {
   saveJiraIssue(context, payload) {
     context.commit('UPDATE_JIRA_ISSUE', payload);
   },
+  saveOtherInformations(context, payload) {
+    context.commit('UPDATE_OTHER_INFORMATIONS', payload);
+  },
 };
