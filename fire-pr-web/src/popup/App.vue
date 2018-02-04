@@ -24,6 +24,17 @@
       updateTitle() {
         this.$store.dispatch('saveTitle', this.title);
       },
+    },
+    mounted() {
+      function getSelectedBranch() {
+        const selectBox = document.querySelector('#id_source_group > div.branch-field-container > select');
+        return selectBox.options[selectBox.selectedIndex].text;
+      }
+      chrome.tabs.executeScript({
+          code: '(' + getSelectedBranch + ')();',
+      }, (branchTitle) => {
+          this.title = branchTitle;
+      });
     }
   }
 </script>
