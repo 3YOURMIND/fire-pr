@@ -5,8 +5,9 @@
   "content_security_policy": "script-src 'self' http://localhost:8098; object-src 'self'",
   "manifest_version": 2,
   "icons": {
-    "48": "icons/icon_48.png",
-    "128": "icons/icon_128.png"
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
   },
   "browser_action": {
     "default_title": "fire-pr-extension",
