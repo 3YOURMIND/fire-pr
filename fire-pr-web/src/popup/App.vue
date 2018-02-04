@@ -23,7 +23,7 @@
     methods: {
       updateTitle() {
         this.$store.dispatch('saveTitle', this.title);
-      }
+      },
     }
   }
 </script>

@@ -83,7 +83,10 @@ export default {
     },
     saveMergeOptions() {
       this.$store.dispatch('saveMergeOptions', this.options);
-      // this.$router.push('/finish');
+      const scriptToExecute = `document.getElementById('id_title').value = '${this.$store.state.title}'`;
+      chrome.tabs.executeScript({
+        code: scriptToExecute,
+      });
     }
   }
 }

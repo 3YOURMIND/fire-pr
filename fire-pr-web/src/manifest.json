@@ -16,5 +16,8 @@
     "scripts": [
       "background.js"
     ]
-  }
+  },
+  "permissions": [
+    "activeTab"
+  ]
 }
