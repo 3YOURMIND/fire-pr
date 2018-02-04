@@ -1,36 +1,34 @@
 <template>
   <div class="main-container">
-    <h3>Testing Procedure</h3>
-    <div v-for="testCase in testCases" :key="testCase.title">
-      <p v-text="testCase.title" />
-      <ul>
-        <li
-          v-for="step in testCase.steps"
-          :key="step"
-          v-text="step"
-        />
-      </ul>
+    <BackButton />
+    <h1>Testing procedure</h1>
+    <div v-for="(testCase, index) in testCases" :key="index">
+      <h2 @click="toggleCollapse(index)">Case {{ index + 1 }}</h2>
+      <ol v-if="uncollapsed.includes(index)">
+        <li v-for="step in testCase" :key="step" v-text="step" />
+      </ol>
     </div>
-    <input
-      class="testing-options__test-case-title"
-      type="text"
-      v-model="testCaseTitle"
-      placeholder="Test Case Title"
-    />
+    <hr />
+    <ol>
+      <li v-for="step in currentSteps" :key="step" v-text="step" />
+    </ol>
     <textarea
-      class="testing-options__test-case-steps"
-      v-model="testCaseSteps"
-      placeholder="Test Case Steps"
+      v-model="testInstruction"
+      placeholder="Test instruction"
     />
-    <button
-      class="testing-options__add-test-case-button"
-      @click="addTestCase"
-    >Add Test Case</button>
+    <button @click="addTestStep">
+      Add Test instruction
+    </button>
+    <button @click="addTestCase" :disabled="disableAddTestStep">
+      Add New Test Case
+    </button>
     <button
       :class="nextClasses"
-      @click="saveTestingOptions"
       :disabled="disableNext"
-    >Next</button>
+      @click="saveTestingOptions"
+    >
+      Next
+    </button>
   </div>
 </template>
 
@@ -44,11 +42,15 @@ export default {
   data() {
     return {
       testCases: [],
-      testCaseTitle: '',
-      testCaseSteps: [],
+      currentSteps: [],
+      uncollapsed: [],
+      testInstruction: '',
     };
   },
   computed: {
+    disableAddTestStep() {
+      return this.currentSteps.length < 1;
+    },
     disableNext() {
       return this.testCases.length < 1;
     },
@@ -56,40 +58,30 @@ export default {
       return {
         'next-button': true,
         'disabled': this.disableNext,
-      }
+      };
     }
   },
   methods: {
+    toggleCollapse(index) {
+      if (this.uncollapsed.includes(index)) {
+        this.uncollapsed = [...this.uncollapsed.filter(e => e !== index)];
+        return;
+      }
+      this.uncollapsed = [...this.uncollapsed, index];
+    },
     saveTestingOptions() {
       this.$store.dispatch('saveTestingOptions', this.testCases);
       this.$router.push('/review-merge');
     },
+    addTestStep() {
+      this.currentSteps.push(this.testInstruction);
+      this.testInstruction = '';
+    },
     addTestCase() {
-      this.testCases.push({
-        title: this.testCaseTitle,
-        steps: this.testCaseSteps.split(/\n/),
-      });
-      this.testCaseTitle = '';
-      this.testCaseSteps = [];
+      this.testCases.push(this.currentSteps);
+      this.currentSteps = [];
+      this.testInstruction = '';
     }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-
-.testing-options__test-case-title {
-  width: 100%;
-}
-
-.testing-options__test-case-steps {
-  width: 100%;
-}
-
-.testing-options__add-test-case-button {
-  width: 40%;
-  margin: auto;
-  display: block;
-}
-
-</style>

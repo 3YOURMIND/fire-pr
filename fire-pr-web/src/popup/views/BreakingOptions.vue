@@ -2,9 +2,11 @@
   <div class="main-container">
     <BackButton />
     <h3>Does this PR introduce a breaking change?</h3>
-    <p>
-      <input type="radio" name="breaking" @click="updateBreaking(true)" />Yes
-    </p>
+    <div>
+      <input type="radio" name="breaking" @click="updateBreaking(true)" />
+      <label>Yes</label>
+      <input v-if="breaking" type="text" v-model="breakingChangeText" />
+    </div>
     <p>
       <input type="radio" name="breaking" @click="updateBreaking(false)" />No
     </p>
@@ -28,11 +30,18 @@ export default {
   data() {
     return {
       breaking: null,
+      breakingChangeText: '',
     };
   },
   computed: {
     disableNext() {
-      return this.breaking === null;
+      if (this.breaking === null) {
+        return true;
+      }
+      if (this.breaking && this.breakingChangeText === '') {
+        return true;
+      }
+      return false;
     },
     nextClasses() {
       return {
@@ -46,7 +55,7 @@ export default {
       this.breaking = breaking;
     },
     saveBreakingOptions() {
-      this.$store.dispatch('saveBreakingOptions', this.breaking);
+      this.$store.dispatch('saveBreakingOptions', {breaking: this.breaking, text: this.breakingChangeText});
       this.$router.push('/testing');
     },
   },
