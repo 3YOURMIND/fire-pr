@@ -50,6 +50,7 @@
 
 <script>
 import BackButton from '../components/BackButton.vue';
+import PrTitle from '../../../../fire-pr-core/pr-title';
 
 export default {
   components: {
@@ -83,7 +84,13 @@ export default {
     },
     saveMergeOptions() {
       this.$store.dispatch('saveMergeOptions', this.options);
-      const scriptToExecute = `document.getElementById('id_title').value = '${this.$store.state.title}'`;
+
+      const calculatedTitle = PrTitle.renderMarkdown({heading: this.$store.state.title, issueNumber: this.$store.state.jiraIssue});
+      let scriptToExecute = `document.getElementById('id_title').value = '${calculatedTitle}'`;
+      chrome.tabs.executeScript({
+        code: scriptToExecute,
+      });
+      scriptToExecute = `document.getElementById('id_description').value = \`${markdown}\``;
       chrome.tabs.executeScript({
         code: scriptToExecute,
       });
