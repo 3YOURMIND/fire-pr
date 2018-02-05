@@ -1,4 +1,4 @@
-const PrBreakingModule = require('./index');
+import PrBreakingModule from './index';
 
 describe('Test pr-breaking', () => {
   it('Breaking change with description', () => {

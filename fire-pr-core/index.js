@@ -1,21 +1,15 @@
-/*const PrType = require('./pr-type');
-const PrBreaking = require('./pr-breaking');
-const PrTestingProcedure = require('./pr-testing-procedure');
-const PrOtherInformation = require('./pr-other-information');
-const PrChangelog = require('./pr-changelog');
-const PrTitle = require('./pr-title');
+import PrType from './pr-type/index.js';
+import PrBreaking from './pr-breaking/index.js';
+import PrTestingProcedure from './pr-testing-procedure/index.js';
+import PrOtherInformation from './pr-other-information/index.js';
+import PrChangelog from './pr-changelog/index.js';
+import PrTitle from './pr-title/index.js';
 
-module.exports = {
+export default {
   PrType,
   PrBreaking,
   PrTestingProcedure,
   PrOtherInformation,
   PrChangelog,
   PrTitle,
-};
-*/
-import PrType from './pr-type/index.js';
-
-export default {
-  PrType,
 };

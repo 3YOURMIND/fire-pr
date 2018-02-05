@@ -7,9 +7,11 @@ const renderMarkdown = (testCases) => {
   }
 
   const resultI = testCases.map((testCaseInstructions, index) => {
-    const instructionList = testCaseInstructions.map((testCaseInstruction, index) => {
-      return `${index + 1}. ${testCaseInstruction}`;
-    });
+    const instructionList = testCaseInstructions.map(
+      (testCaseInstruction, index) => {
+        return `${index + 1}. ${testCaseInstruction}`;
+      },
+    );
     const instructionListRepresentation = instructionList.join(`
 `);
     return `**Case ${index + 1}**
@@ -22,6 +24,6 @@ ${instructionListRepresentation}`;
   return `${headline}${test}`;
 };
 
-module.exports = {
+export default {
   renderMarkdown,
 };

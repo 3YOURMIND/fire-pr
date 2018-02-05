@@ -13,7 +13,8 @@
   "dependencies": {
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
-    "vue": "^2.5.13"
+    "vue": "^2.5.13",
+    "fire-pr-core": "../fire-pr-core"
   },
   "devDependencies": {
     "@vue/devtools": "^1.0.2",

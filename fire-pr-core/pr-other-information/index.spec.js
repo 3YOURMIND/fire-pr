@@ -1,4 +1,4 @@
-const PrOtherInformation = require('./index');
+import PrOtherInformation from './index';
 
 describe('Module pr-other-information', () => {
   it('Test default payload', () => {

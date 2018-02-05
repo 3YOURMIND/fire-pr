@@ -20,11 +20,20 @@
   "author": "3YOURMIND GmbH",
   "license": "MIT",
   "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.1.0",
     "husky": "^0.14.3",
     "jest": "^22.1.4",
     "lint-staged": "^6.1.0",
     "prettier": "^1.10.2",
     "rollup": "^0.55.3",
     "rollup-plugin-uglify": "^3.0.0"
+  },
+  "jest": {
+    "moduleFileExtensions": ["js", "vue"],
+    "transform": {
+      "^.+\\.js?$": "<rootDir>/node_modules/babel-jest"
+    }
   }
 }

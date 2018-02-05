@@ -1,4 +1,4 @@
-const validatePayload = payload => {
+const validatePayload = (payload) => {
   if (!payload.note) {
     return new Error('A note must be provided');
   }
@@ -22,7 +22,7 @@ const validatePayload = payload => {
   return true;
 };
 
-const renderMarkdown = changelogPayload => {
+const renderMarkdown = (changelogPayload) => {
   const validationResponse = validatePayload(changelogPayload);
   if (validationResponse instanceof Error) {
     return validationResponse;
@@ -31,12 +31,14 @@ const renderMarkdown = changelogPayload => {
 
   const note = `### Note ###
 
-- ${changelogPayload.note.description}, closes [#${changelogPayload.note
-    .issueNumber}](${changelogPayload.note.baseUrl}/browse/${changelogPayload
-    .note.projectAbbreviation}-${changelogPayload.note.issueNumber})`;
+- ${changelogPayload.note.description}, closes [#${
+    changelogPayload.note.issueNumber
+  }](${changelogPayload.note.baseUrl}/browse/${
+    changelogPayload.note.projectAbbreviation
+  }-${changelogPayload.note.issueNumber})`;
   let pictures = '';
   if (changelogPayload.pictures && changelogPayload.pictures.length > 0) {
-    const mappedPictureList = changelogPayload.pictures.map(picture => {
+    const mappedPictureList = changelogPayload.pictures.map((picture) => {
       return `- ![](${picture})`;
     }).join(`
 `);
@@ -50,6 +52,6 @@ ${mappedPictureList}`;
   return `${headline}${note}${pictures}`;
 };
 
-module.exports = {
+export default {
   renderMarkdown,
 };

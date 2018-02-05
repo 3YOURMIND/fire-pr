@@ -1,4 +1,4 @@
-const PrTestingProcedure = require('./index');
+import PrTestingProcedure from './index';
 
 describe('Module pr-testing-procedure', () => {
   it('Test single test case, single instruction', () => {

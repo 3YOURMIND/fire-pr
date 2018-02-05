@@ -1,4 +1,4 @@
-const PrType = require('./index');
+import PrType from './index';
 
 describe('Module pr-type', () => {
   it('Test prefix configuration', () => {

@@ -1,4 +1,4 @@
-const renderMarkdown = otherInformation => {
+const renderMarkdown = (otherInformation) => {
   const headline = `## Other information ##
 
 `;
@@ -6,13 +6,13 @@ const renderMarkdown = otherInformation => {
     return `${headline}*No other information provided*`;
   }
   const otherInformationListRepresentation = otherInformation.map(
-    otherInformationElement => {
+    (otherInformationElement) => {
       return `- ${otherInformationElement}`;
     },
   );
   return `${headline}${otherInformationListRepresentation.join('\n')}`;
 };
 
-module.exports = {
+export default {
   renderMarkdown,
 };

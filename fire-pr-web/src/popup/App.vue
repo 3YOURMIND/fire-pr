@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import FirePrCore from 'fire-pr-core';
   export default {
     data () {
       return {

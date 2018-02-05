@@ -1,4 +1,4 @@
-const PrChangelogModule = require('./index');
+import PrChangelogModule from './index';
 
 describe('Test pr-changelog', () => {
   it('Change default payload', () => {
