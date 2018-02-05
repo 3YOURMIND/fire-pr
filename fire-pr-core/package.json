@@ -6,8 +6,7 @@
   "main": "index.js",
   "scripts": {
     "example": "node example.js",
-    "test": "node node_modules/.bin/jest",
-    "test-windows": "node node_modules/jest/bin/jest",
+    "test": "jest",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -18,8 +17,8 @@
   "license": "MIT",
   "devDependencies": {
     "husky": "^0.14.3",
-    "jest": "^21.2.1",
-    "lint-staged": "^6.0.0",
-    "prettier": "^1.9.2"
+    "jest": "^22.1.4",
+    "lint-staged": "^6.1.0",
+    "prettier": "^1.10.2"
   }
 }
