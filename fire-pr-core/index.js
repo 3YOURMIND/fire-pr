@@ -1,4 +1,4 @@
-const PrType = require('./pr-type');
+/*const PrType = require('./pr-type');
 const PrBreaking = require('./pr-breaking');
 const PrTestingProcedure = require('./pr-testing-procedure');
 const PrOtherInformation = require('./pr-other-information');
@@ -12,4 +12,10 @@ module.exports = {
   PrOtherInformation,
   PrChangelog,
   PrTitle,
+};
+*/
+import PrType from './pr-type/index.js';
+
+export default {
+  PrType,
 };
