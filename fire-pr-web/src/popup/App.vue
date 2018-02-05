@@ -47,13 +47,16 @@ import FirePrCore from 'fire-pr-core';
 </script>
 
 <style lang="scss" scoped>
+@import '../../node_modules/purecss/build/pure.css';
+@import '../../node_modules/purecss/build/grids.css';
 
 header {
   text-align: center;
 }
 
 .fire-app__body-container {
-  width: 400px;
+  width: 375px !important;
+  height: 600px !important;
 }
 
 .fire-app__title-input {
