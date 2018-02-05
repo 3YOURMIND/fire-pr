@@ -21,3 +21,12 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.no-pull-request-view {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 2em;
+  letter-spacing: 0;
+}
+</style>

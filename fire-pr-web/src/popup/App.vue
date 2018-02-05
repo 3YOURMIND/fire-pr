@@ -64,13 +64,6 @@ export default {
 @import '../../node_modules/purecss/build/grids.css';
 @import './assets/css/fonts.css';
 
-.no-pull-request-view {
-  font-family: 'Roboto';
-  font-weight: 300;
-  font-size: 2em;
-  letter-spacing: 0;
-}
-
 h4 {
   font-family: 'Roboto';
 }
