@@ -3,16 +3,7 @@
     <div v-if="isLoading">
       Loading...
     </div>
-    <div v-else-if="!bitbucketPullRequestView" style="height: 100vh;">
-      <div class="pure-g" style="text-align: center; position: relative; top: 50%; transform: translateY(-50%);">
-        <div class="pure-u-1">
-          <TheBitbucketIcon style="width: 30vw"/>
-        </div>
-        <div class="pure-u-1" style="margin-top: 2em;">
-          <h2 class="no-pull-request-view">Not in Pull Request View</h2>
-        </div>
-      </div>
-    </div>
+    <TheNoBitbucketSite v-else-if="!bitbucketPullRequestView" />
     <div v-else>
       <h4>fire-pr template</h4>
       <input
@@ -27,12 +18,12 @@
 </template>
 
 <script>
-import TheBitbucketIcon from './components/TheBitbucketIcon.vue';
+import TheNoBitbucketSite from './components/TheNoBitbucketSite.vue';
 import FirePrCore from 'fire-pr-core';
 
 export default {
   components: {
-    TheBitbucketIcon,
+    TheNoBitbucketSite,
   },
   data () {
     return {
