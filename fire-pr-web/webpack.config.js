@@ -47,11 +47,23 @@ const config = {
         })
       },
       {
-        test: /\.(png|jpg|gif|svg|ico)$/,
+        test: /\.(png|jpg|gif|ico)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?emitFile=false'
         }
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader?classPrefix'
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]?emitFile=false'
+        }
+        // loader: 'file?name=public/fonts/[name].[ext]'
       }
     ],
   },
