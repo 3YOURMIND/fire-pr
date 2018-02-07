@@ -1,6 +1,6 @@
 {
   "name": "fire-pr-extension",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The official fire-pr extension for Chrome",
   "author": "James <jo@3yourmind.com>",
   "scripts": {
@@ -11,7 +11,6 @@
     "watch:dev": "npm run build:dev -- --watch"
   },
   "dependencies": {
-    "fire-pr-core": "../fire-pr-core",
     "purecss": "^1.0.0",
     "vue": "^2.5.13",
     "vue-router": "^3.0.1",

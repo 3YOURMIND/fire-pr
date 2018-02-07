@@ -19,7 +19,6 @@
 
 <script>
 import TheNoBitbucketSite from './components/TheNoBitbucketSite.vue';
-import FirePrCore from 'fire-pr-core';
 
 export default {
 	components: {
