@@ -1,26 +1,25 @@
 <template>
-  <p>
-    <a class="back-button" @click="back">
-      &lt; Back
-    </a>
-  </p>
+	<p>
+		<a class="back-button" @click="back">
+			&lt; Back
+		</a>
+	</p>
 </template>
 
 <script>
 export default {
-  methods: {
-    back() {
-      this.$router.back()
-    }
-  }
-}
+	methods: {
+		back() {
+			this.$router.back();
+		},
+	},
+};
 </script>
 
 <style lang="scss" scoped>
-
-  .back-button {
-    margin-top: 20px;
-    text-decoration: none;
-    color: #888;
-  }
+.back-button {
+	margin-top: 20px;
+	text-decoration: none;
+	color: #888;
+}
 </style>

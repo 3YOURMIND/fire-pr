@@ -6,27 +6,28 @@ import OtherInformation from '../views/OtherInformation.vue';
 import Changelog from '../views/Changelog.vue';
 
 export default [
-  {
-    path: '/',
-    component: PullRequestType,
-  },
-  {
-    path: '/breaking',
-    component: BreakingOptions,
-  },
-  {
-    path: '/testing',
-    component: TestingOptions,
-  },
-  {
-    path: '/review-merge',
-    component: ReviewOptions,
-  },
-  {
-    path: '/other-information',
-    component: OtherInformation,
-  },{
-    path: '/changelog',
-    component: Changelog,
-  }
+	{
+		path: '/',
+		component: PullRequestType,
+	},
+	{
+		path: '/breaking',
+		component: BreakingOptions,
+	},
+	{
+		path: '/testing',
+		component: TestingOptions,
+	},
+	{
+		path: '/review-merge',
+		component: ReviewOptions,
+	},
+	{
+		path: '/other-information',
+		component: OtherInformation,
+	},
+	{
+		path: '/changelog',
+		component: Changelog,
+	},
 ];

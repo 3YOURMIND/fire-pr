@@ -1,26 +1,23 @@
 {
-  "name": "Fire PR Chrome Extension",
-  "short_name": "Fire PR",
-  "description": "The official fire-pr extension for Chrome",
-  "version": "0.0.2",
-  "author": "3YOURMIND GmbH",
-  "content_security_policy": "script-src 'self' http://localhost:8098; object-src 'self'",
-  "manifest_version": 2,
-  "icons": {
-    "16": "icons/icon-16.png",
-    "48": "icons/icon-48.png",
-    "128": "icons/icon-128.png"
-  },
-  "browser_action": {
-    "default_title": "fire-pr-extension",
-    "default_popup": "popup/popup.html"
-  },
-  "background": {
-    "scripts": [
-      "background.js"
-    ]
-  },
-  "permissions": [
-    "activeTab"
-  ]
+	"name": "Fire PR Chrome Extension",
+	"short_name": "Fire PR",
+	"description": "The official fire-pr extension for Chrome",
+	"version": "0.0.2",
+	"author": "3YOURMIND GmbH",
+	"content_security_policy":
+		"script-src 'self' http://localhost:8098; object-src 'self'",
+	"manifest_version": 2,
+	"icons": {
+		"16": "icons/icon-16.png",
+		"48": "icons/icon-48.png",
+		"128": "icons/icon-128.png"
+	},
+	"browser_action": {
+		"default_title": "fire-pr-extension",
+		"default_popup": "popup/popup.html"
+	},
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": ["activeTab"]
 }
