@@ -10,7 +10,11 @@
 			"cross-env NODE_ENV=development webpack --config webpack.config.js --progress --hide-modules",
 		"build-zip": "node scripts/build-zip.js",
 		"watch": "npm run build -- --watch",
-		"watch:dev": "npm run build:dev -- --watch"
+		"watch:dev": "npm run build:dev -- --watch",
+		"precommit": "lint-staged"
+	},
+	"lint-staged": {
+		"*.{js,json,css,md}": ["prettier --write", "git add"]
 	},
 	"dependencies": {
 		"purecss": "^1.0.0",
@@ -18,7 +22,6 @@
 		"vue-router": "^3.0.1",
 		"vuex": "^3.0.1"
 	},
-
 	"devDependencies": {
 		"@vue/devtools": "^1.0.2",
 		"babel-core": "^6.26.0",
