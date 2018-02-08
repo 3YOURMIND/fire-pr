@@ -52,7 +52,7 @@ export default {
 			},
 			branchTitle => {
 				this.isLoading = false;
-				const jiraIssue = branchTitle.toString().match(/B3-([0-9])*/gi)[0];
+				const jiraIssue = branchTitle.toString().match(/(.)*-(\d)*-/gi)[0].slice(0, -1);
 				this.$store.dispatch('saveJiraIssue', jiraIssue);
 				this.bitbucketPullRequestView = true;
 			},
