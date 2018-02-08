@@ -63,7 +63,6 @@ const config = {
 				options: {
 					name: '[name].[ext]?emitFile=false',
 				},
-				// loader: 'file?name=public/fonts/[name].[ext]'
 			},
 		],
 	},
