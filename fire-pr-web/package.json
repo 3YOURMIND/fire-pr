@@ -11,7 +11,9 @@
 		"build-zip": "node scripts/build-zip.js",
 		"watch": "npm run build -- --watch",
 		"watch:dev": "npm run build:dev -- --watch",
-		"precommit": "lint-staged"
+		"precommit": "lint-staged",
+		"storybook": "start-storybook -p 6006",
+		"build-storybook": "build-storybook"
 	},
 	"lint-staged": {
 		"*.{js,json,css,md}": ["prettier --write", "git add"]
@@ -45,6 +47,11 @@
 		"vue-template-compiler": "^2.5.13",
 		"webpack": "^3.10.0",
 		"webpack-shell-plugin": "^0.5.0",
-		"zip-folder": "^1.0.0"
+		"zip-folder": "^1.0.0",
+		"@storybook/vue": "^3.3.12",
+		"@storybook/addon-actions": "^3.3.12",
+		"@storybook/addon-links": "^3.3.12",
+		"@storybook/addons": "^3.3.12",
+		"babel-preset-vue": "^2.0.1"
 	}
 }

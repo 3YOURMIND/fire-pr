@@ -3,8 +3,11 @@
 		[
 			"latest",
 			{
-				"es2015": { "modules": "commonjs" }
+				"es2015": {
+					"modules": "commonjs"
+				}
 			}
-		]
+		],
+		"vue"
 	]
 }
