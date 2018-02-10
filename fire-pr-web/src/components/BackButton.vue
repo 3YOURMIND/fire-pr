@@ -8,6 +8,7 @@
 
 <script>
 export default {
+	name: 'BackButton',
 	methods: {
 		back() {
 			this.$router.back();
