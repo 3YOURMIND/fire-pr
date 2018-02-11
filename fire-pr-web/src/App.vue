@@ -1,17 +1,8 @@
 <template>
-	<div style="height: 100vh;">
+	<div>
 		<div v-if="isLoading">Loading...</div>
 		<TheNoBitbucketSite v-else-if="!bitbucketPullRequestView" />
-		<div v-else>
-			<h4>fire-pr template</h4>
-			<input
-				type="text"
-				class="fire-app__title-input"
-				v-model="title"
-				@input="updateTitle"
-			/>
-			<router-view />
-		</div>
+		<router-view v-else />
 	</div>
 </template>
 

@@ -4,10 +4,15 @@ import TestingOptions from '../views/TestingOptions.vue';
 import ReviewOptions from '../views/ReviewOptions.vue';
 import OtherInformation from '../views/OtherInformation.vue';
 import Changelog from '../views/Changelog.vue';
+import PullRequestTitle from '../views/PullRequestTitle.vue';
 
 export default [
 	{
 		path: '/',
+		component: PullRequestTitle,
+	},
+	{
+		path: '/type',
 		component: PullRequestType,
 	},
 	{

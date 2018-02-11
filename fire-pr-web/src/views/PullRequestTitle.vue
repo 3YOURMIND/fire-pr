@@ -4,10 +4,10 @@
 			<h1 class="pull-request-title__heading--first">Pull Request Title</h1>
 		</div>
 		<div class="pure-u-1" style="text-align: center; margin-top: 1.61em;">
-			<input autofocus class="pull-request-title__input" :value="title" />
+			<input autofocus class="pull-request-title__input" v-model="title" />
 		</div>
 		<div class="pure-u-1" style="text-align: center; position: absolute; bottom: 6%;">
-			<button class="pull-request-title__button">Next</button>
+			<button class="pull-request-title__button" @click="onNextClick">Next</button>
 		</div>
 	</div>
 </template>
@@ -15,12 +15,17 @@
 <script>
 export default {
 	name: 'PullRequestTitle',
-	props: {
-		title: {
-			type: String,
-			default: '',
-		},
+	data () {
+		return {
+			title: '',
+		}
 	},
+	methods: {
+		onNextClick() {
+			this.$store.dispatch('saveTitle', this.title);
+			this.$router.push('/type');
+		}
+	}
 };
 </script>
 
