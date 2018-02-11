@@ -1,12 +1,12 @@
 <template>
-	<div class="pure-g pull-request-title__container" style="padding-top: 20vh;">
-		<div class="pure-u-1" style="text-align: center;">
+	<div class="pure-g pull-request-title__container">
+		<div class="pure-u-1" style="text-align: center; margin-top: 35%;">
 			<h1 class="pull-request-title__heading--first">Pull Request Title</h1>
 		</div>
-		<div class="pure-u-1" style="text-align: center;">
+		<div class="pure-u-1" style="text-align: center; margin-top: 1.61em;">
 			<input autofocus class="pull-request-title__input" :value="title" />
 		</div>
-		<div class="pure-u-1" style="text-align: center; margin-top: 25vh;">
+		<div class="pure-u-1" style="text-align: center; position: absolute; bottom: 6%;">
 			<button class="pull-request-title__button">Next</button>
 		</div>
 	</div>
@@ -25,6 +25,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-title__container {
+	font-size: 16px;
+}
+
 ::selection {
 	background: #B8DBD9;
 }
