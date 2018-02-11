@@ -1,22 +1,30 @@
 <template>
-	<div class="main-container">
-		<BackButton />
-		<h3>Does this PR introduce a breaking change?</h3>
-		<div>
+	<div class="pure-g pull-request-breaking__container">
+		<div class="pure-u-1">
+			<BackButton />
+		</div>
+		<div class="pure-u-1">
+			<h3>Does this PR introduce a breaking change?</h3>
+		</div>
+		<div class="pure-u-1">
 			<input type="radio" name="breaking" @click="updateBreaking(true)" />
 			<label>Yes</label>
 			<input v-if="breaking" type="text" v-model="breakingChangeText" />
 		</div>
-		<p>
-			<input type="radio" name="breaking" @click="updateBreaking(false)" />No
-		</p>
-		<button
-			:class="nextClasses"
-			:disabled="disableNext"
-			@click="saveBreakingOptions"
-		>
-			Next
-		</button>
+		<div class="pure-u-1">
+			<p>
+				<input type="radio" name="breaking" @click="updateBreaking(false)" />No
+			</p>
+		</div>
+		<div class="pure-u-1">
+			<button
+				:class="nextClasses"
+				:disabled="disableNext"
+				@click="saveBreakingOptions"
+			>
+				Next
+			</button>
+		</div>
 	</div>
 </template>
 
@@ -24,6 +32,7 @@
 import BackButton from '../components/BackButton.vue';
 
 export default {
+	name: 'PullRequestBreaking',
 	components: {
 		BackButton,
 	},
@@ -64,3 +73,9 @@ export default {
 	},
 };
 </script>
+
+<style lang="scss" scoped>
+.pull-request-breaking__container {
+	font-size: 16px;
+}
+</style>

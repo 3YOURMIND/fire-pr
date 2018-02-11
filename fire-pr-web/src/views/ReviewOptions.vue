@@ -1,36 +1,50 @@
 <template>
-	<div class="main-container">
-		<BackButton />
-		<h3>Review and Merge</h3>
-		<h4>Who</h4>
-		<p>
-			<input type="radio" name="merger" @click="updateMerger('last')" />
-			<label>Last approver merges</label>
-		</p>
-		<p>
-			<input type="radio" name="merger" @click="updateMerger('creator')" />
-			<label>PR creator merges</label>
-		</p>
-		<h4>When</h4>
-		<p>
-			<input type="radio" name="mergeTime" @click="updateMergeTime('half')" />
-			<label>Merge after > 51% of the reviewers approved</label>
-		</p>
-		<p>
-			<input type="radio" name="mergeTime" @click="updateMergeTime('all')" />
-			<label>Merge after 100% of the reviewers approved</label>
-		</p>
-		<p>
-			<input type="radio" name="mergeTime" @click="updateMergeTime('one')" />
-			<label>Merge after 1 reviewer approves</label>
-		</p>
-		<button
-			:class="nextClasses"
-			@click="saveMergeOptions"
-			:disabled="disableNext"
-		>
-			Next
-		</button>
+	<div class="review-options__contaienr pure-g">
+		<div class="pure-u-1">
+			<BackButton />
+		</div>
+		<div class="pure-u-1">
+			<h3>Review and Merge</h3>
+		</div>
+		<div class="pure-u-1">
+			<h4>Who</h4>
+		</div>
+		<div class="pure-u-1">
+			<p>
+				<input type="radio" iname="merger" @click="updateMerger('last')" />
+				<label>Last approver merges</label>
+			</p>
+			<p>
+				<input type="radio" name="merger" @click="updateMerger('creator')" />
+				<label>PR creator merges</label>
+			</p>
+		</div>
+		<div class="pure-u-1">
+			<h4>When</h4>
+		</div>
+		<div class="pure-u-1">
+			<p>
+				<input type="radio" name="mergeTime" @click="updateMergeTime('half')" />
+				<label>Merge after > 51% of the reviewers approved</label>
+			</p>
+			<p>
+				<input type="radio" name="mergeTime" @click="updateMergeTime('all')" />
+				<label>Merge after 100% of the reviewers approved</label>
+			</p>
+			<p>
+				<input type="radio" name="mergeTime" @click="updateMergeTime('one')" />
+				<label>Merge after 1 reviewer approves</label>
+			</p>
+		</div>
+		<div class="pure-u-1">
+			<button
+				:class="nextClasses"
+				@click="saveMergeOptions"
+				:disabled="disableNext"
+			>
+				Next
+			</button>
+		</div>
 	</div>
 </template>
 
@@ -74,3 +88,9 @@ export default {
 	},
 };
 </script>
+
+<style lang="scss" scoped>
+.review-options__contaienr {
+	font-size: 16px;
+}
+</style>

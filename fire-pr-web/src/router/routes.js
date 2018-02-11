@@ -1,5 +1,5 @@
 import PullRequestType from '../views/PullRequestType.vue';
-import BreakingOptions from '../views/BreakingOptions.vue';
+import PullRequestBreaking from '../views/PullRequestBreaking.vue';
 import TestingOptions from '../views/TestingOptions.vue';
 import ReviewOptions from '../views/ReviewOptions.vue';
 import OtherInformation from '../views/OtherInformation.vue';
@@ -17,7 +17,7 @@ export default [
 	},
 	{
 		path: '/breaking',
-		component: BreakingOptions,
+		component: PullRequestBreaking,
 	},
 	{
 		path: '/testing',

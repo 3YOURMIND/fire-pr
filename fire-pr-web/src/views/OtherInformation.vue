@@ -1,21 +1,37 @@
 <template>
-	<div>
-		<BackButton />
-		<ol v-if="informations.length > 0">
-			<li
-				v-for="information in informations"
-				:key="information"
-				v-text="information"
-			/>
-		</ol>
-		<div v-if="informations.length < 1">No Information given</div>
-		<hr />
-		<input type="text" name="merger" v-model="text" />
-		<label>Other Information Note</label>
-		<button @click="addOtherInformation">Add other information</button>
-		<button :disable="nextDisabled" @click="nextStep">
-			Next
-		</button>
+	<div class="pure-g other-information__container">
+		<div class="pure-u-1">
+			<BackButton />
+		</div>
+		<div class="pure-u-1">
+			<ol v-if="informations.length > 0">
+				<li
+					v-for="information in informations"
+					:key="information"
+					v-text="information"
+				/>
+			</ol>
+		</div>
+		<div class="pure-u-1">
+			<div v-if="informations.length < 1">No Information given</div>
+		</div>
+		<div class="pure-u-1">
+			<hr />
+		</div>
+		<div class="pure-u-1">
+			<label>Other Information Note</label>
+		</div>
+		<div class="pure-u-1">
+			<input type="text" name="merger" v-model="text" />
+		</div>
+		<div class="pure-u-1">
+			<button @click="addOtherInformation">Add other information</button>
+		</div>
+		<div class="pure-u-1">
+			<button :disable="nextDisabled" @click="nextStep">
+				Next
+			</button>
+		</div>
 	</div>
 </template>
 
@@ -45,3 +61,9 @@ export default {
 	},
 };
 </script>
+
+<style lang="scss" scoped>
+.other-information__container {
+	font-size: 16px;
+}
+</style>

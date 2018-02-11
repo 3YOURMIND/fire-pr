@@ -1,26 +1,39 @@
 <template>
-	<div class="main-container">
-		<h3>What kind of change does this PR introduce?</h3>
-		<p>
-			<input type="checkbox" v-model="options.bugfix" />
-			<label>Bugfix</label>
-		</p>
-		<p>
-			<input type="checkbox" v-model="options.feature" />
-			<label>Feature</label>
-		</p>
-		<p>
-			<input type="checkbox" v-model="options.codeStyle" />
-			<label>Code style update</label>
-		</p>
-		<p>
-			<input type="checkbox" v-model="options.refactor" />
-			<label>Refactor</label>
-		</p>
-		<p>
-			<input type="checkbox" v-model="options.build" />
-			<label>Build-related changes</label>
-		</p>
+	<div class="pure-g pull-request-type__container">
+		<div class="pure-u-1">
+			<h3>What kind of change does this PR introduce?</h3>
+		</div>
+		<div class="pure-u-1">
+			<p>
+				<input type="checkbox" v-model="options.bugfix" />
+				<label>Bugfix</label>
+			</p>
+		</div>
+		<div class="pure-u-1">
+			<p>
+				<input type="checkbox" v-model="options.feature" />
+				<label>Feature</label>
+			</p>
+		</div>
+		<div class="pure-u-1">
+			<p>
+				<input type="checkbox" v-model="options.codeStyle" />
+				<label>Code style update</label>
+			</p>
+		</div>
+		<div class="pure-u-1">
+			<p>
+				<input type="checkbox" v-model="options.refactor" />
+				<label>Refactor</label>
+			</p>
+		</div>
+		<div class="pure-u-1">
+			<p>
+				<input type="checkbox" v-model="options.build" />
+				<label>Build-related changes</label>
+			</p>
+		</div>
+		<div class="pure-u-1">
 		<p>
 			<input type="checkbox" v-model="options.other" />
 			<label>Other: Please describe</label>
@@ -30,6 +43,7 @@
 				v-model="options.otherDescription"
 			/>
 		</p>
+		</div>
 		<button :disabled="buttonEnabled" @click="saveChangeOptions">
 			Next
 		</button>
@@ -77,3 +91,10 @@ export default {
 	},
 };
 </script>
+
+<style lang="scss" scoped>
+.pull-request-type__container {
+	font-size: 16px;
+}
+</style>
+

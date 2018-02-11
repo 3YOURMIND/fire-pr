@@ -1,9 +1,15 @@
 <template>
-	<div>
-		<input type="text" v-model="changelogText" />
-		<label>Note</label>
-		<button @click="addNote">Add Note</button>
-		<button @click="finish">✨ Create Pull Request</button>
+	<div class="pure-g changelog__container">
+		<div class="pure-u-1">
+			<input type="text" v-model="changelogText" />
+			<label>Note</label>
+		</div>
+		<div class="pure-u-1">
+			<button @click="addNote">Add Note</button>
+		</div>
+		<div class="pure-u-1">
+			<button @click="finish">✨ Create Pull Request</button>
+		</div>
 	</div>
 </template>
 
@@ -54,3 +60,9 @@ export default {
 	},
 };
 </script>
+
+<style lang="scss" scoped>
+.changelog__container {
+	font-size: 16px;
+}
+</style>

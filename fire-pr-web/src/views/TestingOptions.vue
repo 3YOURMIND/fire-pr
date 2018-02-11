@@ -1,29 +1,47 @@
 <template>
-	<div class="main-container">
-		<BackButton />
-		<h1>Testing procedure</h1>
-		<div v-for="(testCase, index) in testCases" :key="index">
-			<h2 @click="toggleCollapse(index)">Case {{ index + 1 }}</h2>
-			<ol v-if="uncollapsed.includes(index)">
-				<li v-for="step in testCase" :key="step" v-text="step" />
+	<div class="pure-g testing-options__container">
+		<div class="pure-u-1">
+			<BackButton />
+		</div>
+		<div class="pure-u-1">
+			<h1>Testing procedure</h1>
+		</div>
+		<div class="pure-u-1">
+			<div v-for="(testCase, index) in testCases" :key="index">
+				<h2 @click="toggleCollapse(index)">Case {{ index + 1 }}</h2>
+				<ol v-if="uncollapsed.includes(index)">
+					<li v-for="step in testCase" :key="step" v-text="step" />
+				</ol>
+			</div>
+		</div>
+		<div class="pure-u-1">
+			<hr />
+		</div>
+		<div class="pure-u-1">
+			<ol>
+				<li v-for="step in currentSteps" :key="step" v-text="step" />
 			</ol>
 		</div>
-		<hr />
-		<ol>
-			<li v-for="step in currentSteps" :key="step" v-text="step" />
-		</ol>
-		<textarea v-model="testInstruction" placeholder="Test instruction" />
-		<button @click="addTestStep">Add Test instruction</button>
-		<button @click="addTestCase" :disabled="disableAddTestStep">
-			Add New Test Case
-		</button>
-		<button
-			:class="nextClasses"
-			:disabled="disableNext"
-			@click="saveTestingOptions"
-		>
-			Next
-		</button>
+		<div class="pure-u-1">
+			<textarea v-model="testInstruction" placeholder="Test instruction" />
+		</div>
+		<div class="pure-u-1">
+			<button @click="addTestStep">Add Test instruction</button>
+		</div>
+		<div class="pure-u-1">
+			<button @click="addTestCase" :disabled="disableAddTestStep">
+				Add New Test Case
+			</button>
+		</div>
+		<div class="pure-u-1">
+			<button
+				:class="nextClasses"
+				:disabled="disableNext"
+				@click="saveTestingOptions"
+			>
+				Next
+			</button>
+		</div>
 	</div>
 </template>
 
@@ -80,3 +98,10 @@ export default {
 	},
 };
 </script>
+
+<style lang="scss" scoped>
+.testing-options__container {
+	font-size: 16px;
+}
+</style>
+
