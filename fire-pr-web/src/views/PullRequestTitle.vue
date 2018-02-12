@@ -1,15 +1,17 @@
 <template>
-	<div class="pure-g pull-request-title__container">
-		<div class="pure-u-1" style="text-align: center; margin-top: 35%;">
-			<h1 class="pull-request-title__heading--first">Pull Request Title</h1>
-		</div>
-		<div class="pure-u-1" style="text-align: center; margin-top: 1.61em;">
-			<input autofocus class="pull-request-title__input" v-model="title" />
-		</div>
-		<div class="pure-u-1" style="text-align: center; position: absolute; bottom: 6%;">
-			<button class="pull-request-title__button" @click="onNextClick">Next</button>
-		</div>
-	</div>
+  <div class="pure-g pull-request-title__container">
+    <div class="pure-u-1 pull-request-title__heading-container">
+      <h1 class="pull-request-title__heading--first">Pull Request Title</h1>
+    </div>
+    <div class="pure-u-1 pull-request-title__input-container">
+      <input autofocus class="pull-request-title__input" v-model="title" />
+    </div>
+    <div class="pure-u-1 pull-request-title__button-container">
+      <button class="pull-request-title__button" @click="onNextClick">
+        Next
+      </button>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -30,12 +32,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pull-request-title__container {
-	font-size: 16px;
-}
-
 ::selection {
 	background: #B8DBD9;
+}
+
+.pull-request-title__button-container {
+	text-align: center;
+	position: absolute;
+	bottom: 6%;
+}
+
+.pull-request-title__heading-container {
+	text-align: center;
+	margin-top: 35%;
+}
+
+.pull-request-title__input-container {
+	text-align: center; margin-top: 1.61em;
+}
+
+.pull-request-title__container {
+	font-size: 16px;
 }
 
 .pull-request-title__heading--first {
