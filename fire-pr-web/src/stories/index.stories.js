@@ -15,11 +15,14 @@ import '../../node_modules/purecss/build/pure.css';
 import '../../node_modules/purecss/build/grids.css';
 import '../assets/css/fonts.css';
 
+const DEFAULT_BODY_STYLE =
+	'width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;';
+
 storiesOf('No Bitbucket site', module).add('initial state', () => ({
 	components: {
 		TheNoBitbucketSite,
 	},
-	template: `<body style="width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;">
+	template: `<body style="${DEFAULT_BODY_STYLE}">
 			<TheNoBitbucketSite />
 		</body>`,
 }));
@@ -28,7 +31,7 @@ storiesOf('Pull Request Title', module).add('initial state', () => ({
 	components: {
 		PullRequestTitle,
 	},
-	template: `<body style="width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;">
+	template: `<body style="${DEFAULT_BODY_STYLE}">
 			<PullRequestTitle />
 		</body>`,
 }));
@@ -37,7 +40,7 @@ storiesOf('Pull Request Type', module).add('initial state', () => ({
 	components: {
 		PullRequestType,
 	},
-	template: `<body style="width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;">
+	template: `<body style="${DEFAULT_BODY_STYLE}">
 			<PullRequestType />
 		</body>`,
 }));
@@ -46,7 +49,7 @@ storiesOf('Pull Request Breaking Changes', module).add('initial state', () => ({
 	components: {
 		PullRequestBreaking,
 	},
-	template: `<body style="width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;">
+	template: `<body style="${DEFAULT_BODY_STYLE}">
 		<PullRequestBreaking />
 	</body>`,
 }));
@@ -55,7 +58,7 @@ storiesOf('Pull Request Testing Options', module).add('initial state', () => ({
 	components: {
 		TestingOptions,
 	},
-	template: `<body style="width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;">
+	template: `<body style="${DEFAULT_BODY_STYLE}">
 		<TestingOptions />
 	</body>`,
 }));
@@ -64,7 +67,7 @@ storiesOf('Pull Request Review Options', module).add('initial state', () => ({
 	components: {
 		ReviewOptions,
 	},
-	template: `<body style="width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;">
+	template: `<body style="${DEFAULT_BODY_STYLE}">
 		<ReviewOptions />
 	</body>`,
 }));
@@ -75,7 +78,7 @@ storiesOf('Pull Request Other Information', module).add(
 		components: {
 			OtherInformation,
 		},
-		template: `<body style="width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;">
+		template: `<body style="${DEFAULT_BODY_STYLE}">
 		<OtherInformation />
 	</body>`,
 	}),
@@ -85,7 +88,7 @@ storiesOf('Pull Request Changelog', module).add('initial state', () => ({
 	components: {
 		Changelog,
 	},
-	template: `<body style="width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;">
+	template: `<body style="${DEFAULT_BODY_STYLE}">
 		<Changelog />
 	</body>`,
 }));
