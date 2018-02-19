@@ -5,21 +5,28 @@
 				Breaking changes
 			</h1>
 		</div>
-		<div style="padding-left: 6%; padding-right: 6%;">
+		<div style="padding-left: 6%; padding-right: 6%; width: 100%;">
+			<div class="pure-u-1" style="margin-top: 0.61em;">
+				<label class="control control--radio" @click="updateBreaking(false)">
+					<span>No</span>
+					<input type="radio" name="radio" :checked="!breaking"/>
+					<div class="control__indicator"></div>
+				</label>
+			</div>
 			<div class="pure-u-1">
 				<label class="control control--radio" @click="updateBreaking(true)">
 					<span>Yes</span>
 					<input type="radio" name="radio" :checked="breaking"/>
 					<div class="control__indicator"></div>
 				</label>
-				<input v-if="breaking" type="text" v-model="breakingChangeText" />
-			</div>
-			<div class="pure-u-1">
-				<label class="control control--radio" @click="updateBreaking(false)">
-					<span>No</span>
-					<input type="radio" name="radio" :checked="!breaking"/>
-					<div class="control__indicator"></div>
-				</label>
+				<div class="pull-request-breaking__input-container" v-if="breaking">
+					<input
+						autofocus
+						type="text"
+						class="pull-request-breaking__input"
+						v-model="breakingChangeText"
+					/>
+				</div>
 			</div>
 		</div>
 		<div class="pure-u-1 pull-request-breaking__button-container">
@@ -87,6 +94,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-breaking {
+	&__input {
+		&-container {
+			margin-top: 0.61em;
+		}
+
+		box-sizing: border-box;
+		background-color: #f4f4f9;
+		border: 0;
+		border: 1px solid rgba(88, 111, 124, 0.5);
+		color: #586f7c;
+		font-family: 'Roboto';
+		font-weight: 300;
+		border-radius: 3px;
+		font-size: 1em;
+		width: 100%;
+		padding-left: 6px;
+		padding-right: 6px;
+		padding-top: calc(0.61em / 2);
+		padding-bottom: calc(0.61em / 2);
+
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 3px #b8dbd9;
+		}
+	}
+}
+
 .pull-request-breaking__heading--first {
 	font-family: 'Roboto';
 	font-weight: 300;
