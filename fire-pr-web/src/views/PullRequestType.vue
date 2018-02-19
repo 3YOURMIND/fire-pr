@@ -45,7 +45,6 @@
 				@click="saveChangeOptions"
 				style="margin-right: 10%; float: right; display: inline;"
 			/>
-
 		</div>
 	</div>
 </template>
