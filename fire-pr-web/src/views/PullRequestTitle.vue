@@ -87,10 +87,12 @@ export default {
 		width: 80%;
 		padding-left: 12px;
 		padding-right: 12px;
+		transition: all 0.2s ease;
 
 		&:focus {
 			outline: none;
 			box-shadow: 0 0 3px #b8dbd9;
+			transition: all 0.2s ease;
 		}
 	}
 
