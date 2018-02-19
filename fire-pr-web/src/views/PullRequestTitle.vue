@@ -7,7 +7,7 @@
 			<input autofocus class="pull-request-title__input" v-model="title" />
 		</div>
 		<div class="pure-u-1 pull-request-title__button-container">
-			<button class="pull-request-title__button" @click="onNextClick">
+			<button :class="nextButtonClass" @click="onNextClick">
 				Next
 			</button>
 		</div>
@@ -21,6 +21,19 @@ export default {
 		return {
 			title: '',
 		}
+	},
+	computed: {
+		formValid() {
+			const titleGiven = this.title !== '';
+			return titleGiven;
+		},
+		nextButtonClass() {
+			const formValid = this.formValid;
+			return {
+				'pull-request-title__button': formValid,
+				'pull-request-title__button--disabled': !formValid,
+			};
+		},
 	},
 	methods: {
 		onNextClick() {
@@ -82,6 +95,18 @@ export default {
 	}
 
 	&__button {
+		&--disabled {
+			border: 0;
+			background: none;
+			color: rgba(88, 111, 124, 0.2);
+			font-size: 20px;
+			border: 1px solid rgba(88, 111, 124, 0.2);
+			padding: 0.4em 0.8em;
+			border-radius: 5px;
+			cursor: not-allowed;
+			transition: all 0.2s ease;
+		}
+
 		&-container {
 			text-align: center;
 			position: absolute;
@@ -95,6 +120,7 @@ export default {
 		border: 1px solid rgba(88, 111, 124, 0.5);
 		padding: 0.4em 0.8em;
 		border-radius: 5px;
+		transition: all 0.2s ease;
 
 		&:active {
 			box-shadow: 0 0 3px #b8dbd9;
