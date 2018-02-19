@@ -34,21 +34,17 @@
 			</div>
 		</div>
 		<div class="pure-u-1 pull-request-type__button-container">
-			<button
-				class="pull-request-type__button"
-				style="margin-left: 10%; float: left; display: inline;"
+			<FirePrButton
+				:label="'Back'"
 				@click="handleBackButtonClick"
-			>
-				Back
-			</button>
-			<button
-				class="pull-request-type__button"
+				style="margin-left: 10%; float: left; display: inline;"
+			/>
+			<FirePrButton
 				:disabled="buttonEnabled"
+				:label="'Next'"
 				@click="saveChangeOptions"
 				style="margin-right: 10%; float: right; display: inline;"
-			>
-				Next
-			</button>
+			/>
 
 		</div>
 	</div>
@@ -56,11 +52,13 @@
 
 <script>
 import FirePrCheckbox from '../components/FirePrCheckbox.vue';
+import FirePrButton from '../components/FirePrButton.vue';
 
 export default {
 	name: 'PullRequestType',
 	components: {
 		FirePrCheckbox,
+		FirePrButton,
 	},
 	data() {
 		return {
