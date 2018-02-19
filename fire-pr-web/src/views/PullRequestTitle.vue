@@ -7,16 +7,23 @@
 			<input autofocus class="pull-request-title__input" v-model="title" />
 		</div>
 		<div class="pure-u-1 pull-request-title__button-container">
-			<button :class="nextButtonClass" @click="onNextClick">
-				Next
-			</button>
+			<FirePrButton
+				:disabled="!formValid"
+				:label="'Next'"
+				@click="onNextClick"
+			/>
 		</div>
 	</div>
 </template>
 
 <script>
+import FirePrButton from '../components/FirePrButton.vue';
+
 export default {
 	name: 'PullRequestTitle',
+	components: {
+		FirePrButton,
+	},
 	data () {
 		return {
 			title: '',
@@ -26,13 +33,6 @@ export default {
 		formValid() {
 			const titleGiven = this.title !== '';
 			return titleGiven;
-		},
-		nextButtonClass() {
-			const formValid = this.formValid;
-			return {
-				'pull-request-title__button': formValid,
-				'pull-request-title__button--disabled': !formValid,
-			};
 		},
 	},
 	methods: {
@@ -96,48 +96,10 @@ export default {
 		}
 	}
 
-	&__button {
-		&--disabled {
-			border: 0;
-			background: none;
-			color: rgba(88, 111, 124, 0.2);
-			font-size: 20px;
-			border: 1px solid rgba(88, 111, 124, 0.2);
-			padding: 0.4em 0.8em;
-			border-radius: 5px;
-			cursor: not-allowed;
-			transition: all 0.2s ease;
-		}
-
-		&-container {
-			text-align: center;
-			position: absolute;
-			bottom: 6%;
-		}
-
-		border: 0;
-		background: none;
-		color: #586f7c;
-		font-size: 20px;
-		border: 1px solid rgba(88, 111, 124, 0.5);
-		padding: 0.4em 0.8em;
-		border-radius: 5px;
-		transition: all 0.2s ease;
-
-		&:active {
-			box-shadow: 0 0 3px #b8dbd9;
-			outline: none;
-		}
-
-		&:focus {
-			box-shadow: 0 0 3px #b8dbd9;
-			outline: none;
-		}
-
-		&:target {
-			outline: none;
-			box-shadow: 0 0 3px #b8dbd9;
-		}
+	&__button-container {
+		text-align: center;
+		position: absolute;
+		bottom: 6%;
 	}
 }
 </style>
