@@ -1,9 +1,6 @@
 <template>
 	<div class="pure-g testing-options__container">
 		<div class="pure-u-1">
-			<BackButton />
-		</div>
-		<div class="pure-u-1">
 			<h1>Testing procedure</h1>
 		</div>
 		<div class="pure-u-1">
