@@ -33,24 +33,30 @@
 				Add New Test Case
 			</button>
 		</div>
-		<div class="pure-u-1">
-			<button
-				:class="nextClasses"
+		<div class="pure-u-1 pull-request-testing__button-container">
+			<FirePrButton
+				:label="'Back'"
+				@click="$router.back()"
+				style="margin-left: 10%; float: left; display: inline;"
+			/>
+			<FirePrButton
 				:disabled="disableNext"
-				@click="saveTestingOptions"
-			>
-				Next
-			</button>
+				:label="'Next'"
+				@click="saveBreakingOptions"
+				style="margin-right: 10%; float: right; display: inline;"
+			/>
 		</div>
 	</div>
 </template>
 
 <script>
 import BackButton from '../components/BackButton.vue';
+import FirePrButton from '../components/FirePrButton.vue';
 
 export default {
 	components: {
 		BackButton,
+		FirePrButton,
 	},
 	data() {
 		return {
@@ -102,6 +108,11 @@ export default {
 <style lang="scss" scoped>
 .testing-options__container {
 	font-size: 16px;
+}
+
+.pull-request-testing__button-container {
+	position: absolute;
+	bottom: 6%;
 }
 </style>
 
