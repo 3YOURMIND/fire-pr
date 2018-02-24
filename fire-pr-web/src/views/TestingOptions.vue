@@ -15,7 +15,7 @@
 			<hr class="pull-request-testing__divider" style="margin: 0; margin-bottom: 0.61em;" />
 		</div>
 		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%; margin: 0;" v-if="currentSteps.length > 0">
-			<ol style="margin: 0; margin-bottom: 0.61em; margin-top: 0.61em;">
+			<ol style="margin: 0; margin-bottom: 0.61em; margin-top: 0;">
 				<li v-for="step in currentSteps" :key="step" v-text="step" />
 			</ol>
 		</div>
