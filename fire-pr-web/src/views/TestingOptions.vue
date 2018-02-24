@@ -3,7 +3,7 @@
 		<div class="pure-u-1 pull-request-testing__heading-container">
 			<h1 class="pull-request-testing__heading--first">Testing procedure</h1>
 		</div>
-		<div class="pure-u-1">
+		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%;">
 			<div v-for="(testCase, index) in testCases" :key="index">
 				<h2 @click="toggleCollapse(index)">Case {{ index + 1 }}</h2>
 				<ol v-if="uncollapsed.includes(index)">
@@ -14,21 +14,34 @@
 		<div class="pure-u-1">
 			<hr />
 		</div>
-		<div class="pure-u-1">
+		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%;">
 			<ol>
 				<li v-for="step in currentSteps" :key="step" v-text="step" />
 			</ol>
 		</div>
-		<div class="pure-u-1">
+		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%;">
 			<textarea v-model="testInstruction" placeholder="Test instruction" />
 		</div>
-		<div class="pure-u-1">
-			<button @click="addTestStep">Add Test instruction</button>
-		</div>
-		<div class="pure-u-1">
-			<button @click="addTestCase" :disabled="disableAddTestStep">
-				Add New Test Case
-			</button>
+		<div class="pure-g" style="width: 100%; padding-left: 6%; padding-right: 6%;">
+			<div class="pure-u-1-2">
+				<div style="padding-right: 10px; width: 100%;">
+					<FirePrButton
+						:label="'Add instruction'"
+						@click="addTestStep"
+						style="float: left; display: inline; font-size: 15px; width: 100%;"
+					/>
+				</div>
+			</div>
+			<div class="pure-u-1-2">
+				<div style="padding-left: 10px; width: 100%;">
+					<FirePrButton
+						:label="'Add Test Case'"
+						:disabled="disableAddTestStep"
+						@click="addTestCase"
+						style="float: right; display: inline; font-size: 15px; width: 100%;"
+					/>
+				</div>
+			</div>
 		</div>
 		<div class="pure-u-1 pull-request-testing__button-container">
 			<FirePrButton
