@@ -50,6 +50,7 @@
 			<div class="pure-u-1-2">
 				<div style="padding-right: 10px; width: 100%;">
 					<FirePrButton
+						:disabled="disableAddInstruction"
 						:label="'Add instruction'"
 						@click="addTestStep"
 						style="float: left; display: inline; font-size: 15px; width: 100%;"
@@ -113,6 +114,9 @@ export default {
 				disabled: this.disableNext,
 			};
 		},
+		disableAddInstruction() {
+			return this.testInstruction === '';
+		},
 	},
 	methods: {
 		toggleCollapse(index) {
@@ -127,6 +131,9 @@ export default {
 			this.$router.push('/review-merge');
 		},
 		addTestStep() {
+			if (this.testInstruction === '') {
+				return;
+			}
 			this.currentSteps.push(this.testInstruction);
 			this.testInstruction = '';
 		},
