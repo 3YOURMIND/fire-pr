@@ -3,7 +3,7 @@
 		<div class="pure-u-1 pull-request-testing__heading-container">
 			<h1 class="pull-request-testing__heading--first">Testing procedure</h1>
 		</div>
-		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%;">
+		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%;" v-if="testCases.length > 0">
 			<div v-for="(testCase, index) in testCases" :key="index">
 				<h2 @click="toggleCollapse(index)">Case {{ index + 1 }}</h2>
 				<ol v-if="uncollapsed.includes(index)">
@@ -12,10 +12,10 @@
 			</div>
 		</div>
 		<div class="pure-u-1">
-			<hr class="pull-request-testing__divider" />
+			<hr class="pull-request-testing__divider" style="margin: 0; margin-bottom: 0.61em;" />
 		</div>
-		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%;">
-			<ol>
+		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%; margin: 0;" v-if="currentSteps.length > 0">
+			<ol style="margin: 0; margin-bottom: 0.61em; margin-top: 0.61em;">
 				<li v-for="step in currentSteps" :key="step" v-text="step" />
 			</ol>
 		</div>
@@ -26,7 +26,7 @@
 				placeholder="Test instruction"
 			/>
 		</div>
-		<div class="pure-g" style="width: 100%; padding-left: 6%; padding-right: 6%;">
+		<div class="pure-g" style="width: 100%; padding-left: 6%; padding-right: 6%; margin-top: 0.61em;">
 			<div class="pure-u-1-2">
 				<div style="padding-right: 10px; width: 100%;">
 					<FirePrButton
