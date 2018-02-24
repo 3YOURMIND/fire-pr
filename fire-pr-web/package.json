@@ -16,7 +16,7 @@
 		"build-storybook": "build-storybook"
 	},
 	"lint-staged": {
-		"*.{js,json,css,md}": ["prettier --write", "git add"]
+		"*.{js,json,css,md,vue}": ["prettier --write", "git add"]
 	},
 	"dependencies": {
 		"purecss": "^1.0.0",
