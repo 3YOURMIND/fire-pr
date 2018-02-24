@@ -20,7 +20,11 @@
 			</ol>
 		</div>
 		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%;">
-			<textarea v-model="testInstruction" placeholder="Test instruction" />
+			<textarea
+				class="pull-request-testing__input"
+				v-model="testInstruction"
+				placeholder="Test instruction"
+			/>
 		</div>
 		<div class="pure-g" style="width: 100%; padding-left: 6%; padding-right: 6%;">
 			<div class="pure-u-1-2">
@@ -33,7 +37,7 @@
 				</div>
 			</div>
 			<div class="pure-u-1-2">
-				<div style="padding-left: 10px; width: 100%;">
+				<div style="padding-left: 10px; width: calc(100% - 10px);">
 					<FirePrButton
 						:label="'Add Test Case'"
 						:disabled="disableAddTestStep"
@@ -116,6 +120,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-testing__input {
+	box-sizing: border-box;
+	background-color: #f4f4f9;
+	border: 0;
+	border: 1px solid rgba(88, 111, 124, 0.5);
+	color: #586f7c;
+	font-family: 'Roboto';
+	font-weight: 300;
+	border-radius: 3px;
+	font-size: 1em;
+	width: 100%;
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: calc(0.61em / 2);
+	padding-bottom: calc(0.61em / 2);
+
+	resize: none;
+
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 3px #b8dbd9;
+	}
+}
+
 .pull-request-testing__container {
 	font-size: 16px;
 }
