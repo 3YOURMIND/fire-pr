@@ -1,7 +1,7 @@
 <template>
-	<div class="pure-g testing-options__container">
-		<div class="pure-u-1">
-			<h1>Testing procedure</h1>
+	<div class="pure-g pull-request-testing__container">
+		<div class="pure-u-1 pull-request-testing__heading-container">
+			<h1 class="pull-request-testing__heading--first">Testing procedure</h1>
 		</div>
 		<div class="pure-u-1">
 			<div v-for="(testCase, index) in testCases" :key="index">
@@ -103,8 +103,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.testing-options__container {
+.pull-request-testing__container {
 	font-size: 16px;
+}
+
+.pull-request-testing__heading-container {
+	text-align: center;
+}
+
+.pull-request-testing__heading--first {
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+	margin-top: 0.61em;
+	margin-bottom: 0.61em;
 }
 
 .pull-request-testing__button-container {
