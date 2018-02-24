@@ -12,7 +12,7 @@
 			</div>
 		</div>
 		<div class="pure-u-1">
-			<hr />
+			<hr class="pull-request-testing__divider" />
 		</div>
 		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%;">
 			<ol>
@@ -120,6 +120,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-testing__divider {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid rgba(88, 111, 124, 0.5);
+	margin: 1em 0;
+	padding: 0;
+}
+
 .pull-request-testing__input {
 	box-sizing: border-box;
 	background-color: #f4f4f9;
