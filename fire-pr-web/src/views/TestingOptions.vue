@@ -3,11 +3,25 @@
 		<div class="pure-u-1 pull-request-testing__heading-container">
 			<h1 class="pull-request-testing__heading--first">Testing procedure</h1>
 		</div>
-		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%;" v-if="testCases.length > 0">
+		<div
+			class="pure-u-1"
+			style="padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550; margin-bottom: 0.61em;"
+			v-if="testCases.length > 0"
+		>
 			<div v-for="(testCase, index) in testCases" :key="index" class="pull-request-testing__test-case-container">
-				<h2 class="pull-request-testing__heading--second" @click="toggleCollapse(index)">Case {{ index + 1 }}</h2>
-				<ol v-if="uncollapsed.includes(index)">
-					<li v-for="step in testCase" :key="step" v-text="step" />
+				<h2
+					class="pull-request-testing__heading--second"
+					@click="toggleCollapse(index)"
+					style="margin-bottom: 0;"
+				>
+					Case {{ index + 1 }}
+				</h2>
+				<ol
+					v-if="uncollapsed.includes(index)"
+					class="pull-request-testing__test-case-list"
+					style="margin-top: 0; margin-bottom: 0.2em;"
+				>
+					<li class="pull-request-testing__test-case-list-entry" v-for="step in testCase" :key="step" v-text="step" />
 				</ol>
 			</div>
 		</div>
@@ -19,7 +33,9 @@
 			<hr class="pull-request-testing__divider" style="margin: 0; margin-bottom: 0.61em;" />
 		</div>
 		<div v-if="currentSteps.length > 0" class="pure-u-1" style="padding-left: 6%; padding-right: 6%; margin: 0; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
-			<ol style="margin: 0; margin-bottom: 0.61em; margin-top: 0; padding-left: 6%;">
+			<ol
+				style="margin: 0; margin-bottom: 0.61em; margin-top: 0; padding-left: 6%;"
+			>
 				<li v-for="step in currentSteps" :key="step" v-text="step" />
 			</ol>
 		</div>
@@ -124,6 +140,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-testing__test-case-list {
+	padding-left: 7%;
+	border-left: 2px solid rgba(88, 111, 124, 0.2);
+	margin-left: 2%;
+}
+
+.pull-request-testing__test-case-list
+	.pull-request-testing__test-case-list-entry:first-child {
+	margin-top: 0.3em;
+}
+
 .pull-request-testing__heading--second {
 	font-family: 'Roboto';
 	font-weight: 300;
