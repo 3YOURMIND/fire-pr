@@ -4,18 +4,22 @@
 			<h1 class="pull-request-testing__heading--first">Testing procedure</h1>
 		</div>
 		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%;" v-if="testCases.length > 0">
-			<div v-for="(testCase, index) in testCases" :key="index">
-				<h2 @click="toggleCollapse(index)">Case {{ index + 1 }}</h2>
+			<div v-for="(testCase, index) in testCases" :key="index" class="pull-request-testing__test-case-container">
+				<h2 class="pull-request-testing__heading--second" @click="toggleCollapse(index)">Case {{ index + 1 }}</h2>
 				<ol v-if="uncollapsed.includes(index)">
 					<li v-for="step in testCase" :key="step" v-text="step" />
 				</ol>
 			</div>
 		</div>
+		<div v-else class="pure-u-1" style="padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+			<p style="margin-top: 0;" v-if="currentSteps.length === 0">You need to add a test instruction</p>
+			<p style="margin-top: 0;" v-else>Now add the test case or add more instructions</p>
+		</div>
 		<div class="pure-u-1">
 			<hr class="pull-request-testing__divider" style="margin: 0; margin-bottom: 0.61em;" />
 		</div>
-		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%; margin: 0;" v-if="currentSteps.length > 0">
-			<ol style="margin: 0; margin-bottom: 0.61em; margin-top: 0;">
+		<div v-if="currentSteps.length > 0" class="pure-u-1" style="padding-left: 6%; padding-right: 6%; margin: 0; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+			<ol style="margin: 0; margin-bottom: 0.61em; margin-top: 0; padding-left: 6%;">
 				<li v-for="step in currentSteps" :key="step" v-text="step" />
 			</ol>
 		</div>
@@ -120,6 +124,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-testing__heading--second {
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+	margin-top: 0.61em;
+	margin-bottom: 0.61em;
+}
+
+.pull-request-testing__test-case-container
+	.pull-request-testing__heading--second:first-child {
+	margin-top: 0;
+}
+
 .pull-request-testing__divider {
 	display: block;
 	height: 1px;
@@ -174,4 +191,3 @@ export default {
 	bottom: 6%;
 }
 </style>
-
