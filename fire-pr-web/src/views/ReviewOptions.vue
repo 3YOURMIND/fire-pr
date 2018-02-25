@@ -1,14 +1,14 @@
 <template>
 	<div class="pure-g review-options__container">
-		<div class="pure-u-1">
-			<h3>Review and Merge</h3>
+		<div class="pure-u-1 pull-request-review__heading-container">
+			<h1 class="pull-request-review__heading--first">Review and Merge</h1>
 		</div>
-		<div class="pure-u-1">
-			<h4>Who</h4>
+		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+			<h2 class="pull-request-review__heading--second">Who should merge?</h2>
 		</div>
-		<div class="pure-u-1">
+		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
 			<p>
-				<input type="radio" iname="merger" @click="updateMerger('last')" />
+				<input type="radio" name="merger" @click="updateMerger('last')" />
 				<label>Last approver merges</label>
 			</p>
 			<p>
@@ -16,10 +16,12 @@
 				<label>PR creator merges</label>
 			</p>
 		</div>
-		<div class="pure-u-1">
-			<h4>When</h4>
+		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+			<h2 class="pull-request-review__heading--second">
+				When should the merge happen?
+			</h2>
 		</div>
-		<div class="pure-u-1">
+		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
 			<p>
 				<input type="radio" name="mergeTime" @click="updateMergeTime('half')" />
 				<label>Merge after > 51% of the reviewers approved</label>
@@ -93,6 +95,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-review__heading-container {
+	text-align: center;
+}
+
+.pull-request-review__heading--first {
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+	margin-top: 0.61em;
+	margin-bottom: 0.61em;
+}
+
+.pull-request-review__heading--second {
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+	margin-top: 0.61em;
+	margin-bottom: 0.61em;
+}
+
 .review-options__container {
 	font-size: 16px;
 }
