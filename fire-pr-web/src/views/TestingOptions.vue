@@ -77,7 +77,7 @@
 			<FirePrButton
 				:disabled="disableNext"
 				:label="'Next'"
-				@click="saveBreakingOptions"
+				@click="saveTestingOptions"
 				style="margin-right: 10%; float: right; display: inline;"
 			/>
 		</div>
