@@ -1,9 +1,6 @@
 <template>
 	<div class="pure-g other-information__container">
 		<div class="pure-u-1">
-			<BackButton />
-		</div>
-		<div class="pure-u-1">
 			<ol v-if="informations.length > 0">
 				<li
 					v-for="information in informations"
@@ -27,21 +24,31 @@
 		<div class="pure-u-1">
 			<button @click="addOtherInformation">Add other information</button>
 		</div>
-		<div class="pure-u-1">
-			<button :disable="nextDisabled" @click="nextStep">
-				Next
-			</button>
+		<div class="pure-u-1 pull-request-other-information__button-container">
+			<FirePrButton
+				:label="'Back'"
+				@click="$router.back()"
+				style="margin-left: 10%; float: left; display: inline;"
+			/>
+			<FirePrButton
+				:disabled="nextDisabled"
+				:label="'Next'"
+				@click="nextStep"
+				style="margin-right: 10%; float: right; display: inline;"
+			/>
 		</div>
 	</div>
 </template>
 
 <script>
 import BackButton from '../components/BackButton.vue';
+import FirePrButton from '../components/FirePrButton.vue';
 
 export default {
 	name: 'OtherInformation',
 	components: {
 		BackButton,
+		FirePrButton,
 	},
 	data() {
 		return {
@@ -63,6 +70,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-other-information__button-container {
+	position: absolute;
+	bottom: 6%;
+}
+
 .other-information__container {
 	font-size: 16px;
 }
