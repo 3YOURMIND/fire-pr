@@ -1,8 +1,5 @@
 <template>
-	<div class="review-options__contaienr pure-g">
-		<div class="pure-u-1">
-			<BackButton />
-		</div>
+	<div class="pure-g review-options__container">
 		<div class="pure-u-1">
 			<h3>Review and Merge</h3>
 		</div>
@@ -36,24 +33,30 @@
 				<label>Merge after 1 reviewer approves</label>
 			</p>
 		</div>
-		<div class="pure-u-1">
-			<button
-				:class="nextClasses"
-				@click="saveMergeOptions"
+		<div class="pure-u-1 pull-request-review__button-container">
+			<FirePrButton
+				:label="'Back'"
+				@click="$router.back()"
+				style="margin-left: 10%; float: left; display: inline;"
+			/>
+			<FirePrButton
 				:disabled="disableNext"
-			>
-				Next
-			</button>
+				:label="'Next'"
+				@click="saveMergeOptions"
+				style="margin-right: 10%; float: right; display: inline;"
+			/>
 		</div>
 	</div>
 </template>
 
 <script>
 import BackButton from '../components/BackButton.vue';
+import FirePrButton from '../components/FirePrButton.vue';
 
 export default {
 	components: {
 		BackButton,
+		FirePrButton,
 	},
 	data() {
 		return {
@@ -90,7 +93,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.review-options__contaienr {
+.review-options__container {
 	font-size: 16px;
+}
+
+.pull-request-review__button-container {
+	position: absolute;
+	bottom: 6%;
 }
 </style>
