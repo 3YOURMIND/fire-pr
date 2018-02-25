@@ -7,14 +7,16 @@
 			<h2 class="pull-request-review__heading--second">Who should merge?</h2>
 		</div>
 		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
-			<p>
-				<input type="radio" name="merger" @click="updateMerger('last')" />
-				<label>Last approver merges</label>
-			</p>
-			<p>
-				<input type="radio" name="merger" @click="updateMerger('creator')" />
-				<label>PR creator merges</label>
-			</p>
+			<label class="control control--radio" @click="updateMerger('last')">
+				<span>Last approver merges</span>
+				<input type="radio" name="merger" :checked="options.merger === 'last'"/>
+				<div class="control__indicator" />
+			</label>
+			<label class="control control--radio" @click="updateMerger('creator')">
+				<span>PR creator merges</span>
+				<input type="radio" name="merger" :checked="options.merger === 'creator'"/>
+				<div class="control__indicator" />
+			</label>
 		</div>
 		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
 			<h2 class="pull-request-review__heading--second">
@@ -22,18 +24,21 @@
 			</h2>
 		</div>
 		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
-			<p>
-				<input type="radio" name="mergeTime" @click="updateMergeTime('half')" />
-				<label>Merge after > 51% of the reviewers approved</label>
-			</p>
-			<p>
-				<input type="radio" name="mergeTime" @click="updateMergeTime('all')" />
-				<label>Merge after 100% of the reviewers approved</label>
-			</p>
-			<p>
-				<input type="radio" name="mergeTime" @click="updateMergeTime('one')" />
-				<label>Merge after 1 reviewer approves</label>
-			</p>
+			<label class="control control--radio" @click="updateMergeTime('half')">
+				<span>Merge after > 51% of the reviewers approved</span>
+				<input type="radio" name="mergeTime" :checked="options.mergeTime === 'half'"/>
+				<div class="control__indicator" />
+			</label>
+			<label class="control control--radio" @click="updateMergeTime('all')">
+				<span>Merge after 100% of the reviewers approved</span>
+				<input type="radio" name="mergeTime" :checked="options.mergeTime === 'all'"/>
+				<div class="control__indicator" />
+			</label>
+			<label class="control control--radio" @click="updateMergeTime('one')">
+				<span>Merge after 1 reviewer approves</span>
+				<input type="radio" name="mergeTime" :checked="options.mergeTime === 'one'"/>
+				<div class="control__indicator" />
+			</label>
 		</div>
 		<div class="pure-u-1 pull-request-review__button-container">
 			<FirePrButton
@@ -122,5 +127,58 @@ export default {
 .pull-request-review__button-container {
 	position: absolute;
 	bottom: 6%;
+}
+
+.control {
+	display: block;
+	position: relative;
+	padding-left: 30px;
+	margin-bottom: 15px;
+	cursor: pointer;
+	font-size: 18px;
+}
+.control input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+.control__indicator {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	height: 20px;
+	width: 20px;
+	background: rgb(244, 244, 249);
+	border: 1px solid rgba(47, 69, 80, 0.1);
+}
+.control--radio .control__indicator {
+	border-radius: 50%;
+}
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+	background: rgb(244, 244, 249);
+}
+.control input:checked ~ .control__indicator {
+	background: rgba(47, 69, 80, 0.5);
+}
+.control__indicator:after {
+	content: '';
+	position: absolute;
+	display: none;
+}
+.control input:checked ~ .control__indicator:after {
+	display: block;
+}
+.control--radio .control__indicator:after {
+	$size: 16px;
+	left: calc(50% - (#{$size} / 2));
+	top: calc(50% - (#{$size} / 2));
+	height: $size;
+	width: $size;
+	border-radius: 50%;
+	background-color: #f4f4f9;
+}
+.control--radio input:disabled ~ .control__indicator:after {
+	background: #7b7b7b;
 }
 </style>
