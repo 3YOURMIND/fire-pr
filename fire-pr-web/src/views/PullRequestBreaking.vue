@@ -17,7 +17,7 @@
 				<label class="control control--radio" @click="updateBreaking(true)">
 					<span>Yes</span>
 					<input type="radio" name="radio" :checked="breaking"/>
-					<div class="control__indicator"></div>
+					<div class="control__indicator" />
 				</label>
 				<div class="pull-request-breaking__input-container" v-if="breaking">
 					<input
