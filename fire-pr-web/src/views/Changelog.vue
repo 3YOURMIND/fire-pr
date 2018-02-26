@@ -1,5 +1,10 @@
 <template>
 	<div class="pure-g changelog__container">
+		<div class="pure-u-1 pull-request-changelog__heading-container">
+			<h1 class="pull-request-changelog__heading--first">
+				Changelog
+			</h1>
+		</div>
 		<div class="pure-u-1" style="margin-top: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
 			<label>Note</label>
 		</div>
@@ -84,6 +89,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-changelog__heading-container {
+	text-align: center;
+}
+
+.pull-request-changelog__heading--first {
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+	margin-top: 0.61em;
+	margin-bottom: 0.61em;
+}
+
 .pull-request-changelog__button-container {
 	position: absolute;
 	bottom: 6%;
