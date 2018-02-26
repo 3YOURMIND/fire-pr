@@ -7,8 +7,12 @@
 		<div class="pure-u-1">
 			<button @click="addNote">Add Note</button>
 		</div>
-		<div class="pure-u-1">
-			<button @click="finish">✨ Create Pull Request</button>
+		<div class="pure-u-1 pull-request-changelog__button-container" style="margin-top: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+			<FirePrButton
+				:label="'Create Pull Request'"
+				@click="finish"
+				style="width: calc(100% - 12%);"
+			/>
 		</div>
 	</div>
 </template>
@@ -16,9 +20,13 @@
 <script>
 import PrTitleUtility from '../util/pr-title';
 import CreateMarkdown from '../util/create-markdown';
+import FirePrButton from '../components/FirePrButton.vue';
 
 export default {
 	name: 'Changelog',
+	components: {
+		FirePrButton,
+	},
 	data() {
 		return {
 			changelogText: '',
@@ -62,6 +70,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-changelog__button-container {
+	position: absolute;
+	bottom: 6%;
+}
+
 .changelog__container {
 	font-size: 16px;
 }
