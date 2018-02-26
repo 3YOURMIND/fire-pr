@@ -19,16 +19,10 @@
 				/>
 			</div>
 		</div>
-		<div class="pure-u-1" style="margin-top: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
-			<FirePrButton
-				:label="'Add Note'"
-				@click="addNote"
-				style="width: 100%;"
-			/>
-		</div>
 		<div class="pure-u-1 pull-request-changelog__button-container" style="margin-top: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
 			<FirePrButton
 				:label="'Create Pull Request'"
+				:disabled="!changelogMessageValid"
 				@click="finish"
 				style="width: calc(100% - 12%);"
 			/>
@@ -59,6 +53,9 @@ export default {
 			}
 			return false;
 		},
+		changelogMessageValid() {
+			return this.changelogText !== '';
+		},
 	},
 	methods: {
 		addNote() {
@@ -66,6 +63,10 @@ export default {
 			this.changelogText = '';
 		},
 		finish() {
+			if (!this.changelogMessageValid) {
+				return;
+			}
+			this.addNote();
 			const calculatedTitle = PrTitleUtility.renderMarkdown({
 				heading: this.$store.state.title,
 				issueNumber: this.$store.state.jiraIssue,
