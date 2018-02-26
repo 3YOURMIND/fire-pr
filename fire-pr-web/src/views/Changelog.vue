@@ -1,8 +1,18 @@
 <template>
 	<div class="pure-g changelog__container">
-		<div class="pure-u-1">
-			<input type="text" v-model="changelogText" />
+		<div class="pure-u-1" style="margin-top: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
 			<label>Note</label>
+		</div>
+		<div class="pure-u-1" style="margin-top: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+			<div class="pull-request-changelog__input-container">
+				<input
+					autofocus
+					type="text"
+					name="merger"
+					class="pull-request-changelog__input"
+					v-model="changelogText"
+				/>
+			</div>
 		</div>
 		<div class="pure-u-1">
 			<button @click="addNote">Add Note</button>
@@ -77,5 +87,27 @@ export default {
 
 .changelog__container {
 	font-size: 16px;
+}
+
+.pull-request-changelog__input {
+	box-sizing: border-box;
+	background-color: #f4f4f9;
+	border: 0;
+	border: 1px solid rgba(88, 111, 124, 0.5);
+	color: #586f7c;
+	font-family: 'Roboto';
+	font-weight: 300;
+	border-radius: 3px;
+	font-size: 1em;
+	width: 100%;
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: calc(0.61em / 2);
+	padding-bottom: calc(0.61em / 2);
+
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 3px #b8dbd9;
+	}
 }
 </style>
