@@ -1,30 +1,26 @@
 <template>
 	<div class="pure-g changelog__container">
 		<div class="pure-u-1 pull-request-changelog__heading-container">
-			<h1 class="pull-request-changelog__heading--first">
-				Changelog
-			</h1>
+			<h1 class="pull-request-changelog__heading--first">Changelog</h1>
 		</div>
-		<div class="pure-u-1" style="margin-top: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+		<div class="pure-u-1 pull-request-changelog__label-container">
 			<label>Note</label>
 		</div>
-		<div class="pure-u-1" style="margin-top: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
-			<div class="pull-request-changelog__input-container">
-				<input
-					autofocus
-					type="text"
-					name="merger"
-					class="pull-request-changelog__input"
-					v-model="changelogText"
-				/>
-			</div>
+		<div class="pure-u-1 pull-request-changelog__input-container">
+			<input
+				autofocus
+				class="pull-request-changelog__input"
+				name="merger"
+				type="text"
+				v-model="changelogText"
+			/>
 		</div>
-		<div class="pure-u-1 pull-request-changelog__button-container" style="margin-top: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+		<div class="pure-u-1 pull-request-changelog__button-container">
 			<FirePrButton
+				class="pull-request-changelog__button"
 				:label="'Create Pull Request'"
 				:disabled="!changelogMessageValid"
 				@click="finish"
-				style="width: calc(100% - 12%);"
 			/>
 		</div>
 	</div>
@@ -90,6 +86,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-changelog__button {
+	width: calc(100% - 12%);
+}
+
+.pull-request-changelog__label-container {
+	margin-top: 0.61em;
+	padding-left: 6%;
+	padding-right: 6%;
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+}
+
+.pull-request-changelog__input-container {
+	margin-top: 0.61em;
+	padding-left: 6%;
+	padding-right: 6%;
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+}
+
 .pull-request-changelog__heading-container {
 	text-align: center;
 }
@@ -105,6 +123,12 @@ export default {
 .pull-request-changelog__button-container {
 	position: absolute;
 	bottom: 6%;
+	margin-top: 0.61em;
+	padding-left: 6%;
+	padding-right: 6%;
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
 }
 
 .changelog__container {
