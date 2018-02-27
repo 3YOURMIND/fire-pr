@@ -24,10 +24,10 @@ export default {
 	components: {
 		FirePrButton,
 	},
-	data () {
+	data() {
 		return {
 			title: '',
-		}
+		};
 	},
 	computed: {
 		formValid() {
@@ -35,12 +35,18 @@ export default {
 			return titleGiven;
 		},
 	},
+	mounted() {
+		const storeTitle = this.$store.state.title;
+		if (storeTitle !== '') {
+			this.title = storeTitle;
+		}
+	},
 	methods: {
 		onNextClick() {
 			this.$store.dispatch('saveTitle', this.title);
 			this.$router.push('/type');
-		}
-	}
+		},
+	},
 };
 </script>
 
