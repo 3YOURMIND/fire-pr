@@ -1,29 +1,36 @@
 <template>
 	<div class="pure-g pull-request-type__container">
 		<div class="pure-u-1 pull-request-type__heading-container">
-			<h1 class="pull-request-type__heading--first">
-				Pull Request Type
-			</h1>
+			<h1 class="pull-request-type__heading--first">Pull Request Type</h1>
 		</div>
-		<div style="padding-left: 6%; padding-right: 6%;">
+		<div class="pull-request-type__selection-container">
 			<div class="pure-u-1">
 				<FirePrCheckbox :checked.sync="options.bugfix" :label="'Bugfix'" />
 			</div>
-			<div class="pure-u-1" style="margin-top: 0.61em;">
+			<div class="pure-u-1">
 				<FirePrCheckbox :checked.sync="options.feature" :label="'Feature'" />
 			</div>
-			<div class="pure-u-1" style="margin-top: 0.61em;">
-				<FirePrCheckbox :checked.sync="options.codeStyle" :label="'Code style'" />
+			<div class="pure-u-1">
+				<FirePrCheckbox
+					:checked.sync="options.codeStyle"
+					:label="'Code style'"
+				/>
 			</div>
-			<div class="pure-u-1" style="margin-top: 0.61em;">
+			<div class="pure-u-1">
 				<FirePrCheckbox :checked.sync="options.refactor" :label="'Refactor'" />
 			</div>
-			<div class="pure-u-1" style="margin-top: 0.61em;">
-				<FirePrCheckbox :checked.sync="options.build" :label="'Build-related changes'" />
+			<div class="pure-u-1">
+				<FirePrCheckbox
+					:checked.sync="options.build"
+					:label="'Build-related changes'"
+				/>
 			</div>
-			<div class="pure-u-1" style="margin-top: 0.61em;">
-				<FirePrCheckbox :checked.sync="options.other" :label="'Other: Please describe'" />
-				<div class="pull-request-type__input-container" v-if="options.other">
+			<div class="pure-u-1">
+				<FirePrCheckbox
+					:checked.sync="options.other"
+					:label="'Other: Please describe'"
+				/>
+				<div v-if="options.other" class="pull-request-type__input-container">
 					<input
 						autofocus
 						type="text"
@@ -35,15 +42,15 @@
 		</div>
 		<div class="pure-u-1 pull-request-type__button-container">
 			<FirePrButton
+				class="pull-request-type__button--left"
 				:label="'Back'"
 				@click="handleBackButtonClick"
-				style="margin-left: 10%; float: left; display: inline;"
 			/>
 			<FirePrButton
+				class="pull-request-type__button--right"
 				:disabled="buttonEnabled"
 				:label="'Next'"
 				@click="saveChangeOptions"
-				style="margin-right: 10%; float: right; display: inline;"
 			/>
 		</div>
 	</div>
@@ -102,6 +109,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-type__button--left {
+	margin-left: 10%;
+	display: inline;
+}
+
+.pull-request-type__button--right {
+	margin-right: 10%;
+	float: right;
+	display: inline;
+}
+
+.pull-request-type__selection-container {
+	padding-left: 6%;
+	padding-right: 6%;
+}
+
+.pull-request-type__selection-container > div:not(:first-child) {
+	margin-top: 0.61em;
+}
+
 .pull-request-type__container {
 	font-size: 16px;
 }
