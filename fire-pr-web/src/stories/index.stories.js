@@ -1,6 +1,9 @@
 import { storiesOf } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import Vue from 'vue';
+import Vuex from 'vuex';
+import StoryRouter from 'storybook-router';
 
 import PullRequestTitle from '../views/PullRequestTitle.vue';
 import TheNoBitbucketSite from '../components/TheNoBitbucketSite.vue';
@@ -15,6 +18,8 @@ import '../../node_modules/purecss/build/pure.css';
 import '../../node_modules/purecss/build/grids.css';
 import '../assets/css/fonts.css';
 
+Vue.use(Vuex);
+
 const DEFAULT_BODY_STYLE =
 	'width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;';
 
@@ -27,14 +32,39 @@ storiesOf('No Bitbucket site', module).add('initial state', () => ({
 		</body>`,
 }));
 
-storiesOf('Pull Request Title', module).add('initial state', () => ({
-	components: {
-		PullRequestTitle,
-	},
-	template: `<body style="${DEFAULT_BODY_STYLE}">
-			<PullRequestTitle />
-		</body>`,
-}));
+storiesOf('Pull Request Title', module)
+	.addDecorator(StoryRouter())
+	.add('blank state', () => ({
+		components: {
+			PullRequestTitle,
+		},
+		store: new Vuex.Store({
+			state: {
+				title: '',
+			},
+		}),
+		template: `<body style="${DEFAULT_BODY_STYLE}">
+		<PullRequestTitle />
+	</body>`,
+	}))
+	.add('predefined state', () => ({
+		components: {
+			PullRequestTitle,
+		},
+		template: `<body style="${DEFAULT_BODY_STYLE}">
+		<PullRequestTitle />
+	</body>`,
+		store: new Vuex.Store({
+			state: {
+				title: 'fix(types): fix wrong errorCaptured type',
+			},
+			actions: {
+				saveTitle: context => {
+					action('COMMIT TO STORE')(context.state.title);
+				},
+			},
+		}),
+	}));
 
 storiesOf('Pull Request Type', module).add('initial state', () => ({
 	components: {
