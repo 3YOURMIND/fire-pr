@@ -78,6 +78,14 @@ export default {
 			};
 		},
 	},
+	mounted() {
+		const storeOptions = this.$store.state.options;
+		if ('breaking' in storeOptions) {
+			const { breaking, text } = storeOptions.breaking;
+			this.breaking = breaking;
+			this.breakingChangeText = text;
+		}
+	},
 	methods: {
 		updateBreaking(breaking) {
 			this.breaking = breaking;
