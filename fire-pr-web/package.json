@@ -1,6 +1,6 @@
 {
 	"name": "fire-pr-extension",
-	"version": "0.0.3",
+	"version": "0.0.5",
 	"description": "The official fire-pr extension for Chrome",
 	"author": "James <jo@3yourmind.com>",
 	"scripts": {
