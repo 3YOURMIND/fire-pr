@@ -1,19 +1,17 @@
 <template>
 	<div class="pure-g pull-request-breaking__container">
 		<div class="pure-u-1 pull-request-breaking__heading-container">
-			<h1 class="pull-request-breaking__heading--first">
-				Breaking changes
-			</h1>
+			<h1 class="pull-request-breaking__heading--first">Breaking changes</h1>
 		</div>
-		<div style="padding-left: 6%; padding-right: 6%; width: 100%;">
-			<div class="pure-u-1" style="margin-top: 0.61em;">
+		<div style="padding-left: 6%; padding-right: 6%; margin-top: 0.61em;">
+			<div class="pure-u-1">
 				<label class="control control--radio" @click="updateBreaking(false)">
 					<span>No</span>
 					<input type="radio" name="radio" :checked="!breaking"/>
-					<div class="control__indicator"></div>
+					<div class="control__indicator" />
 				</label>
 			</div>
-			<div class="pure-u-1">
+			<div class="pure-u-1" style="margin-top: 0.5em;">
 				<label class="control control--radio" @click="updateBreaking(true)">
 					<span>Yes</span>
 					<input type="radio" name="radio" :checked="breaking"/>
@@ -155,10 +153,15 @@ export default {
 	display: block;
 	position: relative;
 	padding-left: 30px;
-	margin-bottom: 15px;
 	cursor: pointer;
 	font-size: 18px;
+	font-family: 'Roboto';
+	font-weight: 300;
 }
+.control span {
+	line-height: 150%;
+}
+
 .control input {
 	position: absolute;
 	z-index: -1;
