@@ -96,6 +96,12 @@ export default {
 			return true;
 		},
 	},
+	mounted() {
+		const storeOptions = this.$store.state.options.change;
+		if (storeOptions) {
+			this.options = storeOptions;
+		}
+	},
 	methods: {
 		saveChangeOptions() {
 			this.$store.dispatch('saveChangeOptions', this.options);
