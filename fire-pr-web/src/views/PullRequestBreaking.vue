@@ -4,22 +4,7 @@
 			<h1 class="pull-request-breaking__heading--first">Breaking changes</h1>
 		</div>
 		<div class="pull-request-breaking__selection-container">
-			<div class="pure-u-1">
-				<RadioButton
-					:checked="!breaking"
-					:label="'No'"
-					:name="'radio'"
-					@click="updateBreaking(false)"
-				/>
-			</div>
-			<div class="pure-u-1">
-				<RadioButton
-					:checked="breaking"
-					:label="'Yes'"
-					:name="'radio'"
-					@click="updateBreaking(true)"
-				/>
-			</div>
+			<BooleanRadioButtonGroup :checked.sync="breaking" />
 			<div class="pure-u-1">
 				<div class="pull-request-breaking__input-container" v-if="breaking">
 					<input
@@ -50,14 +35,14 @@
 <script>
 import BackButton from '../components/BackButton.vue';
 import FirePrButton from '../components/FirePrButton.vue';
-import RadioButton from '../components/RadioButton.vue';
+import BooleanRadioButtonGroup from '../components/BooleanRadioButtonGroup.vue';
 
 export default {
 	name: 'PullRequestBreaking',
 	components: {
 		BackButton,
 		FirePrButton,
-		RadioButton,
+		BooleanRadioButtonGroup,
 	},
 	data() {
 		return {
@@ -120,10 +105,6 @@ export default {
 	padding-right: 6%;
 	margin-top: 0.61em;
 	width: 100%;
-
-	& > div:nth-child(n + 2) {
-		margin-top: 0.5em;
-	}
 }
 
 .pull-request-breaking {
