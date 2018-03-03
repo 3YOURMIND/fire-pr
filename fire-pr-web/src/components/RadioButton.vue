@@ -1,7 +1,7 @@
 <template>
 	<label class="control control--radio" @click="propagateClick">
 		<span v-text="label" />
-		<input type="radio" :name="name" :checked="checked" />
+		<input :checked="checked" :name="name" type="radio" />
 		<div class="control__indicator" />
 	</label>
 </template>
