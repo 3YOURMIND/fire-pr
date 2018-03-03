@@ -5,8 +5,8 @@
 		</div>
 		<div class="pull-request-breaking__selection-container">
 			<BooleanRadioButtonGroup :checked.sync="breaking" />
-			<div class="pure-u-1">
-				<div class="pull-request-breaking__input-container" v-if="breaking">
+			<div class="pure-u-1" v-if="breaking">
+				<div class="pull-request-breaking__input-container">
 					<input
 						autofocus
 						type="text"
