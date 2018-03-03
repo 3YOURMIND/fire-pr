@@ -12,13 +12,15 @@
 					@click="updateBreaking(false)"
 				/>
 			</div>
-			<div class="pure-u-1" style="margin-top: 0.5em;">
+			<div class="pure-u-1">
 				<RadioButton
 					:checked="breaking"
 					:label="'Yes'"
 					:name="'radio'"
 					@click="updateBreaking(true)"
 				/>
+			</div>
+			<div class="pure-u-1">
 				<div class="pull-request-breaking__input-container" v-if="breaking">
 					<input
 						autofocus
@@ -65,13 +67,10 @@ export default {
 	},
 	computed: {
 		disableNext() {
-			if (this.breaking === null) {
-				return true;
-			}
-			if (this.breaking && this.breakingChangeText === '') {
-				return true;
-			}
-			return false;
+			return (
+				this.breaking === null ||
+				(this.breaking && this.breakingChangeText === '')
+			);
 		},
 		nextClasses() {
 			return {
@@ -120,6 +119,11 @@ export default {
 	padding-left: 6%;
 	padding-right: 6%;
 	margin-top: 0.61em;
+	width: 100%;
+
+	& > div:nth-child(n + 2) {
+		margin-top: 0.5em;
+	}
 }
 
 .pull-request-breaking {
