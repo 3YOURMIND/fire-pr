@@ -5,18 +5,20 @@
 		</div>
 		<div class="pull-request-breaking__selection-container">
 			<div class="pure-u-1">
-				<label class="control control--radio" @click="updateBreaking(false)">
-					<span>No</span>
-					<input type="radio" name="radio" :checked="!breaking"/>
-					<div class="control__indicator" />
-				</label>
+				<RadioButton
+					:checked="!breaking"
+					:label="'No'"
+					:name="'radio'"
+					@click="updateBreaking(false)"
+				/>
 			</div>
 			<div class="pure-u-1" style="margin-top: 0.5em;">
-				<label class="control control--radio" @click="updateBreaking(true)">
-					<span>Yes</span>
-					<input type="radio" name="radio" :checked="breaking"/>
-					<div class="control__indicator" />
-				</label>
+				<RadioButton
+					:checked="breaking"
+					:label="'Yes'"
+					:name="'radio'"
+					@click="updateBreaking(true)"
+				/>
 				<div class="pull-request-breaking__input-container" v-if="breaking">
 					<input
 						autofocus
@@ -46,12 +48,14 @@
 <script>
 import BackButton from '../components/BackButton.vue';
 import FirePrButton from '../components/FirePrButton.vue';
+import RadioButton from '../components/RadioButton.vue';
 
 export default {
 	name: 'PullRequestBreaking',
 	components: {
 		BackButton,
 		FirePrButton,
+		RadioButton,
 	},
 	data() {
 		return {
@@ -165,63 +169,5 @@ export default {
 .pull-request-breaking__button-container {
 	position: absolute;
 	bottom: 6%;
-}
-
-.control {
-	display: block;
-	position: relative;
-	padding-left: 30px;
-	cursor: pointer;
-	font-size: 18px;
-	font-family: 'Roboto';
-	font-weight: 300;
-}
-.control span {
-	line-height: 150%;
-}
-
-.control input {
-	position: absolute;
-	z-index: -1;
-	opacity: 0;
-}
-.control__indicator {
-	position: absolute;
-	top: 2px;
-	left: 0;
-	height: 20px;
-	width: 20px;
-	background: rgb(244, 244, 249);
-	border: 1px solid rgba(47, 69, 80, 0.1);
-}
-.control--radio .control__indicator {
-	border-radius: 50%;
-}
-.control:hover input ~ .control__indicator,
-.control input:focus ~ .control__indicator {
-	background: rgb(244, 244, 249);
-}
-.control input:checked ~ .control__indicator {
-	background: rgba(47, 69, 80, 0.5);
-}
-.control__indicator:after {
-	content: '';
-	position: absolute;
-	display: none;
-}
-.control input:checked ~ .control__indicator:after {
-	display: block;
-}
-.control--radio .control__indicator:after {
-	$size: 16px;
-	left: calc(50% - (#{$size} / 2));
-	top: calc(50% - (#{$size} / 2));
-	height: $size;
-	width: $size;
-	border-radius: 50%;
-	background-color: #f4f4f9;
-}
-.control--radio input:disabled ~ .control__indicator:after {
-	background: #7b7b7b;
 }
 </style>
