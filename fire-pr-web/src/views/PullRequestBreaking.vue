@@ -3,7 +3,7 @@
 		<div class="pure-u-1 pull-request-breaking__heading-container">
 			<h1 class="pull-request-breaking__heading--first">Breaking changes</h1>
 		</div>
-		<div style="padding-left: 6%; padding-right: 6%; margin-top: 0.61em;">
+		<div class="pull-request-breaking__selection-container">
 			<div class="pure-u-1">
 				<label class="control control--radio" @click="updateBreaking(false)">
 					<span>No</span>
@@ -29,15 +29,15 @@
 		</div>
 		<div class="pure-u-1 pull-request-breaking__button-container">
 			<FirePrButton
+				class="pull-request-breaking__button--left"
 				:label="'Back'"
 				@click="$router.back()"
-				style="margin-left: 10%; float: left; display: inline;"
 			/>
 			<FirePrButton
+				class="pull-request-breaking__button--right"
 				:disabled="disableNext"
 				:label="'Next'"
 				@click="saveBreakingOptions"
-				style="margin-right: 10%; float: right; display: inline;"
 			/>
 		</div>
 	</div>
@@ -100,6 +100,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-breaking__button--left {
+	margin-left: 10%;
+	float: left;
+	display: inline;
+}
+
+.pull-request-breaking__button--right {
+	margin-right: 10%;
+	float: right;
+	display: inline;
+}
+
+.pull-request-breaking__selection-container {
+	padding-left: 6%;
+	padding-right: 6%;
+	margin-top: 0.61em;
+}
+
 .pull-request-breaking {
 	&__input {
 		&-container {
