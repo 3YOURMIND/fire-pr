@@ -4,81 +4,99 @@
 			<h1 class="pull-request-testing__heading--first">Testing procedure</h1>
 		</div>
 		<div
-			class="pure-u-1"
-			style="padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550; margin-bottom: 0.61em;"
 			v-if="testCases.length > 0"
+			class="pure-u-1 pull-request-testing__test-cases-container"
 		>
-			<div v-for="(testCase, index) in testCases" :key="index" class="pull-request-testing__test-case-container">
+			<div
+				v-for="(testCase, index) in testCases"
+				:key="index"
+				class="pull-request-testing__test-case-container"
+			>
 				<h2
 					class="pull-request-testing__heading--second"
 					@click="toggleCollapse(index)"
-					style="margin-bottom: 0;"
 				>
 					Case {{ index + 1 }}
 				</h2>
 				<ol
 					v-if="uncollapsed.includes(index)"
 					class="pull-request-testing__test-case-list"
-					style="margin-top: 0; margin-bottom: 0.2em;"
 				>
-					<li class="pull-request-testing__test-case-list-entry" v-for="step in testCase" :key="step" v-text="step" />
+					<li
+						v-for="step in testCase"
+						:key="step"
+						class="pull-request-testing__test-case-list-entry"
+						v-text="step"
+					/>
 				</ol>
 			</div>
 		</div>
-		<div v-else class="pure-u-1" style="padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
-			<p style="margin-top: 0;" v-if="currentSteps.length === 0">You need to add a test instruction</p>
-			<p style="margin-top: 0;" v-else>Now add the test case or add more instructions</p>
+		<div v-else class="pure-u-1 pull-request-testing__test-cases-container">
+			<p
+				v-if="currentSteps.length === 0"
+			>
+				You need to add a test instruction
+			</p>
+			<p
+				v-else
+				class="pull-request-testing__test-cases-container-paragraph"
+			>
+				Now add the test case or add more instructions
+			</p>
 		</div>
 		<div class="pure-u-1">
-			<hr class="pull-request-testing__divider" style="margin: 0; margin-bottom: 0.61em;" />
+			<hr class="pull-request-testing__divider" />
 		</div>
-		<div v-if="currentSteps.length > 0" class="pure-u-1" style="padding-left: 6%; padding-right: 6%; margin: 0; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
-			<ol
-				style="margin: 0; margin-bottom: 0.61em; margin-top: 0; padding-left: 6%;"
-			>
+		<div
+			v-if="currentSteps.length > 0"
+			class="pure-u-1 pull-request-testing__current-steps-container"
+		>
+			<ol class="pull-request-testing__current-steps-list">
 				<li v-for="step in currentSteps" :key="step" v-text="step" />
 			</ol>
 		</div>
-		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%;">
+		<div class="pure-u-1 pull-request-testing__textarea-container">
 			<textarea
 				class="pull-request-testing__input"
 				v-model="testInstruction"
 				placeholder="Test instruction"
 			/>
 		</div>
-		<div class="pure-g" style="width: 100%; padding-left: 6%; padding-right: 6%; margin-top: 0.61em;">
+		<div class="pure-g pull-request-testing__control-button-container">
 			<div class="pure-u-1-2">
-				<div style="padding-right: 10px; width: 100%;">
+				<div class="pull-request-testing__control-button-container--left">
 					<FirePrButton
+						class="pull-request-testing-control-button--left"
 						:disabled="disableAddInstruction"
 						:label="'Add instruction'"
 						@click="addTestStep"
-						style="float: left; display: inline; font-size: 15px; width: 100%;"
+						style="font-size: 15px;"
 					/>
 				</div>
 			</div>
 			<div class="pure-u-1-2">
-				<div style="padding-left: 10px; width: calc(100% - 10px);">
+				<div class="pull-request-testing__control-button-container--right">
 					<FirePrButton
+						class="pull-request-testing-control-button--right"
 						:label="'Add Test Case'"
 						:disabled="disableAddTestStep"
 						@click="addTestCase"
-						style="float: right; display: inline; font-size: 15px; width: 100%;"
+						style="font-size: 15px;"
 					/>
 				</div>
 			</div>
 		</div>
 		<div class="pure-u-1 pull-request-testing__button-container">
 			<FirePrButton
+				class="pull-request-testing__router-button--left"
 				:label="'Back'"
 				@click="$router.back()"
-				style="margin-left: 10%; float: left; display: inline;"
 			/>
 			<FirePrButton
+				class="pull-request-testing__router-button--right"
 				:disabled="disableNext"
 				:label="'Next'"
 				@click="saveTestingOptions"
-				style="margin-right: 10%; float: right; display: inline;"
 			/>
 		</div>
 	</div>
@@ -147,10 +165,88 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-testing__router-button--right {
+	margin-right: 10%;
+	float: right;
+	display: inline;
+}
+
+.pull-request-testing__router-button--left {
+	margin-left: 10%;
+	float: left;
+	display: inline;
+}
+
+.pull-request-testing-control-button--left {
+	float: left;
+	display: inline;
+	font-size: 15px;
+	width: 100%;
+}
+
+.pull-request-testing__control-button-container--left {
+	padding-right: 10px;
+	width: 100%;
+}
+
+.pull-request-testing__control-button-container--right {
+	padding-left: 10px;
+	width: calc(100% - 10px);
+}
+
+.pull-request-testing-control-button--right {
+	float: right;
+	display: inline;
+	width: 100%;
+}
+
+.pull-request-testing__control-button-container {
+	width: 100%;
+	padding-left: 6%;
+	padding-right: 6%;
+	margin-top: 0.61em;
+}
+
+.pull-request-testing__textarea-container {
+	padding-left: 6%;
+	padding-right: 6%;
+}
+
+.pull-request-testing__current-steps-list {
+	margin: 0;
+	margin-bottom: 0.61em;
+	margin-top: 0;
+	padding-left: 6%;
+}
+
+.pull-request-testing__current-steps-container {
+	padding-left: 6%;
+	padding-right: 6%;
+	margin: 0;
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+}
+
+.pull-request-testing__test-cases-container-paragraph {
+	margin-top: 0;
+}
+
+.pull-request-testing__test-cases-container {
+	padding-left: 6%;
+	padding-right: 6%;
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+	margin-bottom: 0.61em;
+}
+
 .pull-request-testing__test-case-list {
 	padding-left: 7%;
 	border-left: 2px solid rgba(88, 111, 124, 0.2);
 	margin-left: 2%;
+	margin-top: 0;
+	margin-bottom: 0.2em;
 }
 
 .pull-request-testing__test-case-list
@@ -162,8 +258,8 @@ export default {
 	font-family: 'Roboto';
 	font-weight: 300;
 	color: #2f4550;
-	margin-top: 0.61em;
 	margin-bottom: 0.61em;
+	margin-bottom: 0;
 }
 
 .pull-request-testing__test-case-container
@@ -178,6 +274,8 @@ export default {
 	border-top: 1px solid rgba(88, 111, 124, 0.5);
 	margin: 1em 0;
 	padding: 0;
+	margin: 0;
+	margin-bottom: 0.61em;
 }
 
 .pull-request-testing__input {
