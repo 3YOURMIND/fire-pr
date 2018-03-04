@@ -136,6 +136,14 @@ export default {
 			return this.testInstruction === '';
 		},
 	},
+	mounted() {
+		if (
+			'testing' in this.$store.state.options &&
+			this.$store.state.options.testing.length > 0
+		) {
+			this.testCases = this.$store.state.options.testing;
+		}
+	},
 	methods: {
 		toggleCollapse(index) {
 			if (this.uncollapsed.includes(index)) {
