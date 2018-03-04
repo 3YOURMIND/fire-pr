@@ -59,21 +59,45 @@ storiesOf('Pull Request Title', module)
 				title: 'fix(types): fix wrong errorCaptured type',
 			},
 			actions: {
-				saveTitle: context => {
-					action('COMMIT TO STORE')(context.state.title);
+				saveTitle: (context, payload) => {
+					action('COMMIT TO STORE')(payload);
 				},
 			},
 		}),
 	}));
 
-storiesOf('Pull Request Type', module).add('initial state', () => ({
-	components: {
-		PullRequestType,
-	},
-	template: `<body style="${DEFAULT_BODY_STYLE}">
+storiesOf('Pull Request Type', module)
+	.addDecorator(StoryRouter())
+	.add('initial state', () => ({
+		components: {
+			PullRequestType,
+		},
+		template: `<body style="${DEFAULT_BODY_STYLE}">
 			<PullRequestType />
 		</body>`,
-}));
+	}))
+	.add('predefined state without description', () => ({
+		components: {
+			PullRequestType,
+		},
+		template: `<body style="${DEFAULT_BODY_STYLE}">
+			<PullRequestType />
+		</body>`,
+		store: new Vuex.Store({
+			state: {
+				options: {
+					change: {
+						bugfix: true,
+					},
+				},
+			},
+			actions: {
+				saveChangeOptions: (context, payload) => {
+					action('COMMIT TO STORE')(payload);
+				},
+			},
+		}),
+	}));
 
 storiesOf('Pull Request Breaking Changes', module).add('initial state', () => ({
 	components: {
