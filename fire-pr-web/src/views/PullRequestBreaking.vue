@@ -52,10 +52,7 @@ export default {
 	},
 	computed: {
 		disableNext() {
-			return (
-				this.breaking === null ||
-				(this.breaking && this.breakingChangeText === '')
-			);
+			return this.breaking && this.breakingChangeText === '';
 		},
 		nextClasses() {
 			return {
@@ -67,9 +64,8 @@ export default {
 	mounted() {
 		const storeOptions = this.$store.state.options;
 		if ('breaking' in storeOptions) {
-			const { breaking, text } = storeOptions.breaking;
-			this.breaking = breaking;
-			this.breakingChangeText = text;
+			this.breaking = storeOptions.breaking.breaking;
+			this.breakingChangeText = storeOptions.breaking.text;
 		}
 	},
 	methods: {

@@ -2,7 +2,7 @@
 	<div class="boolean-radio-button-group__container">
 		<div class="pure-u-1">
 			<RadioButton
-				:checked="!breaking"
+				:checked="!checked"
 				:label="'No'"
 				:name="'radio'"
 				@click="updateBreaking(false)"
@@ -10,7 +10,7 @@
 		</div>
 		<div class="pure-u-1">
 			<RadioButton
-				:checked="breaking"
+				:checked="checked"
 				:label="'Yes'"
 				:name="'radio'"
 				@click="updateBreaking(true)"
