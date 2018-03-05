@@ -154,14 +154,62 @@ storiesOf('Pull Request Breaking Changes', module)
 		}),
 	}));
 
-storiesOf('Pull Request Testing Options', module).add('initial state', () => ({
-	components: {
-		TestingOptions,
-	},
-	template: `<body style="${DEFAULT_BODY_STYLE}">
+storiesOf('Pull Request Testing Options', module)
+	.addDecorator(StoryRouter())
+	.add('initial state', () => ({
+		components: {
+			TestingOptions,
+		},
+		template: `<body style="${DEFAULT_BODY_STYLE}">
 		<TestingOptions />
 	</body>`,
-}));
+	}))
+	.add('one test case - multiple steps', () => ({
+		components: {
+			TestingOptions,
+		},
+		template: `<body style="${DEFAULT_BODY_STYLE}">
+		<TestingOptions />
+	</body>`,
+		store: new Vuex.Store({
+			state: {
+				options: {
+					testing: [['Test Scenario', 'Test Steps', 'Parameters']],
+				},
+			},
+			actions: {
+				saveTestingOptions: (context, payload) => {
+					action('COMMIT TO STORE')(payload);
+				},
+			},
+		}),
+	}))
+	.add('multiple test cases - multiple steps', () => ({
+		components: {
+			TestingOptions,
+		},
+		template: `<body style="${DEFAULT_BODY_STYLE}">
+		<TestingOptions />
+	</body>`,
+		store: new Vuex.Store({
+			state: {
+				options: {
+					testing: [
+						['Test Scenario', 'Test Steps', 'Parameters'],
+						['Test Scenario'],
+						[
+							'Multiline is lorem ipsum hic forum est lorem ipsum hic forum est',
+						],
+					],
+				},
+			},
+			actions: {
+				saveTestingOptions: (context, payload) => {
+					action('COMMIT TO STORE')(payload);
+				},
+			},
+		}),
+	}));
 
 storiesOf('Pull Request Review Options', module).add('initial state', () => ({
 	components: {
