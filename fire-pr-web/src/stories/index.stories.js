@@ -120,14 +120,39 @@ storiesOf('Pull Request Type', module)
 		}),
 	}));
 
-storiesOf('Pull Request Breaking Changes', module).add('initial state', () => ({
-	components: {
-		PullRequestBreaking,
-	},
-	template: `<body style="${DEFAULT_BODY_STYLE}">
+storiesOf('Pull Request Breaking Changes', module)
+	.addDecorator(StoryRouter())
+	.add('initial state', () => ({
+		components: {
+			PullRequestBreaking,
+		},
+		template: `<body style="${DEFAULT_BODY_STYLE}">
 		<PullRequestBreaking />
 	</body>`,
-}));
+	}))
+	.add('predefined state', () => ({
+		components: {
+			PullRequestBreaking,
+		},
+		template: `<body style="${DEFAULT_BODY_STYLE}">
+		<PullRequestBreaking />
+	</body>`,
+		store: new Vuex.Store({
+			state: {
+				options: {
+					breaking: {
+						breaking: true,
+						text: 'New dependency which will break a lot of stuff',
+					},
+				},
+			},
+			actions: {
+				saveBreakingOptions: (context, payload) => {
+					action('COMMIT TO STORE')(payload);
+				},
+			},
+		}),
+	}));
 
 storiesOf('Pull Request Testing Options', module).add('initial state', () => ({
 	components: {
