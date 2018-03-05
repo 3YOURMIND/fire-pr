@@ -6,13 +6,14 @@ import Vuex from 'vuex';
 import StoryRouter from 'storybook-router';
 
 import PullRequestTitle from '../views/PullRequestTitle.vue';
-import TheNoBitbucketSite from '../components/TheNoBitbucketSite.vue';
 import PullRequestType from '../views/PullRequestType.vue';
 import PullRequestBreaking from '../views/PullRequestBreaking.vue';
 import TestingOptions from '../views/TestingOptions.vue';
 import ReviewOptions from '../views/ReviewOptions.vue';
 import OtherInformation from '../views/OtherInformation.vue';
 import Changelog from '../views/Changelog.vue';
+
+import NoBitbucketSiteStories from './NoBitbucketSite.story';
 
 import '../../node_modules/purecss/build/pure.css';
 import '../../node_modules/purecss/build/grids.css';
@@ -23,14 +24,10 @@ Vue.use(Vuex);
 const DEFAULT_BODY_STYLE =
 	'width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;';
 
-storiesOf('No Bitbucket site', module).add('initial state', () => ({
-	components: {
-		TheNoBitbucketSite,
-	},
-	template: `<body style="${DEFAULT_BODY_STYLE}">
-			<TheNoBitbucketSite />
-		</body>`,
-}));
+storiesOf('No Bitbucket site', module).add(
+	'initial state',
+	NoBitbucketSiteStories.initialState,
+);
 
 storiesOf('Pull Request Title', module)
 	.addDecorator(StoryRouter())
