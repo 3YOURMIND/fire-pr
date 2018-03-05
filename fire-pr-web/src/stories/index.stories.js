@@ -94,6 +94,30 @@ storiesOf('Pull Request Type', module)
 				},
 			},
 		}),
+	}))
+	.add('predefined state with description', () => ({
+		components: {
+			PullRequestType,
+		},
+		template: `<body style="${DEFAULT_BODY_STYLE}">
+			<PullRequestType />
+		</body>`,
+		store: new Vuex.Store({
+			state: {
+				options: {
+					change: {
+						bugfix: true,
+						other: true,
+						otherDescription: 'Documentation comment grammar fix',
+					},
+				},
+			},
+			actions: {
+				saveChangeOptions: (context, payload) => {
+					action('COMMIT TO STORE')(payload);
+				},
+			},
+		}),
 	}));
 
 storiesOf('Pull Request Breaking Changes', module).add('initial state', () => ({
