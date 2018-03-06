@@ -84,6 +84,12 @@ export default {
 			};
 		},
 	},
+	mounted() {
+		if ('merge' in this.$store.state.options) {
+			this.options.merger = this.$store.state.options.merge.merger;
+			this.options.mergeTime = this.$store.state.options.merge.mergeTime;
+		}
+	},
 	methods: {
 		updateMerger(merger) {
 			this.options.merger = merger;
