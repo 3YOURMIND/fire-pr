@@ -3,10 +3,10 @@
 		<div class="pure-u-1 pull-request-review__heading-container">
 			<h1 class="pull-request-review__heading--first">Review and Merge</h1>
 		</div>
-		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+		<div class="pure-u-1 pull-request-review__heading-container--second">
 			<h2 class="pull-request-review__heading--second">Who should merge?</h2>
 		</div>
-		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+		<div class="pure-u-1 pull-request-review__merger-container">
 			<label class="control control--radio" @click="updateMerger('last')">
 				<span>Last approver merges</span>
 				<input type="radio" name="merger" :checked="options.merger === 'last'"/>
@@ -18,12 +18,12 @@
 				<div class="control__indicator" />
 			</label>
 		</div>
-		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+		<div class="pure-u-1 pure-u-1 pull-request-review__heading-container--second">
 			<h2 class="pull-request-review__heading--second">
 				When should the merge happen?
 			</h2>
 		</div>
-		<div class="pure-u-1" style="padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+		<div class="pure-u-1 pull-request-review__merge-time-container">
 			<label class="control control--radio" @click="updateMergeTime('half')">
 				<span>Merge after > 51% of the reviewers approved</span>
 				<input type="radio" name="mergeTime" :checked="options.mergeTime === 'half'"/>
@@ -42,15 +42,15 @@
 		</div>
 		<div class="pure-u-1 pull-request-review__button-container">
 			<FirePrButton
+				class="pull-request-type__button--left"
 				:label="'Back'"
 				@click="$router.back()"
-				style="margin-left: 10%; float: left; display: inline;"
 			/>
 			<FirePrButton
+				class="pull-request-type__button--right"
 				:disabled="disableNext"
 				:label="'Next'"
 				@click="saveMergeOptions"
-				style="margin-right: 10%; float: right; display: inline;"
 			/>
 		</div>
 	</div>
@@ -106,6 +106,42 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-type__button--left {
+	margin-left: 10%;
+	float: left;
+	display: inline;
+}
+
+.pull-request-type__button--right {
+	margin-right: 10%;
+	float: right;
+	display: inline;
+}
+
+.pull-request-review__merge-time-container {
+	padding-left: 6%;
+	padding-right: 6%;
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+}
+
+.pull-request-review__merger-container {
+	padding-left: 6%;
+	padding-right: 6%;
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+}
+
+.pull-request-review__heading-container--second {
+	padding-left: 6%;
+	padding-right: 6%;
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+}
+
 .pull-request-review__heading-container {
 	text-align: center;
 }
