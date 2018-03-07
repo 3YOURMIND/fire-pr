@@ -211,14 +211,38 @@ storiesOf('Pull Request Testing Options', module)
 		}),
 	}));
 
-storiesOf('Pull Request Review Options', module).add('initial state', () => ({
-	components: {
-		ReviewOptions,
-	},
-	template: `<body style="${DEFAULT_BODY_STYLE}">
+storiesOf('Pull Request Review Options', module)
+	.add('initial state', () => ({
+		components: {
+			ReviewOptions,
+		},
+		template: `<body style="${DEFAULT_BODY_STYLE}">
 		<ReviewOptions />
 	</body>`,
-}));
+	}))
+	.add('predefined state', () => ({
+		components: {
+			ReviewOptions,
+		},
+		template: `<body style="${DEFAULT_BODY_STYLE}">
+		<ReviewOptions />
+	</body>`,
+		store: new Vuex.Store({
+			state: {
+				options: {
+					merge: {
+						merger: 'last',
+						mergeTime: 'all',
+					},
+				},
+			},
+			actions: {
+				saveMergeOptions: (context, payload) => {
+					action('COMMIT TO STORE')(payload);
+				},
+			},
+		}),
+	}));
 
 storiesOf('Pull Request Other Information', module).add(
 	'initial state',
