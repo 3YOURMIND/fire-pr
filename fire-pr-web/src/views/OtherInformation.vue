@@ -78,6 +78,11 @@ export default {
 			return this.informations.length < 1;
 		},
 	},
+	mounted() {
+		if ('otherInformations' in this.$store.state) {
+			this.informations = this.$store.state.otherInformations;
+		}
+	},
 	methods: {
 		addOtherInformation() {
 			this.informations.push(this.text);
