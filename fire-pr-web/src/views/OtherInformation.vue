@@ -75,7 +75,7 @@ export default {
 	},
 	computed: {
 		noInformationGiven() {
-			return informations.length < 1;
+			return this.informations.length < 1;
 		},
 	},
 	methods: {
