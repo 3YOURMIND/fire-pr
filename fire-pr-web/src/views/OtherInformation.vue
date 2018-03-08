@@ -14,8 +14,8 @@
 				/>
 			</ol>
 		</div>
-		<div class="pure-u-1" style="margin-bottom: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
-			<div v-if="informations.length < 1">No Information given</div>
+		<div v-if="noInformationGiven" class="pure-u-1" style="margin-bottom: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+			<span>No Information given</span>
 		</div>
 		<div class="pure-u-1">
 			<hr />
@@ -72,6 +72,11 @@ export default {
 			informations: [],
 			text: '',
 		};
+	},
+	computed: {
+		noInformationGiven() {
+			return informations.length < 1;
+		},
 	},
 	methods: {
 		addOtherInformation() {
