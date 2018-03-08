@@ -15,12 +15,17 @@
 				v-model="changelogText"
 			/>
 		</div>
-		<div class="pure-u-1 pull-request-changelog__button-container">
+		<div class="pure-u-1" style="position: absolute; bottom: 6%;">
 			<FirePrButton
-				class="pull-request-changelog__button"
-				:label="'Create Pull Request'"
+				:label="'Back'"
+				@click="$router.back()"
+				style="margin-left: 10%; float: left; display: inline;"
+			/>
+			<FirePrButton
 				:disabled="!changelogMessageValid"
+				:label="'Create'"
 				@click="finish"
+				style="margin-right: 10%; float: right; display: inline;"
 			/>
 		</div>
 	</div>
