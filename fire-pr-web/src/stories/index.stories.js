@@ -244,17 +244,36 @@ storiesOf('Pull Request Review Options', module)
 		}),
 	}));
 
-storiesOf('Pull Request Other Information', module).add(
-	'initial state',
-	() => ({
+storiesOf('Pull Request Other Information', module)
+	.add('initial state', () => ({
 		components: {
 			OtherInformation,
 		},
 		template: `<body style="${DEFAULT_BODY_STYLE}">
 		<OtherInformation />
 	</body>`,
-	}),
-);
+	}))
+	.add('predefined state', () => ({
+		components: {
+			OtherInformation,
+		},
+		template: `<body style="${DEFAULT_BODY_STYLE}">
+		<OtherInformation />
+	</body>`,
+		store: new Vuex.Store({
+			state: {
+				otherInformations: [
+					"I'm developing some editor extension which can highlight styles",
+					'I have no idea why the template option is not padded',
+				],
+			},
+			actions: {
+				saveOtherInformations: (context, payload) => {
+					action('COMMIT TO STORE')(payload);
+				},
+			},
+		}),
+	}));
 
 storiesOf('Pull Request Changelog', module).add('initial state', () => ({
 	components: {
@@ -264,5 +283,3 @@ storiesOf('Pull Request Changelog', module).add('initial state', () => ({
 		<Changelog />
 	</body>`,
 }));
-
-// Create pull request
