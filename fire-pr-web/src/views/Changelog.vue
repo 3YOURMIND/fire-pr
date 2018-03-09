@@ -15,17 +15,17 @@
 				v-model="changelogText"
 			/>
 		</div>
-		<div class="pure-u-1" style="position: absolute; bottom: 6%;">
+		<div class="pure-u-1 pull-request-changelog__button-container">
 			<FirePrButton
+				class="pull-request-changelog__button--left"
 				:label="'Back'"
 				@click="goBack"
-				style="margin-left: 10%; float: left; display: inline;"
 			/>
 			<FirePrButton
+				class="pull-request-changelog__button--right"
 				:disabled="!changelogMessageValid"
 				:label="'Create'"
 				@click="finish"
-				style="margin-right: 10%; float: right; display: inline;"
 			/>
 		</div>
 	</div>
@@ -100,6 +100,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-changelog__button--right {
+	margin-right: 10%;
+	float: right;
+	display: inline;
+}
+
+.pull-request-changelog__button--left {
+	margin-left: 10%;
+	float: left;
+	display: inline;
+}
+
 .pull-request-changelog__button {
 	width: calc(100% - 12%);
 }
@@ -138,11 +150,10 @@ export default {
 	position: absolute;
 	bottom: 6%;
 	margin-top: 0.61em;
-	padding-left: 6%;
-	padding-right: 6%;
 	font-family: 'Roboto';
 	font-weight: 300;
 	color: #2f4550;
+	width: 100%;
 }
 
 .changelog__container {
