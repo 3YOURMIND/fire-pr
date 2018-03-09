@@ -18,7 +18,7 @@
 		<div class="pure-u-1" style="position: absolute; bottom: 6%;">
 			<FirePrButton
 				:label="'Back'"
-				@click="$router.back()"
+				@click="goBack"
 				style="margin-left: 10%; float: left; display: inline;"
 			/>
 			<FirePrButton
@@ -58,7 +58,16 @@ export default {
 			return this.changelogText !== '';
 		},
 	},
+	mounted() {
+		if ('changelog' in this.$store.state) {
+			this.changelogText = this.$store.state.changelog.text;
+		}
+	},
 	methods: {
+		goBack() {
+			this.addNote();
+			this.$router.back();
+		},
 		addNote() {
 			this.$store.dispatch('saveChangelog', { text: this.changelogText });
 			this.changelogText = '';
