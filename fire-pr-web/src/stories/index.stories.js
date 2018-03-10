@@ -5,7 +5,6 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import StoryRouter from 'storybook-router';
 
-import PullRequestTitle from '../views/PullRequestTitle.vue';
 import PullRequestType from '../views/PullRequestType.vue';
 import PullRequestBreaking from '../views/PullRequestBreaking.vue';
 import TestingOptions from '../views/TestingOptions.vue';
@@ -14,6 +13,7 @@ import OtherInformation from '../views/OtherInformation.vue';
 import PullRequestChangelog from '../views/PullRequestChangelog.vue';
 
 import NoBitbucketSiteStories from './NoBitbucketSite.story';
+import PullRequestTitleStories from './PullRequestTitle.story';
 
 import '../../node_modules/purecss/build/pure.css';
 import '../../node_modules/purecss/build/grids.css';
@@ -31,37 +31,8 @@ storiesOf('No Bitbucket site', module).add(
 
 storiesOf('Pull Request Title', module)
 	.addDecorator(StoryRouter())
-	.add('blank state', () => ({
-		components: {
-			PullRequestTitle,
-		},
-		store: new Vuex.Store({
-			state: {
-				title: '',
-			},
-		}),
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-		<PullRequestTitle />
-	</body>`,
-	}))
-	.add('predefined state', () => ({
-		components: {
-			PullRequestTitle,
-		},
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-		<PullRequestTitle />
-	</body>`,
-		store: new Vuex.Store({
-			state: {
-				title: 'fix(types): fix wrong errorCaptured type',
-			},
-			actions: {
-				saveTitle: (context, payload) => {
-					action('COMMIT TO STORE')(payload);
-				},
-			},
-		}),
-	}));
+	.add('blank state', PullRequestTitleStories.initialState)
+	.add('predefined state', PullRequestTitleStories.predefinedState);
 
 storiesOf('Pull Request Type', module)
 	.addDecorator(StoryRouter())
