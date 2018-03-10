@@ -11,7 +11,7 @@ import PullRequestBreaking from '../views/PullRequestBreaking.vue';
 import TestingOptions from '../views/TestingOptions.vue';
 import ReviewOptions from '../views/ReviewOptions.vue';
 import OtherInformation from '../views/OtherInformation.vue';
-import Changelog from '../views/Changelog.vue';
+import PullRequestChangelog from '../views/PullRequestChangelog.vue';
 
 import NoBitbucketSiteStories from './NoBitbucketSite.story';
 
@@ -278,18 +278,18 @@ storiesOf('Pull Request Other Information', module)
 storiesOf('Pull Request Changelog', module)
 	.add('initial state', () => ({
 		components: {
-			Changelog,
+			PullRequestChangelog,
 		},
 		template: `<body style="${DEFAULT_BODY_STYLE}">
-		<Changelog />
+		<PullRequestChangelog />
 	</body>`,
 	}))
 	.add('predefined state', () => ({
 		components: {
-			Changelog,
+			PullRequestChangelog,
 		},
 		template: `<body style="${DEFAULT_BODY_STYLE}">
-	<Changelog />
+	<PullRequestChangelog />
 </body>`,
 		store: new Vuex.Store({
 			state: {

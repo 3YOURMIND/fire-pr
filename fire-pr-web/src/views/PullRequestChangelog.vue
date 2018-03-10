@@ -37,7 +37,7 @@ import CreateMarkdown from '../util/create-markdown';
 import FirePrButton from '../components/FirePrButton.vue';
 
 export default {
-	name: 'Changelog',
+	name: 'PullRequestChangelog',
 	components: {
 		FirePrButton,
 	},
