@@ -33,14 +33,12 @@
 </template>
 
 <script>
-import BackButton from '../components/BackButton.vue';
 import FirePrButton from '../components/FirePrButton.vue';
 import BooleanRadioButtonGroup from '../components/BooleanRadioButtonGroup.vue';
 
 export default {
 	name: 'PullRequestBreaking',
 	components: {
-		BackButton,
 		FirePrButton,
 		BooleanRadioButtonGroup,
 	},

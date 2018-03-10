@@ -58,13 +58,11 @@
 </template>
 
 <script>
-import BackButton from '../components/BackButton.vue';
 import FirePrButton from '../components/FirePrButton.vue';
 
 export default {
 	name: 'OtherInformation',
 	components: {
-		BackButton,
 		FirePrButton,
 	},
 	data() {
