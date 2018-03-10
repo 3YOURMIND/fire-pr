@@ -275,11 +275,32 @@ storiesOf('Pull Request Other Information', module)
 		}),
 	}));
 
-storiesOf('Pull Request Changelog', module).add('initial state', () => ({
-	components: {
-		Changelog,
-	},
-	template: `<body style="${DEFAULT_BODY_STYLE}">
+storiesOf('Pull Request Changelog', module)
+	.add('initial state', () => ({
+		components: {
+			Changelog,
+		},
+		template: `<body style="${DEFAULT_BODY_STYLE}">
 		<Changelog />
 	</body>`,
-}));
+	}))
+	.add('predefined state', () => ({
+		components: {
+			Changelog,
+		},
+		template: `<body style="${DEFAULT_BODY_STYLE}">
+	<Changelog />
+</body>`,
+		store: new Vuex.Store({
+			state: {
+				changelog: {
+					text: 'ref: allow ref key to be zero',
+				},
+			},
+			actions: {
+				saveChangelog: (context, payload) => {
+					action('COMMIT TO STORE')(payload);
+				},
+			},
+		}),
+	}));
