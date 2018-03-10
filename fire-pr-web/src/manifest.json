@@ -1,5 +1,11 @@
 {
 	"name": "Fire PR Chrome Extension",
+	"applications": {
+		"gecko": {
+			"id": "{fa781ee3-85ee-4e9f-a21a-3206505dcf81}",
+			"strict_min_version": "42.0"
+		}
+	},
 	"short_name": "Fire PR",
 	"description": "The official fire-pr extension for Chrome",
 	"version": "0.0.5",
