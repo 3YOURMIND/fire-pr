@@ -1,6 +1,12 @@
 export default {
 	UPDATE_TITLE(state, payload) {
 		state.title = payload;
+		chrome.storage.sync.set(
+			{
+				[`title-${state.jiraIssue}`]: payload,
+			},
+			() => {},
+		);
 	},
 	UPDATE_CHANGE_OPTIONS(state, payload) {
 		state.options.change = payload;
