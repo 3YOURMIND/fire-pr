@@ -1,16 +1,9 @@
-const saveTitleToStorage = ({ jiraIssue, title }) => {
-	chrome.storage.sync.set(
-		{
-			[`title-${jiraIssue}`]: title,
-		},
-		() => {},
-	);
-};
+import chromeStorage from './chromeStorage';
 
 export default {
 	UPDATE_TITLE(state, title) {
 		state.title = title;
-		saveTitleToStorage({
+		chromeStorage.saveTitleToStorage({
 			jiraIssue: state.jiraIssue,
 			title,
 		});
