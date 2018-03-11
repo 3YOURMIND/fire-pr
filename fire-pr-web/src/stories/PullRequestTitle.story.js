@@ -16,6 +16,11 @@ const initialState = () => ({
 		state: {
 			title: '',
 		},
+		actions: {
+			saveTitle: (context, payload) => {
+				action('COMMIT TO STORE')(payload);
+			},
+		},
 	}),
 	template: `<body style="${DEFAULT_BODY_STYLE}">
 	<PullRequestTitle />
