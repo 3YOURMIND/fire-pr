@@ -3,7 +3,7 @@ import chromeStorage from './chromeStorage';
 export default {
 	UPDATE_TITLE(state, title) {
 		state.title = title;
-		chromeStorage.saveTitleToStorage({
+		chromeStorage.saveTitle({
 			jiraIssue: state.jiraIssue,
 			title,
 		});

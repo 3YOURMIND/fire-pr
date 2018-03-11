@@ -1,4 +1,4 @@
-const saveTitleToStorage = ({ jiraIssue, title }) => {
+const saveTitle = ({ jiraIssue, title }) => {
 	chrome.storage.sync.set(
 		{
 			[`${jiraIssue}-title`]: title,
@@ -8,5 +8,5 @@ const saveTitleToStorage = ({ jiraIssue, title }) => {
 };
 
 export default {
-	saveTitleToStorage,
+	saveTitle,
 };
