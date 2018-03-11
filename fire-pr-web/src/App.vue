@@ -20,11 +20,6 @@ export default {
 			isLoading: true,
 		};
 	},
-	methods: {
-		updateTitle() {
-			this.$store.dispatch('saveTitle', this.title);
-		},
-	},
 	mounted() {
 		const scriptToExecute = `document.getElementById('id_description').style.height = '500px'`;
 		chrome.tabs.executeScript({
@@ -49,11 +44,16 @@ export default {
 					.slice(0, -1);
 				this.$store.dispatch('saveJiraIssue', jiraIssue);
 				this.bitbucketPullRequestView = true;
-				chrome.storage.sync.get([`title-${jiraIssue}`], data => {
-					console.log(data[`title-${jiraIssue}`]);
+				chrome.storage.sync.get([`${jiraIssue}-title`], data => {
+					console.log(data[`${jiraIssue}-title`]);
 				});
 			},
 		);
+	},
+	methods: {
+		updateTitle() {
+			this.$store.dispatch('saveTitle', this.title);
+		},
 	},
 };
 </script>
