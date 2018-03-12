@@ -61,7 +61,7 @@
 import FirePrButton from '../components/FirePrButton.vue';
 
 export default {
-	name: 'OtherInformation',
+	name: 'PullRequestOtherInformation',
 	components: {
 		FirePrButton,
 	},

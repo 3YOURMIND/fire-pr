@@ -2,7 +2,7 @@ import PullRequestType from '../views/PullRequestType.vue';
 import PullRequestBreaking from '../views/PullRequestBreaking.vue';
 import TestingOptions from '../views/TestingOptions.vue';
 import ReviewOptions from '../views/ReviewOptions.vue';
-import OtherInformation from '../views/OtherInformation.vue';
+import PullRequestOtherInformation from '../views/PullRequestOtherInformation.vue';
 import PullRequestChangelog from '../views/PullRequestChangelog.vue';
 import PullRequestTitle from '../views/PullRequestTitle.vue';
 
@@ -29,7 +29,7 @@ export default [
 	},
 	{
 		path: '/other-information',
-		component: OtherInformation,
+		component: PullRequestOtherInformation,
 	},
 	{
 		path: '/changelog',

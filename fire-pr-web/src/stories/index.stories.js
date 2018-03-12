@@ -9,7 +9,7 @@ import PullRequestType from '../views/PullRequestType.vue';
 import PullRequestBreaking from '../views/PullRequestBreaking.vue';
 import TestingOptions from '../views/TestingOptions.vue';
 import ReviewOptions from '../views/ReviewOptions.vue';
-import OtherInformation from '../views/OtherInformation.vue';
+import PullRequestOtherInformation from '../views/PullRequestOtherInformation.vue';
 import PullRequestChangelog from '../views/PullRequestChangelog.vue';
 
 import NoBitbucketSiteStories from './NoBitbucketSite.story';
@@ -218,18 +218,18 @@ storiesOf('Pull Request Review Options', module)
 storiesOf('Pull Request Other Information', module)
 	.add('initial state', () => ({
 		components: {
-			OtherInformation,
+			PullRequestOtherInformation,
 		},
 		template: `<body style="${DEFAULT_BODY_STYLE}">
-		<OtherInformation />
+		<PullRequestOtherInformation />
 	</body>`,
 	}))
 	.add('predefined state', () => ({
 		components: {
-			OtherInformation,
+			PullRequestOtherInformation,
 		},
 		template: `<body style="${DEFAULT_BODY_STYLE}">
-		<OtherInformation />
+		<PullRequestOtherInformation />
 	</body>`,
 		store: new Vuex.Store({
 			state: {
