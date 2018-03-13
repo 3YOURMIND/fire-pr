@@ -210,9 +210,9 @@
   version "16.0.36"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.36.tgz#ceb5639013bdb92a94147883052e69bb2c22c69b"
 
-"@vue/devtools@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@vue/devtools/-/devtools-1.0.2.tgz#b4031cbc25f4869778ec9ccb581cb67128600ebf"
+"@vue/devtools@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@vue/devtools/-/devtools-1.1.0.tgz#ef15a2fd7a429ad156149927a2b99f6a4db0ef3c"
   dependencies:
     cross-spawn "^5.1.0"
     electron "1.7.11"
