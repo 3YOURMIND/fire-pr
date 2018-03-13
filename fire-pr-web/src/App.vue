@@ -47,6 +47,9 @@ export default {
 				chrome.storage.sync.get([`${jiraIssue}-title`], data => {
 					console.log(data[`${jiraIssue}-title`]);
 				});
+				chrome.storage.sync.get([`${jiraIssue}-change-options`], data => {
+					console.log(data[`${jiraIssue}-change-options`]);
+				});
 			},
 		);
 	},
