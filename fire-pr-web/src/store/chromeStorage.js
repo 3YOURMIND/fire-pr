@@ -22,9 +22,30 @@ const saveTestingOptions = ({ jiraIssue, testingOptions }) => {
 	});
 };
 
+const saveMergeOptions = ({ jiraIssue, mergeOptions }) => {
+	chrome.storage.sync.set({
+		[`${jiraIssue}-merge-options`]: mergeOptions,
+	});
+};
+
+const saveOtherInformations = ({ jiraIssue, otherInformations }) => {
+	chrome.storage.sync.set({
+		[`${jiraIssue}-other-informations`]: otherInformations,
+	});
+};
+
+const saveChangelog = ({ jiraIssue, changelog }) => {
+	chrome.storage.sync.set({
+		[`${jiraIssue}-changelog`]: changelog,
+	});
+};
+
 export default {
 	saveTitle,
 	saveChangeOptions,
 	saveBreakingOptions,
 	saveTestingOptions,
+	saveMergeOptions,
+	saveOtherInformations,
+	saveChangelog,
 };

@@ -31,14 +31,26 @@ export default {
 	},
 	UPDATE_MERGE_OPTIONS(state, payload) {
 		state.options.merge = payload;
+		chromeStorage.saveMergeOptions({
+			jiraIssue: state.jiraIssue,
+			mergeOptions: payload,
+		});
 	},
 	UPDATE_JIRA_ISSUE(state, payload) {
 		state.jiraIssue = payload;
 	},
 	UPDATE_OTHER_INFORMATIONS(state, payload) {
 		state.otherInformations = payload;
+		chromeStorage.saveOtherInformations({
+			jiraIssue: state.jiraIssue,
+			otherInformations: payload,
+		});
 	},
 	UPDATE_CHANGELOG(state, payload) {
 		state.changelog.text = payload.text;
+		chromeStorage.saveChangelog({
+			jiraIssue: state.jiraIssue,
+			changelog: payload,
+		});
 	},
 };
