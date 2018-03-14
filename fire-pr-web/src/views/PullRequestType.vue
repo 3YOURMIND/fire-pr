@@ -100,6 +100,16 @@ export default {
 		const storeOptions = this.$store.state.options.change;
 		if (storeOptions) {
 			this.options = storeOptions;
+		} else {
+			chrome.storage.sync.get(
+				[`${this.$store.state.jiraIssue}-change-options`],
+				data => {
+					if (data[`${this.$store.state.jiraIssue}-change-options`]) {
+						this.options =
+							data[`${this.$store.state.jiraIssue}-change-options`];
+					}
+				},
+			);
 		}
 	},
 	methods: {
