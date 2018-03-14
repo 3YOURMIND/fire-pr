@@ -37,7 +37,16 @@ export default {
 	},
 	mounted() {
 		const storeTitle = this.$store.state.title;
-		if (storeTitle !== '') {
+		if (storeTitle === '') {
+			chrome.storage.sync.get(
+				[`${this.$store.state.jiraIssue}-title`],
+				data => {
+					if (data[`${this.$store.state.jiraIssue}-title`]) {
+						this.title = data[`${this.$store.state.jiraIssue}-title`];
+					}
+				},
+			);
+		} else {
 			this.title = storeTitle;
 		}
 	},

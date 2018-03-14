@@ -44,9 +44,6 @@ export default {
 					.slice(0, -1);
 				this.$store.dispatch('saveJiraIssue', jiraIssue);
 				this.bitbucketPullRequestView = true;
-				chrome.storage.sync.get([`${jiraIssue}-title`], data => {
-					console.log(data[`${jiraIssue}-title`]);
-				});
 				chrome.storage.sync.get([`${jiraIssue}-change-options`], data => {
 					console.log(data[`${jiraIssue}-change-options`]);
 				});
