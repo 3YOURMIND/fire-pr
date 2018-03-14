@@ -1,9 +1,13 @@
 const saveTitle = ({ jiraIssue, title }) => {
-	chrome.storage.sync.set({ [`${jiraIssue}-title`]: title });
+	chrome.storage.sync.set({
+		[`${jiraIssue}-title`]: title,
+	});
 };
 
 const saveChangeOptions = ({ jiraIssue, changeOptions }) => {
-	chrome.storage.sync.set({ [`${jiraIssue}-change-options`]: changeOptions });
+	chrome.storage.sync.set({
+		[`${jiraIssue}-change-options`]: changeOptions,
+	});
 };
 
 const saveBreakingOptions = ({ jiraIssue, breakingOptions }) => {
@@ -12,8 +16,15 @@ const saveBreakingOptions = ({ jiraIssue, breakingOptions }) => {
 	});
 };
 
+const saveTestingOptions = ({ jiraIssue, testingOptions }) => {
+	chrome.storage.sync.set({
+		[`${jiraIssue}-testing-options`]: testingOptions,
+	});
+};
+
 export default {
 	saveTitle,
 	saveChangeOptions,
 	saveBreakingOptions,
+	saveTestingOptions,
 };

@@ -24,6 +24,10 @@ export default {
 	},
 	UPDATE_TESTING_OPTIONS(state, payload) {
 		state.options.testing = payload;
+		chromeStorage.saveTestingOptions({
+			jiraIssue: state.jiraIssue,
+			testingOptions: payload,
+		});
 	},
 	UPDATE_MERGE_OPTIONS(state, payload) {
 		state.options.merge = payload;

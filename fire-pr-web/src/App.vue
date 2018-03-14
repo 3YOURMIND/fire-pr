@@ -53,6 +53,9 @@ export default {
 				chrome.storage.sync.get([`${jiraIssue}-breaking-options`], data => {
 					console.log(data[`${jiraIssue}-breaking-options`]);
 				});
+				chrome.storage.sync.get([`${jiraIssue}-testing-options`], data => {
+					console.log(data[`${jiraIssue}-testing-options`]);
+				});
 			},
 		);
 	},
