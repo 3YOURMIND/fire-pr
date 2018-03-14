@@ -17,6 +17,10 @@ export default {
 	},
 	UPDATE_BREAKING_OPTIONS(state, payload) {
 		state.options.breaking = payload;
+		chromeStorage.saveBreakingOptions({
+			jiraIssue: state.jiraIssue,
+			breakingOptions: payload,
+		});
 	},
 	UPDATE_TESTING_OPTIONS(state, payload) {
 		state.options.testing = payload;

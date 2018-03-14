@@ -50,6 +50,9 @@ export default {
 				chrome.storage.sync.get([`${jiraIssue}-change-options`], data => {
 					console.log(data[`${jiraIssue}-change-options`]);
 				});
+				chrome.storage.sync.get([`${jiraIssue}-breaking-options`], data => {
+					console.log(data[`${jiraIssue}-breaking-options`]);
+				});
 			},
 		);
 	},
