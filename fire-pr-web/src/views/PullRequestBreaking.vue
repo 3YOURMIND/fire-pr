@@ -64,6 +64,19 @@ export default {
 		if ('breaking' in storeOptions) {
 			this.breaking = storeOptions.breaking.breaking;
 			this.breakingChangeText = storeOptions.breaking.text;
+		} else {
+			chrome.storage.sync.get(
+				[`${this.$store.state.jiraIssue}-breaking-options`],
+				data => {
+					if (data[`${this.$store.state.jiraIssue}-breaking-options`]) {
+						const { breaking, text } = data[
+							`${this.$store.state.jiraIssue}-breaking-options`
+						];
+						this.breaking = breaking;
+						this.breakingChangeText = text;
+					}
+				},
+			);
 		}
 	},
 	methods: {
