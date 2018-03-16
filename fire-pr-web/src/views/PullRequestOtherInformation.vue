@@ -5,8 +5,8 @@
 				Other Information
 			</h1>
 		</div>
-		<div class="pure-u-1" style="margin-bottom: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
-			<ol v-if="informations.length > 0" style="padding-left: 6%; margin: 0;">
+		<div class="pure-u-1 pull-request-other-information__list-container">
+			<ol v-if="informations.length > 0" class="pull-request-other-information__list">
 				<li
 					v-for="information in informations"
 					:key="information"
@@ -14,44 +14,42 @@
 				/>
 			</ol>
 		</div>
-		<div v-if="noInformationGiven" class="pure-u-1" style="margin-bottom: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+		<div v-if="noInformationGiven" class="pure-u-1 pull-request-other-information__warning-container">
 			<span>No Information given</span>
 		</div>
 		<div class="pure-u-1">
 			<hr />
 		</div>
-		<div class="pure-u-1" style="margin-top: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+		<div class="pure-u-1 pull-request-other-information__label-container">
 			<label>Other Information Note</label>
 		</div>
-		<div class="pure-u-1" style="margin-top: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
-			<div class="pull-request-other-information__input-container">
-				<input
-					autofocus
-					type="text"
-					name="merger"
-					class="pull-request-other-information__input"
-					v-model="text"
-				/>
-			</div>
+		<div class="pure-u-1 pull-request-other-information__input-container">
+			<input
+				autofocus
+				type="text"
+				name="merger"
+				class="pull-request-other-information__input"
+				v-model="text"
+			/>
 		</div>
-		<div class="pure-u-1" style="margin-top: 0.61em; padding-left: 6%; padding-right: 6%; font-family: 'Roboto'; font-weight: 300; color: #2f4550;">
+		<div class="pure-u-1 pull-request-other-information__add-button-container">
 			<FirePrButton
+				class="pull-request-other-information__add-button"
 				:label="'Add other information'"
 				@click="addOtherInformation"
-				style="width: 100%;"
 			/>
 		</div>
 		<div class="pure-u-1 pull-request-other-information__button-container">
 			<FirePrButton
+				class="pull-request-other-information__button--left"
 				:label="'Back'"
 				@click="$router.back()"
-				style="margin-left: 10%; float: left; display: inline;"
 			/>
 			<FirePrButton
+				class="pull-request-other-information__button--right"
 				:disabled="nextDisabled"
 				:label="'Next'"
 				@click="nextStep"
-				style="margin-right: 10%; float: right; display: inline;"
 			/>
 		</div>
 	</div>
@@ -95,6 +93,63 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pull-request-other-information__button--left {
+	margin-left: 10%;
+	float: left;
+	display: inline;
+}
+
+.pull-request-other-information__button--right {
+	margin-right: 10%;
+	float: right;
+	display: inline;
+}
+
+.pull-request-other-information__add-button {
+	width: 100%;
+}
+
+.pull-request-other-information__add-button-container {
+	margin-top: 0.61em;
+	padding-left: 6%;
+	padding-right: 6%;
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+}
+
+.pull-request-other-information__label-container {
+	margin-top: 0.61em;
+	padding-left: 6%;
+	padding-right: 6%;
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+}
+
+.pull-request-other-information__warning-container {
+	margin-bottom: 0.61em;
+	padding-left: 6%;
+	padding-right: 6%;
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+}
+
+.pull-request-other-information__list {
+	padding-left: 6%;
+	margin: 0;
+}
+
+.pull-request-other-information__list-container {
+	margin-bottom: 0.61em;
+	padding-left: 6%;
+	padding-right: 6%;
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
+}
+
 .pull-request-other-information__heading-container {
 	text-align: center;
 }
@@ -114,6 +169,15 @@ export default {
 
 .other-information__container {
 	font-size: 16px;
+}
+
+.pull-request-other-information__input-container {
+	margin-top: 0.61em;
+	padding-left: 6%;
+	padding-right: 6%;
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #2f4550;
 }
 
 .pull-request-other-information__input {
