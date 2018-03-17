@@ -59,7 +59,17 @@ export default {
 		},
 	},
 	mounted() {
-		if ('changelog' in this.$store.state) {
+		if (this.$store.state.changelog.text === '') {
+			chrome.storage.sync.get(
+				[`${this.$store.state.jiraIssue}-changelog`],
+				data => {
+					if (data[`${this.$store.state.jiraIssue}-changelog`].text !== '') {
+						this.changelogText =
+							data[`${this.$store.state.jiraIssue}-changelog`].text;
+					}
+				},
+			);
+		} else {
 			this.changelogText = this.$store.state.changelog.text;
 		}
 	},
