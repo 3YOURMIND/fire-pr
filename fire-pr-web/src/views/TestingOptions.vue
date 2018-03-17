@@ -136,9 +136,21 @@ export default {
 	},
 	mounted() {
 		if (
-			'testing' in this.$store.state.options &&
-			this.$store.state.options.testing.length > 0
+			!(
+				'testing' in this.$store.state.options &&
+				this.$store.state.options.testing.length > 0
+			)
 		) {
+			chrome.storage.sync.get(
+				[`${this.$store.state.jiraIssue}-testing-options`],
+				data => {
+					if (data[`${this.$store.state.jiraIssue}-testing-options`]) {
+						this.testCases =
+							data[`${this.$store.state.jiraIssue}-testing-options`];
+					}
+				},
+			);
+		} else {
 			this.testCases = this.$store.state.options.testing;
 		}
 	},
