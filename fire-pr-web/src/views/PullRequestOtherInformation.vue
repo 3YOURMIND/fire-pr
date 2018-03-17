@@ -47,7 +47,6 @@
 			/>
 			<FirePrButton
 				class="pull-request-other-information__button--right"
-				:disabled="nextDisabled"
 				:label="'Next'"
 				@click="nextStep"
 			/>
@@ -75,7 +74,17 @@ export default {
 		},
 	},
 	mounted() {
-		if ('otherInformations' in this.$store.state) {
+		if (this.$store.state.otherInformations.length === 0) {
+			chrome.storage.sync.get(
+				[`${this.$store.state.jiraIssue}-other-informations`],
+				data => {
+					if (data[`${this.$store.state.jiraIssue}-other-informations`]) {
+						this.informations =
+							data[`${this.$store.state.jiraIssue}-other-informations`];
+					}
+				},
+			);
+		} else {
 			this.informations = this.$store.state.otherInformations;
 		}
 	},
