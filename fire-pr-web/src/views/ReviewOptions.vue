@@ -83,7 +83,19 @@ export default {
 		},
 	},
 	mounted() {
-		if ('merge' in this.$store.state.options) {
+		if (!('merge' in this.$store.state.options)) {
+			chrome.storage.sync.get(
+				[`${this.$store.state.jiraIssue}-merge-options`],
+				data => {
+					if (data[`${this.$store.state.jiraIssue}-merge-options`]) {
+						this.options.merger =
+							data[`${this.$store.state.jiraIssue}-merge-options`].merger;
+						this.options.mergeTime =
+							data[`${this.$store.state.jiraIssue}-merge-options`].mergeTime;
+					}
+				},
+			);
+		} else {
 			this.options.merger = this.$store.state.options.merge.merger;
 			this.options.mergeTime = this.$store.state.options.merge.mergeTime;
 		}
