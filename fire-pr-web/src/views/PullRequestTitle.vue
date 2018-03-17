@@ -60,10 +60,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-::selection {
-	background: #b8dbd9;
-}
-
 .pull-request-title {
 	&__container {
 		font-size: 16px;
@@ -71,50 +67,53 @@ export default {
 
 	&__heading {
 		&-container {
-			text-align: center;
+			font-family: 'Roboto';
 			margin-top: 35%;
+			text-align: center;
 		}
 
 		&--first {
-			font-family: 'Roboto';
-			font-weight: 300;
 			color: #2f4550;
-			margin-top: 0.61em;
+			font-weight: 300;
 			margin-bottom: 0.61em;
+			margin-top: 0.61em;
 		}
 	}
 
 	&__input {
-		&-container {
-			text-align: center;
-			margin-top: 1.61em;
-		}
-
 		background-color: #f4f4f9;
-		border: 0;
 		border: 1px solid rgba(88, 111, 124, 0.5);
+		border-radius: 5px;
 		color: #586f7c;
 		font-family: 'Roboto';
-		font-weight: 300;
-		border-radius: 5px;
 		font-size: 2em;
+		font-weight: 300;
 		height: 1.61em;
-		width: 80%;
-		padding-left: 12px;
-		padding-right: 12px;
+		padding-left: 0.375em;
+		padding-right: 0.375em;
 		transition: all 0.2s ease;
+		width: 80%;
+
+		&::selection {
+			background: #b8dbd9;
+		}
 
 		&:focus {
-			outline: none;
 			box-shadow: 0 0 3px #b8dbd9;
+			outline: none;
 			transition: all 0.2s ease;
+		}
+
+		&-container {
+			margin-top: 1.61em;
+			text-align: center;
 		}
 	}
 
 	&__button-container {
-		text-align: center;
-		position: absolute;
 		bottom: 6%;
+		position: absolute;
+		text-align: center;
 	}
 }
 </style>
