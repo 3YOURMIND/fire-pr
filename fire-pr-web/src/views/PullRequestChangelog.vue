@@ -15,31 +15,26 @@
 				v-model="changelogText"
 			/>
 		</div>
-		<div class="pure-u-1 pull-request-changelog__button-container">
-			<FirePrButton
-				class="pull-request-changelog__button--left"
-				:label="'Back'"
-				@click="goBack"
-			/>
-			<FirePrButton
-				class="pull-request-changelog__button--right"
-				:disabled="!changelogMessageValid"
-				:label="'Create'"
-				@click="finish"
-			/>
-		</div>
+		<NavigationButtonBar
+			:leftLabel="'Back'"
+			:rightLabel="'Create'"
+			:rightDisabled="!changelogMessageValid"
+			@leftClick="goBack"
+			@rightClick="finish"
+		/>
 	</div>
 </template>
 
 <script>
+import NavigationButtonBar from '../components/NavigationButtonBar.vue';
+
 import PrTitleUtility from '../util/pr-title';
 import CreateMarkdown from '../util/create-markdown';
-import FirePrButton from '../components/FirePrButton.vue';
 
 export default {
 	name: 'PullRequestChangelog',
 	components: {
-		FirePrButton,
+		NavigationButtonBar,
 	},
 	data() {
 		return {
@@ -110,22 +105,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pull-request-changelog__button--right {
-	margin-right: 10%;
-	float: right;
-	display: inline;
-}
-
-.pull-request-changelog__button--left {
-	margin-left: 10%;
-	float: left;
-	display: inline;
-}
-
-.pull-request-changelog__button {
-	width: calc(100% - 12%);
-}
-
 .pull-request-changelog__label-container {
 	margin-top: 0.61em;
 	padding-left: 6%;
@@ -154,16 +133,6 @@ export default {
 	color: #2f4550;
 	margin-top: 0.61em;
 	margin-bottom: 0.61em;
-}
-
-.pull-request-changelog__button-container {
-	position: absolute;
-	bottom: 6%;
-	margin-top: 0.61em;
-	font-family: 'Roboto';
-	font-weight: 300;
-	color: #2f4550;
-	width: 100%;
 }
 
 .changelog__container {
