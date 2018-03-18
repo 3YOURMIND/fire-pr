@@ -16,31 +16,25 @@
 				</div>
 			</div>
 		</div>
-		<div class="pure-u-1 pull-request-breaking__button-container">
-			<FirePrButton
-				class="pull-request-breaking__button--left"
-				:label="'Back'"
-				@click="$router.back()"
-			/>
-			<FirePrButton
-				class="pull-request-breaking__button--right"
-				:disabled="disableNext"
-				:label="'Next'"
-				@click="saveBreakingOptions"
-			/>
-		</div>
+		<NavigationButtonBar
+			:leftLabel="'Back'"
+			:rightLabel="'Next'"
+			:rightDisabled="disableNext"
+			@leftClick="$router.back()"
+			@rightClick="saveBreakingOptions"
+		/>
 	</div>
 </template>
 
 <script>
-import FirePrButton from '../components/FirePrButton.vue';
 import BooleanRadioButtonGroup from '../components/BooleanRadioButtonGroup.vue';
+import NavigationButtonBar from '../components/NavigationButtonBar.vue';
 
 export default {
 	name: 'PullRequestBreaking',
 	components: {
-		FirePrButton,
 		BooleanRadioButtonGroup,
+		NavigationButtonBar,
 	},
 	data() {
 		return {
@@ -95,18 +89,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pull-request-breaking__button--left {
-	margin-left: 10%;
-	float: left;
-	display: inline;
-}
-
-.pull-request-breaking__button--right {
-	margin-right: 10%;
-	float: right;
-	display: inline;
-}
-
 .pull-request-breaking__selection-container {
 	padding-left: 6%;
 	padding-right: 6%;
@@ -156,10 +138,5 @@ export default {
 
 .pull-request-breaking__container {
 	font-size: 16px;
-}
-
-.pull-request-breaking__button-container {
-	position: absolute;
-	bottom: 6%;
 }
 </style>
