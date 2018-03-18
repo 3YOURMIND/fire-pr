@@ -40,28 +40,22 @@
 				<div class="control__indicator" />
 			</label>
 		</div>
-		<div class="pure-u-1 pull-request-review__button-container">
-			<FirePrButton
-				class="pull-request-type__button--left"
-				:label="'Back'"
-				@click="$router.back()"
-			/>
-			<FirePrButton
-				class="pull-request-type__button--right"
-				:disabled="disableNext"
-				:label="'Next'"
-				@click="saveMergeOptions"
-			/>
-		</div>
+		<NavigationButtonBar
+			:leftLabel="'Back'"
+			:rightLabel="'Next'"
+			:rightDisabled="disableNext"
+			@leftClick="$router.back()"
+			@rightClick="saveMergeOptions"
+		/>
 	</div>
 </template>
 
 <script>
-import FirePrButton from '../components/FirePrButton.vue';
+import NavigationButtonBar from '../components/NavigationButtonBar.vue';
 
 export default {
 	components: {
-		FirePrButton,
+		NavigationButtonBar,
 	},
 	data() {
 		return {
