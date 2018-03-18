@@ -35,6 +35,8 @@ export default {
 	padding: 0.4em 0.8em;
 	border-radius: 5px;
 	transition: all 0.2s ease;
+	font-family: 'Roboto';
+	font-weight: 300;
 
 	&:active {
 		box-shadow: 0 0 3px #b8dbd9;
