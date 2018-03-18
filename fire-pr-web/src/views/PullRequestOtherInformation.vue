@@ -39,28 +39,24 @@
 				@click="addOtherInformation"
 			/>
 		</div>
-		<div class="pure-u-1 pull-request-other-information__button-container">
-			<FirePrButton
-				class="pull-request-other-information__button--left"
-				:label="'Back'"
-				@click="$router.back()"
-			/>
-			<FirePrButton
-				class="pull-request-other-information__button--right"
-				:label="'Next'"
-				@click="nextStep"
-			/>
-		</div>
+		<NavigationButtonBar
+			:leftLabel="'Back'"
+			:rightLabel="'Next'"
+			@leftClick="$router.back()"
+			@rightClick="nextStep"
+		/>
 	</div>
 </template>
 
 <script>
 import FirePrButton from '../components/FirePrButton.vue';
+import NavigationButtonBar from '../components/NavigationButtonBar.vue';
 
 export default {
 	name: 'PullRequestOtherInformation',
 	components: {
 		FirePrButton,
+		NavigationButtonBar,
 	},
 	data() {
 		return {
@@ -102,18 +98,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pull-request-other-information__button--left {
-	margin-left: 10%;
-	float: left;
-	display: inline;
-}
-
-.pull-request-other-information__button--right {
-	margin-right: 10%;
-	float: right;
-	display: inline;
-}
-
 .pull-request-other-information__add-button {
 	width: 100%;
 }
@@ -169,11 +153,6 @@ export default {
 	color: #2f4550;
 	margin-top: 0.61em;
 	margin-bottom: 0.61em;
-}
-
-.pull-request-other-information__button-container {
-	position: absolute;
-	bottom: 6%;
 }
 
 .other-information__container {
