@@ -40,31 +40,25 @@
 				</div>
 			</div>
 		</div>
-		<div class="pure-u-1 pull-request-type__button-container">
-			<FirePrButton
-				class="pull-request-type__button--left"
-				:label="'Back'"
-				@click="handleBackButtonClick"
-			/>
-			<FirePrButton
-				class="pull-request-type__button--right"
-				:disabled="buttonEnabled"
-				:label="'Next'"
-				@click="saveChangeOptions"
-			/>
-		</div>
+		<NavigationButtonBar
+			:leftLabel="'Back'"
+			:rightLabel="'Next'"
+			:rightDisabled="buttonEnabled"
+			@leftClick="handleBackButtonClick"
+			@rightClick="saveChangeOptions"
+		/>
 	</div>
 </template>
 
 <script>
 import FirePrCheckbox from '../components/FirePrCheckbox.vue';
-import FirePrButton from '../components/FirePrButton.vue';
+import NavigationButtonBar from '../components/NavigationButtonBar.vue';
 
 export default {
 	name: 'PullRequestType',
 	components: {
 		FirePrCheckbox,
-		FirePrButton,
+		NavigationButtonBar,
 	},
 	data() {
 		return {
@@ -125,17 +119,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pull-request-type__button--left {
-	margin-left: 10%;
-	display: inline;
-}
-
-.pull-request-type__button--right {
-	margin-right: 10%;
-	float: right;
-	display: inline;
-}
-
 .pull-request-type__selection-container {
 	padding-left: 6%;
 	padding-right: 6%;
@@ -183,36 +166,6 @@ export default {
 		padding-bottom: calc(0.61em / 2);
 
 		&:focus {
-			outline: none;
-			box-shadow: 0 0 3px #b8dbd9;
-		}
-	}
-
-	&__button {
-		&-container {
-			position: absolute;
-			bottom: 6%;
-		}
-
-		border: 0;
-		background: none;
-		color: #586f7c;
-		font-size: 20px;
-		border: 1px solid rgba(88, 111, 124, 0.5);
-		padding: 0.4em 0.8em;
-		border-radius: 5px;
-
-		&:active {
-			box-shadow: 0 0 3px #b8dbd9;
-			outline: none;
-		}
-
-		&:focus {
-			box-shadow: 0 0 3px #b8dbd9;
-			outline: none;
-		}
-
-		&:target {
 			outline: none;
 			box-shadow: 0 0 3px #b8dbd9;
 		}
