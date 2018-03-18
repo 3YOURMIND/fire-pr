@@ -1,13 +1,13 @@
 <template>
-	<div class="pure-u-1 pull-request-type__button-container">
+	<div class="pure-u-1 navigation-button-bar__container">
 		<FirePrButton
-			class="pull-request-type__button--left"
+			class="navigation-button-bar__button--left"
 			:label="leftLabel"
 			:disabled="leftDisabled"
 			@click="onLeftButtonClick"
 		/>
 		<FirePrButton
-			class="pull-request-type__button--right"
+			class="navigation-button-bar__button--right"
 			:disabled="rightDisabled"
 			:label="rightLabel"
 			@click="onRightButtonClick"
@@ -47,19 +47,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pull-request-type__button-container {
-	position: absolute;
-	bottom: 6%;
-}
+.navigation-button-bar {
+	&__container {
+		position: absolute;
+		bottom: 6%;
+	}
 
-.pull-request-type__button--left {
-	margin-left: 10%;
-	display: inline;
-}
+	&__button--left {
+		margin-left: 10%;
+		display: inline;
+	}
 
-.pull-request-type__button--right {
-	margin-right: 10%;
-	float: right;
-	display: inline;
+	&__button--right {
+		margin-right: 10%;
+		float: right;
+		display: inline;
+	}
 }
 </style>
