@@ -20,7 +20,7 @@
 			:leftLabel="'Back'"
 			:rightLabel="'Next'"
 			:rightDisabled="disableNext"
-			@leftClick="$router.back()"
+			@leftClick="onBackClick"
 			@rightClick="saveBreakingOptions"
 		/>
 	</div>
@@ -54,26 +54,36 @@ export default {
 		},
 	},
 	mounted() {
-		const storeOptions = this.$store.state.options;
-		if ('breaking' in storeOptions) {
-			this.breaking = storeOptions.breaking.breaking;
-			this.breakingChangeText = storeOptions.breaking.text;
-		} else {
-			chrome.storage.sync.get(
-				[`${this.$store.state.jiraIssue}-breaking-options`],
-				data => {
-					if (data[`${this.$store.state.jiraIssue}-breaking-options`]) {
-						const { breaking, text } = data[
-							`${this.$store.state.jiraIssue}-breaking-options`
-						];
-						this.breaking = breaking;
-						this.breakingChangeText = text;
-					}
-				},
-			);
-		}
+		this.tryLoadingCachedData();
 	},
 	methods: {
+		tryLoadingCachedData() {
+			const storeOptions = this.$store.state.options;
+			const vuexStateGiven = 'breaking' in storeOptions;
+			if (vuexStateGiven) {
+				this.updateStateByStoreOptions(storeOptions.breaking);
+			} else {
+				this.updateStateByExtensionStorage();
+			}
+		},
+		updateStateByStoreOptions({ breaking, text }) {
+			this.breaking = breaking;
+			this.breakingChangeText = text;
+		},
+		updateStateByExtensionStorage() {
+			const breakingOptionsKey = `${
+				this.$store.state.jiraIssue
+			}-breaking-options`;
+			chrome.storage.sync.get(breakingOptionsKey, data => {
+				const breakingOptions = data[breakingOptionsKey];
+				if (breakingOptions) {
+					this.updateStateByStoreOptions(breakingOptions);
+				}
+			});
+		},
+		onBackClick() {
+			this.$router.back();
+		},
 		updateBreaking(breaking) {
 			this.breaking = breaking;
 		},
