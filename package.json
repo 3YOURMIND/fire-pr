@@ -3,6 +3,9 @@
 	"version": "0.0.6",
 	"description": "The official fire-pr extension for Chrome",
 	"author": "James <jo@3yourmind.com>",
+	"main": "./fire-pr-core/dist/fire-pr-core.cjs.js",
+	"module": "./fire-pr-core/dist/fire-pr-core.esm.js",
+	"browser": "./fire-pr-core/dist/fire-pr-core.js",
 	"scripts": {
 		"build":
 			"cross-env NODE_ENV=production webpack --config ./fire-pr-web/webpack.config.js --progress --hide-modules",
@@ -13,7 +16,10 @@
 		"watch:dev": "npm run build:dev -- --watch",
 		"precommit": "lint-staged",
 		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook"
+		"build-storybook": "build-storybook",
+		"core:run-example": "node ./fire-pr-core/example.js",
+		"test": "jest",
+		"core:build": "rollup -c ./rollup.config.js"
 	},
 	"lint-staged": {
 		"*.{js,json,css,md,vue}": ["prettier --write", "git add"]
@@ -31,7 +37,9 @@
 		"@storybook/vue": "^3.3.15",
 		"@vue/devtools": "^1.1.0",
 		"babel-core": "^6.26.0",
+		"babel-jest": "^23.0.0-alpha.0",
 		"babel-loader": "^7.1.4",
+		"babel-preset-env": "^1.6.1",
 		"babel-preset-latest": "^6.24.1",
 		"babel-preset-vue": "^2.0.1",
 		"copy-webpack-plugin": "^4.5.1",
@@ -43,9 +51,12 @@
 		"extract-text-webpack-plugin": "^3.0.2",
 		"file-loader": "^1.1.11",
 		"husky": "^0.14.3",
+		"jest": "^22.4.2",
 		"lint-staged": "^7.0.0",
 		"node-sass": "^4.7.2",
 		"prettier": "1.11.1",
+		"rollup": "^0.57.1",
+		"rollup-plugin-uglify": "^3.0.0",
 		"sass-loader": "^6.0.7",
 		"storybook-router": "^0.3.3",
 		"vue-loader": "^14.2.1",
