@@ -62,8 +62,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../node_modules/purecss/build/pure.css';
-@import '../node_modules/purecss/build/grids.css';
+@import '../../node_modules/purecss/build/pure.css';
+@import '../../node_modules/purecss/build/grids.css';
 @import './assets/css/fonts.css';
 
 h4 {

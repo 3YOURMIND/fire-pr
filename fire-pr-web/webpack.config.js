@@ -77,7 +77,7 @@ const config = {
 			{ from: 'manifest.json', to: 'manifest.json' },
 		]),
 		new WebpackShellPlugin({
-			onBuildEnd: ['node scripts/remove-evals.js'],
+			onBuildEnd: ['node ./fire-pr-web/scripts/remove-evals.js'],
 		}),
 	],
 };

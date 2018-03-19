@@ -5,10 +5,10 @@
 	"author": "James <jo@3yourmind.com>",
 	"scripts": {
 		"build":
-			"cross-env NODE_ENV=production webpack --config webpack.config.js --progress --hide-modules",
+			"cross-env NODE_ENV=production webpack --config ./fire-pr-web/webpack.config.js --progress --hide-modules",
 		"build:dev":
-			"cross-env NODE_ENV=development webpack --config webpack.config.js --progress --hide-modules",
-		"build-zip": "node scripts/build-zip.js",
+			"cross-env NODE_ENV=development webpack --config ./fire-pr-web/webpack.config.js --progress --hide-modules",
+		"build-zip": "node ./fire-pr-web/scripts/build-zip.js",
 		"watch": "npm run build -- --watch",
 		"watch:dev": "npm run build:dev -- --watch",
 		"precommit": "lint-staged",

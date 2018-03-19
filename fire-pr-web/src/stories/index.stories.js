@@ -15,8 +15,8 @@ import PullRequestChangelog from '../views/PullRequestChangelog.vue';
 import NoBitbucketSiteStories from './NoBitbucketSite.story';
 import PullRequestTitleStories from './PullRequestTitle.story';
 
-import '../../node_modules/purecss/build/pure.css';
-import '../../node_modules/purecss/build/grids.css';
+import '../../../node_modules/purecss/build/pure.css';
+import '../../../node_modules/purecss/build/grids.css';
 import '../assets/css/fonts.css';
 
 Vue.use(Vuex);
