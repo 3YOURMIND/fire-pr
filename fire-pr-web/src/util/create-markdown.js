@@ -1,9 +1,9 @@
-import PrTypeUtility from './pr-type';
-import PrBreakingUtility from './pr-breaking';
-import PrTestingUtility from './pr-testing';
-import PrMergerUtility from './pr-merger';
-import PrOtherInformationUtility from './pr-other-information';
-import PrChangelogUtility from './pr-changelog';
+import PrTypeUtility from '../../../fire-pr-core/pr-type';
+import PrBreakingUtility from '../../../fire-pr-core/pr-breaking';
+import PrTestingUtility from '../../../fire-pr-core/pr-testing-procedure';
+import PrMergerUtility from '../../../fire-pr-core/pr-merger';
+import PrOtherInformationUtility from '../../../fire-pr-core/pr-other-information';
+import PrChangelogUtility from '../../../fire-pr-core/pr-changelog';
 
 const createTypeMarkdown = state => {
 	const options = state.options.change;

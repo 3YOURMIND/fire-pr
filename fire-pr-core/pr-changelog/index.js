@@ -1,57 +1,54 @@
-const validatePayload = (payload) => {
-  if (!payload.note) {
-    return new Error('A note must be provided');
-  }
-  const payloadNote = payload.note;
-  if (!('description' in payloadNote)) {
-    return new Error('A description for the changelog note must be provided.');
-  }
-  if (!('issueNumber' in payloadNote)) {
-    return new Error(
-      'A issue number must be provided to create the changelog note.',
-    );
-  }
-  if (!('projectAbbreviation' in payloadNote)) {
-    return new Error(
-      'A project abbreviation must be provided to create the changelog note.',
-    );
-  }
-  if (!('baseUrl' in payloadNote)) {
-    return new Error('A base url nmust be provided to create the changelog.');
-  }
-  return true;
+const validatePayload = payload => {
+	if (!payload.note) {
+		return new Error('A note must be provided');
+	}
+	const payloadNote = payload.note;
+	if (!('description' in payloadNote)) {
+		return new Error('A description for the changelog note must be provided.');
+	}
+	if (!('issueNumber' in payloadNote)) {
+		return new Error(
+			'A issue number must be provided to create the changelog note.',
+		);
+	}
+	if (!('projectAbbreviation' in payloadNote)) {
+		return new Error(
+			'A project abbreviation must be provided to create the changelog note.',
+		);
+	}
+	return true;
 };
 
-const renderMarkdown = (changelogPayload) => {
-  const validationResponse = validatePayload(changelogPayload);
-  if (validationResponse instanceof Error) {
-    return validationResponse;
-  }
-  const headline = '## Changelog ##\n\n';
+const renderMarkdown = changelogPayload => {
+	const validationResponse = validatePayload(changelogPayload);
+	if (validationResponse instanceof Error) {
+		return validationResponse;
+	}
+	const headline = '## Changelog ##\n\n';
 
-  const note = `### Note ###
+	const note = `**Note**
 
 - ${changelogPayload.note.description}, closes [#${
-    changelogPayload.note.issueNumber
-  }](${changelogPayload.note.baseUrl}/browse/${
-    changelogPayload.note.projectAbbreviation
-  }-${changelogPayload.note.issueNumber})`;
-  let pictures = '';
-  if (changelogPayload.pictures && changelogPayload.pictures.length > 0) {
-    const mappedPictureList = changelogPayload.pictures.map((picture) => {
-      return `- ![](${picture})`;
-    }).join(`
+		changelogPayload.note.issueNumber
+	}](${changelogPayload.note.baseUrl}/browse/${
+		changelogPayload.note.projectAbbreviation
+	}-${changelogPayload.note.issueNumber})`;
+	let pictures = '';
+	if (changelogPayload.pictures && changelogPayload.pictures.length > 0) {
+		const mappedPictureList = changelogPayload.pictures.map(picture => {
+			return `- ![](${picture})`;
+		}).join(`
 `);
-    pictures = `
+		pictures = `
 
-### Pictures ###
+**Pictures**
 
 ${mappedPictureList}`;
-  }
+	}
 
-  return `${headline}${note}${pictures}`;
+	return `${headline}${note}${pictures}`;
 };
 
 export default {
-  renderMarkdown,
+	renderMarkdown,
 };
