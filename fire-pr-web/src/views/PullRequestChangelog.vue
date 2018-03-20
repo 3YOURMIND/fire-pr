@@ -28,7 +28,7 @@
 <script>
 import NavigationButtonBar from '../components/NavigationButtonBar.vue';
 
-import PrTitleUtility from '../util/pr-title';
+import PrTitleUtility from '../../../fire-pr-core/pr-title/index';
 import CreateMarkdown from '../util/create-markdown';
 
 export default {
