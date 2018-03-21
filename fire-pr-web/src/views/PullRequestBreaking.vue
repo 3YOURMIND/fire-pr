@@ -59,12 +59,9 @@ export default {
 	methods: {
 		tryLoadingCachedData() {
 			const storeOptions = this.$store.state.options;
-			const vuexStateGiven = 'breaking' in storeOptions;
-			if (vuexStateGiven) {
-				this.updateStateByStoreOptions(storeOptions.breaking);
-			} else {
-				this.updateStateByExtensionStorage();
-			}
+			'breaking' in storeOptions
+				? this.updateStateByStoreOptions(storeOptions.breaking)
+				: this.updateStateByExtensionStorage();
 		},
 		updateStateByStoreOptions({ breaking, text }) {
 			this.breaking = breaking;
