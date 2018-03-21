@@ -84,9 +84,6 @@ export default {
 		onBackClick() {
 			this.$router.back();
 		},
-		updateBreaking(breaking) {
-			this.breaking = breaking;
-		},
 		saveBreakingOptions() {
 			this.$store.dispatch('saveBreakingOptions', {
 				breaking: this.breaking,
