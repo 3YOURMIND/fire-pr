@@ -1,4 +1,4 @@
-<img src="./docs/readme-banner.svg" />
+<img src="./docs/readme-banner.png" />
 
 For more details go to.
 
