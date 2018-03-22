@@ -1,10 +1,6 @@
-# fire-pr
+<img src="./docs/readme-banner.svg" />
 
-> A project to make it easier to create consistent pull requests in organizations which are working with the Atlassian stack (JIRA, Bitbucket)
-
-## Intro
-
-Lorem ipsum.
+For more details go to.
 
 ## Architecture
 
