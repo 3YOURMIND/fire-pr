@@ -1,5 +1,11 @@
 <img src="./docs/readme-banner.png" />
 
+<a href="https://chrome.google.com/webstore/detail/fire-pr-chrome-extension/mcpcdbmbifcjeeedncbcajkljmdjdgoh"><img src="https://img.shields.io/badge/download-chrome-3cba54.svg" /></a>
+<a href="https://addons.mozilla.org/de/firefox/addon/fire-pr/"><img src="https://img.shields.io/badge/download-firefox-ff9400.svg" /></a>
+<a href="./LICENSE"><img src="https://img.shields.io/github/license/3yourmind/fire-pr.svg" /></a>
+<a href="https://github.com/3YOURMIND/fire-pr/pulls"><img src="https://img.shields.io/badge/PR-welcome-green.svg" /></a>
+<a href="https://www.3yourmind.com/career"><img src="https://img.shields.io/badge/3YOURMIND-Hiring-brightgreen.svg" /></a>
+
 For more details go to.
 
 ## Architecture
