@@ -14,6 +14,7 @@ import PullRequestChangelog from '../views/PullRequestChangelog.vue';
 
 import NoBitbucketSiteStories from './NoBitbucketSite.story';
 import PullRequestTitleStories from './PullRequestTitle.story';
+import PullRequestTypeStories from './PullRequestType.story';
 
 import '../../../node_modules/purecss/build/pure.css';
 import '../../../node_modules/purecss/build/grids.css';
@@ -36,60 +37,15 @@ storiesOf('Pull Request Title', module)
 
 storiesOf('Pull Request Type', module)
 	.addDecorator(StoryRouter())
-	.add('initial state', () => ({
-		components: {
-			PullRequestType,
-		},
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-			<PullRequestType />
-		</body>`,
-	}))
-	.add('predefined state without description', () => ({
-		components: {
-			PullRequestType,
-		},
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-			<PullRequestType />
-		</body>`,
-		store: new Vuex.Store({
-			state: {
-				options: {
-					change: {
-						bugfix: true,
-					},
-				},
-			},
-			actions: {
-				saveChangeOptions: (context, payload) => {
-					action('COMMIT TO STORE')(payload);
-				},
-			},
-		}),
-	}))
-	.add('predefined state with description', () => ({
-		components: {
-			PullRequestType,
-		},
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-			<PullRequestType />
-		</body>`,
-		store: new Vuex.Store({
-			state: {
-				options: {
-					change: {
-						bugfix: true,
-						other: true,
-						otherDescription: 'Documentation comment grammar fix',
-					},
-				},
-			},
-			actions: {
-				saveChangeOptions: (context, payload) => {
-					action('COMMIT TO STORE')(payload);
-				},
-			},
-		}),
-	}));
+	.add('initial state', PullRequestTypeStories.initialState)
+	.add(
+		'predefined state without description',
+		PullRequestTypeStories.predefinedStateWithoutDescription,
+	)
+	.add(
+		'predefined state with description',
+		PullRequestTypeStories.predefinedStateWitDescription,
+	);
 
 storiesOf('Pull Request Breaking Changes', module)
 	.addDecorator(StoryRouter())
