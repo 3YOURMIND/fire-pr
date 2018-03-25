@@ -29,7 +29,11 @@ module.exports = {
 	/*
   ** Global CSS
   */
-	css: [],
+	css: [
+		'purecss/build/base-min.css',
+		'purecss/build/grids-min.css',
+		'purecss/build/grids-responsive-min.css',
+	],
 
 	/*
   ** Plugins to load before mounting the App
