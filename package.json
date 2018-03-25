@@ -19,12 +19,17 @@
 		"build-storybook": "build-storybook",
 		"core:run-example": "node ./fire-pr-core/example.js",
 		"test": "jest",
-		"core:build": "rollup -c ./rollup.config.js"
+		"core:build": "rollup -c ./rollup.config.js",
+		"site:dev": "nuxt",
+		"site:build": "nuxt build",
+		"site:start": "nuxt start",
+		"site:generate": "nuxt generate"
 	},
 	"lint-staged": {
 		"*.{js,json,css,md,vue}": ["prettier --write", "git add"]
 	},
 	"dependencies": {
+		"nuxt": "^1.4.0",
 		"purecss": "^1.0.0",
 		"vue": "^2.5.16",
 		"vue-router": "^3.0.1",
