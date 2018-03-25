@@ -48,39 +48,6 @@ module.exports = {
 		/*
     ** You can extend webpack config here
     */
-		extend(config, ctx) {
-			if (ctx.isDev) {
-				if (config.name === 'client') {
-					config.entry.app[0] =
-						'webpack-hot-middleware/client?name=client&reload=true&timeout=30000&path=/__webpack_hmr';
-					config.entry.app[1] = path.normalize(
-						path.resolve(__dirname, './fire-pr-site/.nuxt/client.js'),
-					);
-					config.output.path = path.normalize(
-						path.resolve(__dirname, './fire-pr-site/.nuxt/dist'),
-					);
-				}
-				if (config.name === 'server') {
-					config.entry = path.normalize(
-						path.resolve(__dirname, './fire-pr-site/.nuxt/server.js'),
-					);
-					config.output.path = path.normalize(
-						path.resolve(__dirname, './fire-pr-site/.nuxt/dist'),
-					);
-				}
-
-				console.log(config);
-				console.log('\n\n\n----------------------\n');
-			}
-			// Run ESLint on save
-			if (ctx.isDev && ctx.isClient) {
-				config.module.rules.push({
-					enforce: 'pre',
-					test: /\.(js|vue)$/,
-					loader: 'eslint-loader',
-					exclude: /(node_modules)/,
-				});
-			}
-		},
+		extend(config, ctx) {},
 	},
 };
