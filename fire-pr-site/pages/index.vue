@@ -174,5 +174,10 @@ export default {
 	padding-left: calc((100% - 1000px) / 2);
 	padding-right: calc((100% - 1000px) / 2);
 	font-family: 'Roboto';
+
+	@media (max-width: 1064px) {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
 }
 </style>

@@ -5,7 +5,7 @@
         <img class="navigation__logo" src="../assets/logo.svg"/>
         <div class="navigation__title">PR</div>
       </router-link>
-      <div class="navigation__menu" style="display: inline-block;">
+      <div class="navigation__menu">
         <div class="navigation__menu-item-container">
           <router-link :to="'/support'">Support</router-link>
         </div>
@@ -17,6 +17,11 @@
         </div>
         <div class="navigation__menu-item-container">
           <router-link :to="'/about'">About</router-link>
+        </div>
+      </div>
+      <div class="navigation__menu--mobile">
+        <div class="navigation__menu-item-container--mobile">
+          <router-link :to="'/about'">Menu</router-link>
         </div>
       </div>
     </div>
@@ -47,6 +52,35 @@ export default {
 	& > a {
 		color: #586f7c;
 	}
+}
+
+.navigation__menu-item-container--mobile {
+	font-size: 19px;
+	font-weight: 700;
+	line-height: 50px;
+	margin-top: 10px;
+	float: right;
+	display: inline-block;
+
+	& > a {
+		color: #586f7c;
+	}
+}
+
+.navigation__menu-item-container--mobile > a:link {
+	text-decoration: none;
+}
+
+.navigation__menu-item-container--mobile > a:visited {
+	text-decoration: none;
+}
+
+.navigation__menu-item-container--mobile > a:hover {
+	text-decoration: none;
+}
+
+.navigation__menu-item-container--mobile > a:active {
+	text-decoration: none;
 }
 
 .navigation__menu-item-container > a:link {
@@ -84,12 +118,29 @@ export default {
 	float: left;
 }
 
+.navigation__menu--mobile {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	height: 100%;
+	display: inline-block;
+	float: right;
+
+	@media (min-width: 769px) {
+		display: none;
+	}
+}
+
 .navigation__menu {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	height: 100%;
 	display: inline-block;
 	float: right;
+	flex-grow: 1;
+
+	@media (max-width: 768px) {
+		display: none;
+	}
 }
 
 .navigation__logo-container {
@@ -104,6 +155,12 @@ export default {
 	height: 100px;
 	padding-left: calc((100% - 1000px) / 2);
 	padding-right: calc((100% - 1000px) / 2);
+	display: flex;
+
+	@media (max-width: 1064px) {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
 }
 </style>
 
