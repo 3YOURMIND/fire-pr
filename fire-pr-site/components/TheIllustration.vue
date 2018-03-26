@@ -1,0 +1,68 @@
+<template>
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="0 0 592 1002"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xml:space="preserve"
+    xmlns:serif="http://www.serif.com/"
+    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"
+  >
+    <g>
+      <path
+        d="M589.886,60.733c-0.015,-16.25 -13.219,-29.43 -29.469,-29.415l-529.952,0.487c-16.249,0.015 -29.43,13.219 -29.415,29.469l0.835,909.263c0.015,16.249 13.22,29.43 29.469,29.415l529.952,-0.487c16.25,-0.015 29.43,-13.219 29.415,-29.469l-0.835,-909.263Z"
+        style="fill:#fff;stroke:#596f7d;stroke-width:2.1px;"
+      />
+      <path
+        d="M546.441,444.602c-0.005,-4.688 -3.814,-8.49 -8.502,-8.486l-484.252,0.445c-4.688,0.004 -8.491,3.814 -8.486,8.502l0.062,67.952c0.004,4.688 3.814,8.49 8.502,8.486l484.252,-0.445c4.688,-0.004 8.49,-3.814 8.486,-8.502l-0.062,-67.952Z"
+        style="fill:#fff;stroke:#596f7d;stroke-width:1.15px;"
+      />
+      <path
+        d="M386.862,892.189c-0.005,-5.5 -4.475,-9.962 -9.976,-9.957l-161.327,0.148c-5.501,0.005 -9.963,4.475 -9.958,9.976l0.043,46.511c0.005,5.501 4.475,9.962 9.976,9.957l161.327,-0.148c5.501,-0.005 9.962,-4.475 9.957,-9.976l-0.042,-46.511Z"
+        style="fill:#fff;stroke:#596f7d;stroke-width:1.15px;"
+      />
+      <g transform="matrix(1,-0.000918279,0.000918279,1,-0.0771995,-1.71338)">
+        <text
+          x="247.376px"
+          y="933.667px"
+          style="font-family:'Roboto-Light', 'Roboto';font-weight:300;font-size:46.076px;fill:#2d434f;fill-opacity:0.74902;"
+        >
+          Next
+        </text>
+      </g>
+      <path
+        d="M385.613,0l23.06,31.457l-46.062,0.043l23.002,-31.5Z"
+        style="fill:#596f7d;"
+      />
+      <g transform="matrix(1,-0.000918279,0.000918279,1,0.318058,-1.82754)">
+        <text
+          x="123.246px"
+          y="503.177px"
+          style="font-family:'Roboto-Light', 'Roboto';font-weight:300;font-size:57.595px;fill:#2d434f;fill-opacity:0.501961;"
+        >
+          add feature x
+        </text>
+      </g>
+      <g transform="matrix(1,-0.000918279,0.000918279,1,0.339455,-1.896)">
+        <text
+          x="75.687px"
+          y="363.725px"
+          style="font-family:'Roboto-Light', 'Roboto';font-weight:300;font-size:57.595px;fill:#2d434f;"
+        >
+          Pull Request Title
+        </text>
+      </g>
+    </g>
+  </svg>
+</template>
+
+<script>
+export default {
+	name: 'TheIllustration',
+};
+</script>
+
+<style>
+</style>

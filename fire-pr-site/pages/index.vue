@@ -1,19 +1,19 @@
 <template>
   <section class="container">
     <div class="pure-g" style="width: 100%;">
-      <div class="pure-u-1-2 pure-g">
+      <div class="pure-u-1 pure-u-sm-1-2 pure-g">
         <div class="content">
-          <h1 class="pure-u-1 content__heading--first">Crafting Pull Requests</h1>
+          <h1 class="pure-u-1content__heading--first">Crafting Pull Requests</h1>
           <span class="pure-u-1 content__description">Optimize the developer experience by generating pull requests more quickly and more reliant.</span>
           <div class="pure-u-1" style="margin-top: 24px;">
             <a :href="downloadUrl" rel="noopener noreferrer" target="_blank" class="content__button" v-text="downloadFor"></a>
           </div>
-          <span class="pure-u-1 content__button-description">Work with JIRA + Bitbucket</span>
+          <span class="pure-u-1 content__button-description">Works with JIRA + Bitbucket</span>
         </div>
       </div>
-      <div class="pure-u-1-2">
+      <div class="pure-u-1-2 illustration__grid-container">
         <div class="image__container">
-          <img class="content-image" src="../assets/extension-example.svg" />
+          <TheIllustration class="content-image" />
         </div>
       </div>
     </div>
@@ -21,11 +21,11 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue';
+import TheIllustration from '~/components/TheIllustration.vue';
 
 export default {
 	components: {
-		Logo,
+		TheIllustration,
 	},
 	data() {
 		return {
@@ -83,6 +83,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.illustration__grid-container {
+	@media (max-width: 568px) {
+		display: none;
+	}
+}
+
 .image__container {
 	margin-left: 15%;
 	height: 60vh;
