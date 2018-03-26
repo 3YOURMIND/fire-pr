@@ -13,7 +13,7 @@
       </div>
       <div class="pure-u-1-2 illustration__grid-container">
         <div class="image__container">
-          <TheIllustration class="content-image" />
+          <TheIllustration />
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import TheIllustration from '~/components/TheIllustration.vue';
+import TheIllustration from '../components/TheIllustration.vue';
 
 export default {
 	components: {
