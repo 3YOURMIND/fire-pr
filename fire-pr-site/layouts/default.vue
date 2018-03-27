@@ -19,7 +19,7 @@
           <router-link :to="'/about'">About</router-link>
         </div>
       </div>
-      <div class="navigation__menu--mobile">
+      <div class="navigation__menu--mobile" style="width: 100%;">
         <div class="navigation__menu-item-container--mobile">
           <router-link :to="'/about'">Menu</router-link>
         </div>
@@ -110,6 +110,12 @@ export default {
 	font-weight: 700;
 	color: #2f4550;
 	margin-left: 10px;
+}
+
+.navigation__title {
+	@media (max-width: 768px) {
+		display: none;
+	}
 }
 
 .navigation__logo {
