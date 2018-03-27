@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layout--default">
     <div class="navigation">
       <router-link class="navigation__logo-container" :to="'/'">
         <img class="navigation__logo" src="../assets/logo.svg"/>
@@ -37,6 +37,10 @@ export default {
 
 
 <style lang="scss" scoped>
+.layout--default {
+	padding-bottom: 5vh;
+}
+
 .navigation__menu-item-container:not(:first-child) {
 	margin-right: 32px;
 }

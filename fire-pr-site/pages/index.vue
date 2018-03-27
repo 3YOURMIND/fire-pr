@@ -16,16 +16,24 @@
           <TheIllustration />
         </div>
       </div>
+      <div class="pure-u-1-1 illustration__grid-container--mobile" style="margin-top: 5vh;">
+        <div>
+          <TheIllustrationMobile style="width:70%; margin-left: auto;
+    margin-right: auto; display: block" />
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 import TheIllustration from '../components/TheIllustration.vue';
+import TheIllustrationMobile from '../components/TheIllustrationMobile.vue';
 
 export default {
 	components: {
 		TheIllustration,
+		TheIllustrationMobile,
 	},
 	data() {
 		return {
@@ -83,6 +91,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.illustration__grid-container--mobile {
+	@media (min-width: 569px) {
+		display: none;
+	}
+}
+
 .illustration__grid-container {
 	@media (max-width: 568px) {
 		display: none;
@@ -103,6 +117,9 @@ export default {
 
 .content {
 	margin-top: 18vh;
+	@media (max-width: 568px) {
+		margin-top: 7vh;
+	}
 }
 
 .content__button-description {
