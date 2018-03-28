@@ -3,7 +3,7 @@
     <div class="pure-g" style="width: 100%;">
       <div class="pure-u-1 pure-u-sm-1-2 pure-g">
         <div class="content">
-          <h1 class="pure-u-1content__heading--first">Crafting Pull Requests</h1>
+          <h1 class="pure-u-1 content__heading--first">Crafting Pull Requests</h1>
           <span class="pure-u-1 content__description">Optimize the developer experience by generating pull requests more quickly and more reliant.</span>
           <div class="pure-u-1" style="margin-top: 24px;">
             <a :href="downloadUrl" rel="noopener noreferrer" target="_blank" class="content__button" v-text="downloadFor"></a>
@@ -18,8 +18,7 @@
       </div>
       <div class="pure-u-1-1 illustration__grid-container--mobile" style="margin-top: 5vh;">
         <div>
-          <TheIllustrationMobile style="width:70%; margin-left: auto;
-    margin-right: auto; display: block" />
+          <TheIllustrationMobile style="width:70%; margin-left: auto; margin-right: auto; display: block" />
         </div>
       </div>
     </div>
@@ -174,6 +173,14 @@ export default {
 	margin-top: 0;
 	max-width: 90%;
 	font-family: 'Roboto';
+
+	@media (max-width: 500px) {
+		font-size: 28px;
+	}
+
+	@media (max-width: 400px) {
+		font-size: 24px;
+	}
 }
 
 .content__description {
