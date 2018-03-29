@@ -1,5 +1,7 @@
 <template>
-  <div>Download</div>
+  <section class="container">
+    <h1>Download</h1>
+  </section>
 </template>
 
 <script>
@@ -9,4 +11,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/scss/layout.scss';
 </style>

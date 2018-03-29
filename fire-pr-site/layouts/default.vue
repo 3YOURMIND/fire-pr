@@ -7,7 +7,7 @@
       </router-link>
       <div class="navigation__menu">
         <div class="navigation__menu-item-container">
-          <router-link :to="'/support'">Support</router-link>
+          <a href="https://github.com/3YOURMIND/fire-pr" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
         <div class="navigation__menu-item-container">
           <router-link :to="'/why-fire-pr'">Why fire-pr?</router-link>

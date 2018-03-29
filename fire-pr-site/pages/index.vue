@@ -90,6 +90,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/scss/layout.scss';
+
 .illustration__grid-container--mobile {
 	@media (min-width: 569px) {
 		display: none;
@@ -191,17 +193,5 @@ export default {
 	color: #586f7c;
 	max-width: 90%;
 	font-family: 'Roboto';
-}
-
-.container {
-	display: flex;
-	padding-left: calc((100% - 1000px) / 2);
-	padding-right: calc((100% - 1000px) / 2);
-	font-family: 'Roboto';
-
-	@media (max-width: 1064px) {
-		padding-left: 32px;
-		padding-right: 32px;
-	}
 }
 </style>
