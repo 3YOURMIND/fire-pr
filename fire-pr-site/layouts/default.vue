@@ -10,13 +10,13 @@
           <a href="https://github.com/3YOURMIND/fire-pr" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
         <div class="navigation__menu-item-container">
-          <router-link :to="'/why-fire-pr'">Why fire-pr?</router-link>
+          <router-link :to="'/about'">About</router-link>
         </div>
         <div class="navigation__menu-item-container">
           <router-link :to="'/download'">Download</router-link>
         </div>
         <div class="navigation__menu-item-container">
-          <router-link :to="'/about'">About</router-link>
+          <router-link :to="'/why-fire-pr'">Why fire-pr?</router-link>
         </div>
       </div>
       <div class="navigation__menu--mobile" style="width: 100%;">
