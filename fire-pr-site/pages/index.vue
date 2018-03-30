@@ -1,38 +1,114 @@
 <template>
-  <section class="container">
-    <div class="pure-g" style="width: 100%;">
-      <div class="pure-u-1 pure-u-sm-1-2 pure-g">
-        <div class="content">
-          <h1 class="pure-u-1 content__heading--first">Crafting Pull Requests</h1>
-          <span class="pure-u-1 content__description">Optimize the developer experience by generating pull requests more quickly and more reliant.</span>
-          <div class="pure-u-1" style="margin-top: 24px;">
-            <a :href="downloadUrl" rel="noopener noreferrer" target="_blank" class="content__button" v-text="downloadFor"></a>
+  <div>
+    <section class="container">
+      <div class="pure-g" style="width: 100%;">
+        <div class="pure-u-1 pure-u-sm-1-2 pure-g">
+          <div class="content">
+            <h1 class="pure-u-1 content__heading--first">
+              Crafting Pull Requests
+            </h1>
+            <span class="pure-u-1 content__description">
+              Optimize the developer experience by generating pull requests more
+              quickly and more reliant.
+            </span>
+            <div class="pure-u-1" style="margin-top: 24px;">
+              <a
+                :href="downloadUrl"
+                rel="noopener noreferrer"
+                target="_blank"
+                class="content__button"
+                v-text="downloadFor"
+              />
+            </div>
+            <span class="pure-u-1 content__button-description">
+              Works with JIRA + Bitbucket
+            </span>
           </div>
-          <span class="pure-u-1 content__button-description">Works with JIRA + Bitbucket</span>
+        </div>
+        <div class="pure-u-1-2 illustration__grid-container">
+          <div class="image__container">
+            <TheIllustration />
+          </div>
+        </div>
+        <div
+          class="pure-u-1-1 illustration__grid-container--mobile"
+          style="margin-top: 5vh;"
+        >
+          <div>
+            <TheIllustrationMobile style="width:70%; margin-left: auto; margin-right: auto; display: block" />
+          </div>
         </div>
       </div>
-      <div class="pure-u-1-2 illustration__grid-container">
-        <div class="image__container">
-          <TheIllustration />
+    </section>
+    <div class="testimonial__background-container">
+      <svg
+        class="testimonial__background"
+        height="100%"
+        viewBox="0 0 1900 700"
+        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"
+      >
+        <clipPath id="_clip1">
+          <path d="M1900,328.169l0,-328.169l-1900,0l0,328.169l1900,0Z" />
+        </clipPath>
+        <g clip-path="url(#_clip1)">
+          <path
+            d="M2094.2,164.085c0,-90.561 -515.709,-164.085 -1150.92,-164.085c-635.208,0 -1150.92,73.524 -1150.92,164.085c268.548,-27.169 691.808,-49.226 1150.92,-49.226c459.11,0 882.37,22.057 1150.92,49.226Z"
+            style="fill:#d3dcda;"
+          />
+        </g>
+        <clipPath id="_clip2">
+          <path d="M1935.01,471.181l-1935.01,-121.181l-35.014,305.007l1935.01,121.181l35.014,-305.007Z" />
+        </clipPath>
+        <g clip-path="url(#_clip2)">
+          <path
+            d="M-653.73,519.511c0,0 529.847,112.169 999.925,157.698c470.077,45.529 866.982,-35.007 866.982,-35.007c0,0 227.092,-69.515 674.752,-34.261c447.661,35.253 -546.7,-200.267 -546.7,-200.267l-1953.21,-16.928l-41.75,128.765Z"
+            style="fill:#d3dcda;"
+          />
+        </g>
+        <rect
+          x="0"
+          y="72.967"
+          width="1935.01"
+          height="490.126"
+          style="fill:#d3dcda;"
+        />
+      </svg>
+      <div class="container testimonial__container--parent">
+        <div class="pure-g testimonial__container">
+          <div class="pure-u-3-5 testimonial__illustration-container">
+            <TheIllustrationPullRequestExample class="testimonial__illustration" />
+          </div>
+          <div class="pure-u-2-5" style="display: flex; align-items: center; padding-left: 10px;">
+            <div class="pure-g">
+              <div class="pure-u-1">
+                <span class="content__description" style="line-height: 1.6em;">
+                  Create awesome Pull Requests that makes everyone happy.
+                </span>
+              </div>
+              <div class="pure-u-1">
+                <router-link :to="'/about'" class="content__description">
+                  Show me how <b>→</b>
+                </router-link>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="pure-u-1-1 illustration__grid-container--mobile" style="margin-top: 5vh;">
-        <div>
-          <TheIllustrationMobile style="width:70%; margin-left: auto; margin-right: auto; display: block" />
-        </div>
+
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
 import TheIllustration from '../components/TheIllustration.vue';
 import TheIllustrationMobile from '../components/TheIllustrationMobile.vue';
+import TheIllustrationPullRequestExample from '../components/TheIllustrationPullRequestExample.vue';
 
 export default {
 	components: {
 		TheIllustration,
 		TheIllustrationMobile,
+		TheIllustrationPullRequestExample,
 	},
 	data() {
 		return {
@@ -91,6 +167,47 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/scss/layout.scss';
+
+.testimonial__container--parent {
+	margin-top: calc(100vw * -0.36837);
+	height: calc(100vw * -0.36837);
+}
+
+.testimonial__background-container {
+	position: relative;
+	margin-top: 5em;
+}
+
+.testimonial__background {
+	@media (max-width: 767px) {
+		display: none;
+	}
+}
+
+.testimonial__illustration-container {
+	line-height: 1.6em;
+	color: #586f7c;
+	font-weight: 500;
+	text-decoration: none;
+	display: flex;
+	padding-right: 30px;
+	justify-content: center;
+}
+
+.testimonial__illustration {
+	@media (max-width: 1300px) {
+		width: 40vw;
+	}
+}
+
+.testimonial__container {
+	width: 100%;
+	margin-top: 10%;
+
+	@media (max-width: 1400px) {
+		margin-top: 5%;
+	}
+}
 
 .illustration__grid-container--mobile {
 	@media (min-width: 569px) {
