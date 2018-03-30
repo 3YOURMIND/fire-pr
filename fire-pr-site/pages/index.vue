@@ -175,6 +175,7 @@ export default {
 	margin-top: 0;
 	max-width: 90%;
 	font-family: 'Roboto';
+	font-weight: 500;
 
 	@media (max-width: 500px) {
 		font-size: 28px;
@@ -193,5 +194,6 @@ export default {
 	color: #586f7c;
 	max-width: 90%;
 	font-family: 'Roboto';
+	font-weight: 300;
 }
 </style>
