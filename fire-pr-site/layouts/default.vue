@@ -25,7 +25,28 @@
         </div>
       </div>
     </div>
-    <nuxt/>
+    <nuxt style="flex: 1;" />
+    <section class="container" style="margin-top: 5em;">
+      <div class="pure-g" style="width: 100%;">
+        <div class="pure-u-sm-3-4" />
+        <div class="pure-u-1 pure-u-sm-1-4" style="font-size: 14px; font-family: 'Roboto';">
+          <a
+            style="font-weight: 700; color: #586f7c; line-height: 1.6em; text-decoration: none;"
+            href="https://www.3yourmind.com/career"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            We are hiring →
+          </a>
+          <p>
+            <router-link :to="'/imprint'" style="color: #586f7c; line-height: 1.6em; text-decoration: none;">
+              Imprint
+            </router-link>
+          </p>
+          <p style="color: #586f7c; line-height: 1.6em;">© Kevin Peters & 3YOURMIND GmbH</p>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -37,8 +58,13 @@ export default {
 
 
 <style lang="scss" scoped>
+@import '../assets/scss/layout.scss';
+
 .layout--default {
-	padding-bottom: 5vh;
+	padding-bottom: 2vh;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
 .navigation__menu-item-container:not(:first-child) {
