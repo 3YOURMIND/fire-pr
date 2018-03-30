@@ -11,7 +11,7 @@
               Optimize the developer experience by generating pull requests more
               quickly and more reliant.
             </span>
-            <div class="pure-u-1" style="margin-top: 24px;">
+            <div class="pure-u-1 content__button-container">
               <a
                 :href="downloadUrl"
                 rel="noopener noreferrer"
@@ -75,18 +75,18 @@
       </svg>
       <div class="container testimonial__container--parent">
         <div class="pure-g testimonial__container">
-          <div class="pure-u-3-5 testimonial__illustration-container">
+          <div class="pure-u-1 pure-u-sm-3-5 testimonial__illustration-container">
             <TheIllustrationPullRequestExample class="testimonial__illustration" />
           </div>
-          <div class="pure-u-2-5" style="display: flex; align-items: center; padding-left: 10px;">
+          <div class="pure-u-1 pure-u-sm-2-5" style="display: flex; align-items: center; padding-left: 10px;">
             <div class="pure-g">
               <div class="pure-u-1">
                 <span class="content__description" style="line-height: 1.6em;">
                   Create awesome Pull Requests that makes everyone happy.
                 </span>
               </div>
-              <div class="pure-u-1">
-                <router-link :to="'/about'" class="content__description">
+              <div class="pure-u-1" style="margin-top: 0.6em;">
+                <router-link :to="'/about'" class="content__description" style="font-weight: 500;">
                   Show me how <b>→</b>
                 </router-link>
               </div>
@@ -168,14 +168,27 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/scss/layout.scss';
 
+.content__button-container {
+	margin-top: 24px;
+}
+
 .testimonial__container--parent {
 	margin-top: calc(100vw * -0.36837);
 	height: calc(100vw * -0.36837);
+
+	@media (max-width: 767px) {
+		margin-top: 0;
+		height: 100%;
+	}
 }
 
 .testimonial__background-container {
 	position: relative;
 	margin-top: 5em;
+
+	@media (max-width: 767px) {
+		margin-top: 0;
+	}
 }
 
 .testimonial__background {
@@ -198,11 +211,15 @@ export default {
 	@media (max-width: 1300px) {
 		width: 40vw;
 	}
+
+	@media (max-width: 568px) {
+		width: 100%;
+	}
 }
 
 .testimonial__container {
 	width: 100%;
-	margin-top: 10%;
+	margin-top: 17%;
 
 	@media (max-width: 1400px) {
 		margin-top: 5%;
@@ -312,5 +329,7 @@ export default {
 	max-width: 90%;
 	font-family: 'Roboto';
 	font-weight: 300;
+
+	text-decoration: none;
 }
 </style>
