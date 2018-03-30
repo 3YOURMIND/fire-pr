@@ -96,6 +96,9 @@
 
       </div>
     </div>
+    <!-- <section class="container">
+      TEST!
+    </section> -->
   </div>
 </template>
 
@@ -174,7 +177,7 @@ export default {
 
 .testimonial__container--parent {
 	margin-top: calc(100vw * -0.36837);
-	height: calc(100vw * -0.36837);
+	height: calc(100vw * 0.36837);
 
 	@media (max-width: 767px) {
 		margin-top: 0;
@@ -219,11 +222,6 @@ export default {
 
 .testimonial__container {
 	width: 100%;
-	margin-top: 17%;
-
-	@media (max-width: 1400px) {
-		margin-top: 5%;
-	}
 }
 
 .illustration__grid-container--mobile {
