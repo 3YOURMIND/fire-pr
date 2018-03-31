@@ -198,6 +198,7 @@ export default {
 }
 
 .testimonial__illustration-container {
+	height: 100%;
 	line-height: 1.6em;
 	color: #586f7c;
 	font-weight: 500;
