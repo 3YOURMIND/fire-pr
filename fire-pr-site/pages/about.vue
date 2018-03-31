@@ -15,8 +15,8 @@
         <h2 class="about__heading--second">Why you should use Fire PR?</h2>
       </div>
       <div class="pure-u-1 about__text" style="padding-left: 0.6em; margin-top: 0.6em;">
-        <p >Fire PR is directly aimed to companies. It should streamline the Pull Request review by normalizing it. It adds the right amount of value which a reviewer needs to complete the Pull Request review.</p>
-        <p >In this review different steps are required which are featured in Fire PR which includes:</p>
+        <p>Fire PR is directly aimed to companies. It should streamline the Pull Request review by normalizing it. It adds the right amount of value which a reviewer needs to complete the Pull Request review.</p>
+        <p>In this review different steps are required which are featured in Fire PR which includes:</p>
         <ul>
           <li>A proper title with links to the JIRA issue so people can check requirements easily</li>
           <li>The type of the change to focus on an easier review</li>
@@ -31,7 +31,46 @@
         <h2 class="about__heading--second">What is this application built with?</h2>
       </div>
       <div class="pure-u-1 about__text" style="padding-left: 0.6em; margin-top: 0.6em;">
-
+        <p>The application was built with modern web technologies and is fully open source.</p>
+        <p>The company 3YOURMIND behind this product is embracing open source a lot. And we wanted to give something back to the community.</p>
+        <p>Here is a list of used technologies:</p>
+        <div class="technology-logo__container">
+          <div class="technology-logo__item-container">
+            <a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">
+              <img src="../assets/technology-logos/vue-logo.svg" alt="" />
+            </a>
+          </div>
+          <div class="technology-logo__item-container">
+            <a href="https://storybook.js.org/" target="_blank" rel="noopener noreferrer">
+              <img src="../assets/technology-logos/storybook.svg" alt="" />
+            </a>
+          </div>
+          <div class="technology-logo__item-container">
+            <a href="https://facebook.github.io/jest/" target="_blank" rel="noopener noreferrer">
+              <img src="../assets/technology-logos/jest.svg" alt="" />
+            </a>
+          </div>
+          <div class="technology-logo__item-container">
+            <a href="https://prettier.io/" target="_blank" rel="noopener noreferrer">
+              <img src="../assets/technology-logos/prettier.svg" alt="" />
+            </a>
+          </div>
+          <div class="technology-logo__item-container">
+            <a href="https://rollupjs.org/" target="_blank" rel="noopener noreferrer">
+              <img src="../assets/technology-logos/rollup.svg" alt="" />
+            </a>
+          </div>
+          <div class="technology-logo__item-container">
+            <a href="https://sass-lang.com/" target="_blank" rel="noopener noreferrer">
+              <img src="../assets/technology-logos/sass.svg" alt="" />
+            </a>
+          </div>
+          <div class="technology-logo__item-container">
+            <a href="https://webpack.js.org/" target="_blank" rel="noopener noreferrer">
+              <img src="../assets/technology-logos/webpack.svg" alt="" />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -45,6 +84,28 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/scss/layout.scss';
+
+.technology-logo__item-container {
+	min-width: 168px;
+	max-width: 168px;
+	margin-top: 20px;
+	filter: grayscale(1);
+	transition: all 0.15s ease-in;
+
+	&:hover {
+		filter: grayscale(0);
+		transition: all 0.15s ease-out;
+	}
+}
+
+.technology-logo__container {
+	display: flex;
+	justify-content: center;
+	max-width: 1000px;
+	position: relative;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
 
 .about__text {
 	font-family: 'Roboto';
