@@ -3,7 +3,7 @@
     <div class="navigation">
       <router-link class="navigation__logo-container" :to="'/'">
         <img class="navigation__logo" src="../assets/logo.svg"/>
-        <div class="navigation__title">PR</div>
+        <div class="navigation__title">Fire PR</div>
       </router-link>
       <div class="navigation__menu">
         <div class="navigation__menu-item-container">
