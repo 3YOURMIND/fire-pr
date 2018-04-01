@@ -14,10 +14,10 @@
       d="M120.443,2.233c0,-1.233 -1,-2.233 -2.232,-2.233l-115.978,0c-1.233,0 -2.233,1 -2.233,2.233l0,69.96c0,1.232 1,2.232 2.233,2.232l115.978,0c1.232,0 2.232,-1 2.232,-2.232l0,-69.96Z"
       style="fill:#fff;"
     />
-    <clipPath id="_clip1">
+    <clipPath id="_clip10213">
       <rect x="0" y="0" width="120.443" height="6.948" />
     </clipPath>
-    <g clip-path="url(#_clip1)">
+    <g clip-path="url(#_clip10213)">
       <path
         d="M120.443,1.877c0,-1.036 -0.841,-1.877 -1.877,-1.877l-116.689,0c-1.036,0 -1.877,0.841 -1.877,1.877l0,3.5c0,1.036 0.841,1.878 1.877,1.878l116.689,0c1.036,0 1.877,-0.842 1.877,-1.878l0,-58.828Z"
         style="fill:#efefef;"
@@ -431,7 +431,7 @@
         style="fill:#13274c;fill-rule:nonzero;"
       />
     </g>
-    <clipPath id="_clip2">
+    <clipPath id="_clip232562">
       <rect
         id="Creative-Tail-People-man-2"
         x="21.515"
@@ -440,7 +440,7 @@
         height="7.68"
       />
     </clipPath>
-    <g clip-path="url(#_clip2)">
+    <g clip-path="url(#_clip232562)">
       <g>
         <circle cx="25.355" cy="12.801" r="3.84" style="fill:#00b86e;" />
         <g>
