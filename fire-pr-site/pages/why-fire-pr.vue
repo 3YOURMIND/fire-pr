@@ -47,6 +47,9 @@
 <script>
 export default {
 	name: 'WhyFirePrPage',
+	head: {
+		title: 'Why to use Fire PR',
+	},
 };
 </script>
 

@@ -105,6 +105,17 @@ import TheIllustrationMobile from '../components/TheIllustrationMobile.vue';
 import TheIllustrationPullRequestExample from '../components/TheIllustrationPullRequestExample.vue';
 
 export default {
+	head: {
+		title: 'Fire PR | Pull Request Tooling',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content:
+					'Fire PR is a browser extension trying to streamline the pull request workflow for developers by providing an interface to create those in an easy way. The tool is trying to optimize the work flows.',
+			},
+		],
+	},
 	components: {
 		TheIllustration,
 		TheIllustrationMobile,

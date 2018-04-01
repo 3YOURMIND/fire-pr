@@ -12,11 +12,12 @@ module.exports = {
   ** Headers of the page
   */
 	head: {
-		title: pkg.name,
+		title: 'Fire PR | Pull Request Tooling',
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-			{ hid: 'description', name: 'description', content: pkg.description },
+			{ name: 'referrer', content: 'no-referrer' },
+			{ name: 'theme-color', content: '#EF629F' },
 		],
 		link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/icon.png' },

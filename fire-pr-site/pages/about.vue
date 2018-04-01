@@ -79,6 +79,9 @@
 <script>
 export default {
 	name: 'AboutPage',
+	head: {
+		title: 'General information of the Pull Request automation extension',
+	},
 };
 </script>
 

@@ -22,6 +22,9 @@
 <script>
 export default {
 	name: 'Imprint',
+	head: {
+		title: 'Imprint Fire PR | Imprint of the team which built Fire PR',
+	},
 };
 </script>
 

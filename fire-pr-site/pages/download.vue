@@ -22,6 +22,9 @@
 <script>
 export default {
 	name: 'DownloadPage',
+	head: {
+		title: 'Locations to download the extension for Chrome and Firefox',
+	},
 };
 </script>
 
