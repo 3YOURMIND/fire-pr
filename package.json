@@ -7,18 +7,15 @@
 	"module": "./fire-pr-core/dist/fire-pr-core.esm.js",
 	"browser": "./fire-pr-core/dist/fire-pr-core.js",
 	"scripts": {
-		"build":
-			"cross-env NODE_ENV=production webpack --config ./fire-pr-web/webpack.config.js --progress --hide-modules",
-		"build:dev":
-			"cross-env NODE_ENV=development webpack --config ./fire-pr-web/webpack.config.js --progress --hide-modules",
-		"build-zip": "node ./fire-pr-web/scripts/build-zip.js",
-		"watch": "npm run build -- --watch",
-		"watch:dev": "npm run build:dev -- --watch",
 		"precommit": "lint-staged",
-		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook",
-		"core:run-example": "node ./fire-pr-core/example.js",
 		"test": "jest",
+		"web:build":
+			"cross-env NODE_ENV=production webpack --config ./fire-pr-web/webpack.config.js --progress --hide-modules && node ./fire-pr-web/scripts/build-zip.js",
+		"web:dev":
+			"cross-env NODE_ENV=development webpack --config ./fire-pr-web/webpack.config.js --progress --hide-modules",
+		"web:storybook": "start-storybook -p 6006",
+		"web:build-storybook": "build-storybook",
+		"core:run-example": "node ./fire-pr-core/example.js",
 		"core:build": "rollup -c ./rollup.config.js",
 		"site:dev": "nuxt",
 		"site:build": "nuxt build",
