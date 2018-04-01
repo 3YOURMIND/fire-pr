@@ -8,14 +8,14 @@
         <h2 class="why-fire-pr__heading--second">About Pull Requests</h2>
       </div>
       <div class="pure-u-1 why-fire-pr__text" style="padding-left: 0.6em; margin-top: 0.6em;">
-        <p>We spent more time on reading code than writing code. Therefore it is important to have some kind of code review process so just good code is getting into the code base.</p>
-        <p>With this goal in mind it is also important to have a nice experience when reviewing the code. To make this easier this tool exists. We can also save a lot of time designing the Pull Request.</p>
+        <p>We spent more time reading code than writing code. Therefore it is important to have some kind of code review process so just good code is getting into the code base.</p>
+        <p>With this goal in mind, it is also important to have a nice experience when reviewing the code. To make this easier this tool exists. We can also save a lot of time designing the Pull Request.</p>
       </div>
       <div class="pure-u-1">
         <h2 class="why-fire-pr__heading--second">How is Fire PR so fast at creating Pull Requests?</h2>
       </div>
       <div class="pure-u-1 why-fire-pr__text" style="padding-left: 0.6em; margin-top: 0.6em;">
-        <p>Basically it is an interface generating the markdown for the Pull Request description. It includes different topics of a Pull Request to make it as easy as possible to review a code change.</p>
+        <p>Basically, it is an interface generating the markdown for the Pull Request description. It includes different topics of a Pull Request to make it as easy as possible to review a code change.</p>
         <p>This is done by preparing the reviewer with general information of the code change. An example can be found below which shows the interface of the extension and the output inside the description container of the Pull Request.</p>
         <div class="pure-g" style="margin-top: 0.6em;">
           <div class="pure-u-1 pure-u-sm-1-2" style="display: flex; justify-content: center;">
@@ -30,7 +30,7 @@
         <h2 class="why-fire-pr__heading--second">This tool seems really easy</h2>
       </div>
       <div class="pure-u-1 why-fire-pr__text" style="padding-left: 0.6em; margin-top: 0.6em;">
-        <p>This is true. But since no Interface for this was existing yet, we decided to create this. We live the standard that there should be a tool for every use case and that engineers should interfacivize everything which is possible so the user experience is begin guarenteed.</p>
+        <p>This is true. But since no Interface for this was existing yet, we decided to create this. We live the standard that there should be a tool for every use case and that engineers should interfacivize everything which is possible so the user experience is begin guaranteed.</p>
       </div>
       <div class="pure-u-1">
         <h2 class="why-fire-pr__heading--second">This tool is opinionated</h2>
