@@ -15,13 +15,13 @@
         <h2 class="about__heading--second">Why you should use Fire PR?</h2>
       </div>
       <div class="pure-u-1 about__text" style="padding-left: 0.6em; margin-top: 0.6em;">
-        <p>Fire PR is directly aimed to companies. It should streamline the Pull Request review by normalizing it. It adds the right amount of value which a reviewer needs to complete the Pull Request review.</p>
-        <p>In this review different steps are required which are featured in Fire PR which includes:</p>
+        <p>Fire PR is directly aimed at companies. It should streamline the Pull Request review by normalizing it. It adds the right amount of value which a reviewer needs to complete the Pull Request review.</p>
+        <p>In this review, different steps are required which are featured in Fire PR which includes:</p>
         <ul>
           <li>A proper title with links to the JIRA issue so people can check requirements easily</li>
           <li>The type of the change to focus on an easier review</li>
           <li>If the pr is breaking to inform the reviewers beforehand if they need to be careful about merging this Pull Request</li>
-          <li>Testing instructions to validate if E2E tests, integration tests and unit tests are covering the requirements</li>
+          <li>Testing instructions to validate if E2E tests, integration tests, and unit tests are covering the requirements</li>
           <li>Who should merge it to avoid confusion about the merge</li>
           <li>A changelog message to make it easier for tools or project managers to write a release log</li>
           <li>And other information if needed 🤷</li>
@@ -31,7 +31,7 @@
         <h2 class="about__heading--second">What is this application built with?</h2>
       </div>
       <div class="pure-u-1 about__text" style="padding-left: 0.6em; margin-top: 0.6em;">
-        <p>The application was built with modern web technologies and is fully open source.</p>
+        <p>The application was built with modern web technologies and is a fully open source application.</p>
         <p>The company 3YOURMIND behind this product is embracing open source a lot. And we wanted to give something back to the community.</p>
         <p>Here is a list of used technologies:</p>
         <div class="technology-logo__container">
