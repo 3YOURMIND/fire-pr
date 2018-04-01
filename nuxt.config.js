@@ -63,7 +63,7 @@ module.exports = {
 	manifest: {
 		name: 'Fire PR Website',
 		short_name: 'fire-pr-site',
-		start_url: '.',
+		start_url: '/',
 		display: 'standalone',
 		background_color: '#fff',
 		description:
