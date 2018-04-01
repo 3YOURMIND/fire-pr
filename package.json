@@ -29,6 +29,7 @@
 		"*.{js,json,css,md,vue}": ["prettier --write", "git add"]
 	},
 	"dependencies": {
+		"@nuxtjs/pwa": "^2.0.8",
 		"nuxt": "^1.4.0",
 		"purecss": "^1.0.0",
 		"vue": "^2.5.16",
