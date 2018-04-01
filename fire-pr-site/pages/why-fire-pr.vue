@@ -49,6 +49,14 @@ export default {
 	name: 'WhyFirePrPage',
 	head: {
 		title: 'Why to use Fire PR',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content:
+					'Fire PR enables you to easily create Pull Requests on Bitbucket and streamlines the progress. It should be used to have a consistent progress, even with opinionated tools. It is an easy to use browser extension which every developer can install.',
+			},
+		],
 	},
 };
 </script>

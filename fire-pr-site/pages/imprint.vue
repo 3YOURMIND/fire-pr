@@ -24,6 +24,14 @@ export default {
 	name: 'Imprint',
 	head: {
 		title: 'Imprint Fire PR | Imprint of the team which built Fire PR',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content:
+					'Imprint of the Fire PR extension which is optimizing the Pull Request workflow for Bitbucket. Contact details are given on this page to get in touch with the owners of this open source project.',
+			},
+		],
 	},
 };
 </script>

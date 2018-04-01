@@ -24,6 +24,14 @@ export default {
 	name: 'DownloadPage',
 	head: {
 		title: 'Locations to download the extension for Chrome and Firefox',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content:
+					'The download pages provided for the browser extension Fire PR. The extension is available on the chrome web store and in the firefox add-ons marketplace. It is easy to install and will streamline and optimize the process of creating Pull Requests on Bitbucket in combination with JIRA.',
+			},
+		],
 	},
 };
 </script>

@@ -81,6 +81,14 @@ export default {
 	name: 'AboutPage',
 	head: {
 		title: 'General information of the Pull Request automation extension',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content:
+					'A description of Fire PR. It is explaining how the workflow automation tool for Pull Requests was created and why it should be used. It will streamline the Pull Request workflow for different platforms with a nice interface built on top of the newest web technologies such as Vue.js, Jest, rollup, webpack or storybook.',
+			},
+		],
 	},
 };
 </script>
