@@ -7,10 +7,6 @@ module.exports = {
 	generate: {
 		dir: 'dist-site',
 	},
-
-	/*
-  ** Headers of the page
-  */
 	head: {
 		title: 'Fire PR | Pull Request Tooling',
 		meta: [
@@ -27,38 +23,15 @@ module.exports = {
 			},
 		],
 	},
-
-	/*
-  ** Customize the progress-bar color
-  */
 	loading: { color: '#EF629F' },
-
-	/*
-  ** Global CSS
-  */
 	css: [
 		'purecss/build/base-min.css',
 		'purecss/build/grids-min.css',
 		'purecss/build/grids-responsive-min.css',
 	],
-
-	/*
-  ** Plugins to load before mounting the App
-  */
 	plugins: [],
-
-	/*
-  ** Nuxt.js modules
-  */
 	modules: ['@nuxtjs/pwa'],
-
-	/*
-  ** Build configuration
-  */
 	build: {
-		/*
-    ** You can extend webpack config here
-    */
 		extend(config, ctx) {},
 	},
 	manifest: {
