@@ -7,14 +7,13 @@
       <div class="pure-u-1">
         <h2 class="about__heading--second">What is Fire PR?</h2>
       </div>
-      <div class="pure-u-1" style="margin-top: 0.6em; padding-left: 0.6em;">
-        <p class="about__text">Fire PR is an opinionated browser extension to easily create Pull Requests. Right now it is limited to Bitbucket in combination with JIRA but we plan to support other platforms like GitHub or Gitlab really soon.</p>
-        <!-- <p class="about__paragraph"></p> -->
+      <div class="pure-u-1 text__container">
+        <p>Fire PR is an opinionated browser extension to easily create Pull Requests. Right now it is limited to Bitbucket in combination with JIRA but we plan to support other platforms like GitHub or Gitlab really soon.</p>
       </div>
       <div class="pure-u-1">
         <h2 class="about__heading--second">Why you should use Fire PR?</h2>
       </div>
-      <div class="pure-u-1 about__text" style="padding-left: 0.6em; margin-top: 0.6em;">
+      <div class="pure-u-1 text__container">
         <p>Fire PR is directly aimed at companies. It should streamline the Pull Request review by normalizing it. It adds the right amount of value which a reviewer needs to complete the Pull Request review.</p>
         <p>In this review, different steps are required which are featured in Fire PR which includes:</p>
         <ul>
@@ -30,7 +29,7 @@
       <div class="pure-u-1">
         <h2 class="about__heading--second">What is this application built with?</h2>
       </div>
-      <div class="pure-u-1 about__text" style="padding-left: 0.6em; margin-top: 0.6em;">
+      <div class="pure-u-1 text__container">
         <p>The application was built with modern web technologies and is a fully open source application.</p>
         <p>The company 3YOURMIND behind this product is embracing open source a lot. And we wanted to give something back to the community.</p>
         <p>Here is a list of used technologies:</p>
@@ -96,6 +95,15 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/scss/layout.scss';
 
+.text__container {
+	margin-top: 0.6em;
+	padding-left: 0.6em;
+	font-family: 'Roboto';
+	font-weight: 300;
+	line-height: 1.6em;
+	font-size: 21px;
+}
+
 .technology-logo__item-container {
 	min-width: 168px;
 	max-width: 168px;
@@ -116,13 +124,6 @@ export default {
 	position: relative;
 	flex-direction: row;
 	flex-wrap: wrap;
-}
-
-.about__text {
-	font-family: 'Roboto';
-	font-weight: 300;
-	line-height: 1.6em;
-	font-size: 21px;
 }
 
 .about__heading--first {
