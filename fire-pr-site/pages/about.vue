@@ -33,51 +33,68 @@
         <p>The application was built with modern web technologies and is a fully open source application.</p>
         <p>The company 3YOURMIND behind this product is embracing open source a lot. And we wanted to give something back to the community.</p>
         <p>Here is a list of used technologies:</p>
-        <div class="technology-logo__container">
-          <div class="technology-logo__item-container">
-            <a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">
-              <img src="../assets/technology-logos/vue-logo.svg" alt="" />
-            </a>
-          </div>
-          <div class="technology-logo__item-container">
-            <a href="https://storybook.js.org/" target="_blank" rel="noopener noreferrer">
-              <img src="../assets/technology-logos/storybook.svg" alt="" />
-            </a>
-          </div>
-          <div class="technology-logo__item-container">
-            <a href="https://facebook.github.io/jest/" target="_blank" rel="noopener noreferrer">
-              <img src="../assets/technology-logos/jest.svg" alt="" />
-            </a>
-          </div>
-          <div class="technology-logo__item-container">
-            <a href="https://prettier.io/" target="_blank" rel="noopener noreferrer">
-              <img src="../assets/technology-logos/prettier.svg" alt="" />
-            </a>
-          </div>
-          <div class="technology-logo__item-container">
-            <a href="https://rollupjs.org/" target="_blank" rel="noopener noreferrer">
-              <img src="../assets/technology-logos/rollup.svg" alt="" />
-            </a>
-          </div>
-          <div class="technology-logo__item-container">
-            <a href="https://sass-lang.com/" target="_blank" rel="noopener noreferrer">
-              <img src="../assets/technology-logos/sass.svg" alt="" />
-            </a>
-          </div>
-          <div class="technology-logo__item-container">
-            <a href="https://webpack.js.org/" target="_blank" rel="noopener noreferrer">
-              <img src="../assets/technology-logos/webpack.svg" alt="" />
-            </a>
-          </div>
-        </div>
+        <TechnologyList :technologies="technologies" />
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import TechnologyList from '../components/TechnologyList.vue';
+import VueLogo from '../assets/technology-logos/vue-logo.svg';
+import StorybookLogo from '../assets/technology-logos/storybook.svg';
+import JestLogo from '../assets/technology-logos/jest.svg';
+import PrettierLogo from '../assets/technology-logos/prettier.svg';
+import RollupLogo from '../assets/technology-logos/rollup.svg';
+import SassLogo from '../assets/technology-logos/sass.svg';
+import WebpackLogo from '../assets/technology-logos/webpack.svg';
+
 export default {
 	name: 'AboutPage',
+	components: {
+		TechnologyList,
+	},
+	data() {
+		return {
+			technologies: [
+				{
+					logo: VueLogo,
+					logoDescription: '',
+					website: 'https://vuejs.org/',
+				},
+				{
+					logo: StorybookLogo,
+					logoDescription: '',
+					website: 'https://storybook.js.org/',
+				},
+				{
+					logo: JestLogo,
+					logoDescription: '',
+					website: 'https://facebook.github.io/jest/',
+				},
+				{
+					logo: PrettierLogo,
+					logoDescription: '',
+					website: 'https://prettier.io/',
+				},
+				{
+					logo: RollupLogo,
+					logoDescription: '',
+					website: 'https://rollupjs.org/',
+				},
+				{
+					logo: SassLogo,
+					logoDescription: '',
+					website: 'https://sass-lang.com/',
+				},
+				{
+					logo: WebpackLogo,
+					logoDescription: '',
+					website: 'https://webpack.js.org/',
+				},
+			],
+		};
+	},
 	head: {
 		title: 'General information of the Pull Request automation extension',
 		meta: [
@@ -102,28 +119,6 @@ export default {
 	font-weight: 300;
 	line-height: 1.6em;
 	font-size: 21px;
-}
-
-.technology-logo__item-container {
-	min-width: 168px;
-	max-width: 168px;
-	margin-top: 20px;
-	filter: grayscale(1);
-	transition: all 0.15s ease-in;
-
-	&:hover {
-		filter: grayscale(0);
-		transition: all 0.15s ease-out;
-	}
-}
-
-.technology-logo__container {
-	display: flex;
-	justify-content: center;
-	max-width: 1000px;
-	position: relative;
-	flex-direction: row;
-	flex-wrap: wrap;
 }
 
 .about__heading--first {
@@ -154,7 +149,6 @@ export default {
 	max-width: 90%;
 	font-family: 'Roboto';
 	font-weight: 300;
-
 	text-decoration: none;
 }
 </style>
