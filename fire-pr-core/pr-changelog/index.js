@@ -6,16 +6,6 @@ const validatePayload = payload => {
 	if (!('description' in payloadNote)) {
 		return new Error('A description for the changelog note must be provided.');
 	}
-	if (!('issueNumber' in payloadNote)) {
-		return new Error(
-			'A issue number must be provided to create the changelog note.',
-		);
-	}
-	if (!('projectAbbreviation' in payloadNote)) {
-		return new Error(
-			'A project abbreviation must be provided to create the changelog note.',
-		);
-	}
 	return true;
 };
 

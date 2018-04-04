@@ -38,12 +38,14 @@ export default {
 			},
 			branchTitle => {
 				this.isLoading = false;
+				if (branchTitle) {
+					this.bitbucketPullRequestView = true;
+				}
 				const jiraIssue = branchTitle
 					.toString()
 					.match(/(.)*-(\d)*-/gi)[0]
 					.slice(0, -1);
 				this.$store.dispatch('saveJiraIssue', jiraIssue);
-				this.bitbucketPullRequestView = true;
 				chrome.storage.sync.get([`${jiraIssue}-breaking-options`], data => {
 					console.log(data[`${jiraIssue}-breaking-options`]);
 				});

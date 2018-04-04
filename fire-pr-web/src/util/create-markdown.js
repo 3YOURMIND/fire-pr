@@ -92,13 +92,19 @@ const createOtherInformationMarkdown = state => {
 };
 
 const createChangelogMarkdown = state => {
-	const splittedIssues = state.jiraIssue.split('-');
+	let issueNumber = null;
+	let projectAbbreviation = null;
+	try {
+		const splittedIssues = state.jiraIssue.split('-');
+		issueNumber = splittedIssues[1];
+		projectAbbreviation = splittedIssues[0];
+	} catch (error) {}
 	return PrChangelogUtility.renderMarkdown({
 		note: {
 			description: state.changelog.text,
-			issueNumber: splittedIssues[1],
+			issueNumber,
 			baseUrl: 'https://jira.3yourmind.com',
-			projectAbbreviation: splittedIssues[0],
+			projectAbbreviation,
 		},
 		pictures: [],
 	});
