@@ -21,12 +21,20 @@
       </div>
       <div class="navigation__menu--mobile" style="width: 100%;">
         <div class="navigation__menu-item-container--mobile">
-          <router-link :to="'/about'">Menu</router-link>
+          <a @click="onMobileMenuClick">Menu</a>
         </div>
       </div>
     </div>
-    <nuxt style="flex: 1;" />
-    <section class="container footer">
+		<div v-if="showMobileMenu">
+			<div style="display: flex; flex-direction: column;">
+				<router-link class="menu-item--mobile" :to="'/about'" @click.native="onMobileRouteClick">About</router-link>
+				<router-link class="menu-item--mobile" :to="'/download'" @click.native="onMobileRouteClick">Download</router-link>
+				<router-link class="menu-item--mobile" :to="'/why-fire-pr'" @click.native="onMobileRouteClick">Why fire-pr?</router-link>
+				<a @click.native="onMobileRouteClick" class="menu-item--mobile" href="https://github.com/3YOURMIND/fire-pr" target="_blank" rel="noopener noreferrer">GitHub</a>
+			</div>
+		</div>
+    <nuxt style="flex: 1;" v-if="!showMobileMenu" />
+    <section class="container footer" v-if="!showMobileMenu">
       <div class="pure-g" style="width: 100%;">
         <div class="pure-u-sm-3-4" />
         <div class="pure-u-1 pure-u-sm-1-4" style="font-size: 14px; font-family: 'Roboto';">
@@ -53,12 +61,53 @@
 <script>
 export default {
 	name: 'DefaultLayout',
+	data() {
+		return {
+			showMobileMenu: false,
+		};
+	},
+	methods: {
+		onMobileMenuClick() {
+			this.showMobileMenu = !this.showMobileMenu;
+		},
+		onMobileRouteClick() {
+			this.showMobileMenu = false;
+		},
+	},
 };
 </script>
 
 
 <style lang="scss" scoped>
 @import '../assets/scss/layout.scss';
+
+.menu-item--mobile {
+	color: #586f7c;
+	font-size: 24px;
+	font-family: 'Roboto';
+	padding-bottom: 0.8em;
+	padding-top: 0.8em;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:link {
+		text-decoration: none;
+	}
+
+	&:visited {
+		text-decoration: none;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:active {
+		text-decoration: none;
+	}
+}
 
 .footer {
 	margin-top: 12em;
