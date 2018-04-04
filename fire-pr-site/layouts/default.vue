@@ -1,7 +1,7 @@
 <template>
   <div class="layout--default">
     <div class="navigation">
-      <router-link class="navigation__logo-container" :to="'/'">
+      <router-link class="navigation__logo-container" :to="'/'" @click.native="onLogoClick">
         <img class="navigation__logo" src="../assets/logo.svg" alt="logo of fire pr which is a flame with a red to yellow gradient" />
         <div class="navigation__title">Fire PR</div>
       </router-link>
@@ -71,6 +71,9 @@ export default {
 			this.showMobileMenu = !this.showMobileMenu;
 		},
 		onMobileRouteClick() {
+			this.showMobileMenu = false;
+		},
+		onLogoClick() {
 			this.showMobileMenu = false;
 		},
 	},
