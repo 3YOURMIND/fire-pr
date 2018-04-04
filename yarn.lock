@@ -2141,6 +2141,10 @@ clean-css@4.1.x:
   dependencies:
     source-map "0.5.x"
 
+cli-command-parser@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/cli-command-parser/-/cli-command-parser-1.0.3.tgz#377af3ce60ad2d8a34a7e5eae4b395d491b0d652"
+
 cli-cursor@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-1.0.2.tgz#64da3f7d56a54412e59794bd62dc35295e8f2987"
@@ -5595,12 +5599,13 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lint-staged@^7.0.2:
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-7.0.2.tgz#c99f6800e0525fa9c16f04c13ebe137edfd4fcd7"
+lint-staged@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-7.0.3.tgz#c2c30bd2821ae9c6043141179b9a03793ad3da08"
   dependencies:
     app-root-path "^2.0.1"
     chalk "^2.3.1"
+    cli-command-parser "^1.0.3"
     commander "^2.14.1"
     cosmiconfig "^4.0.0"
     debug "^3.1.0"
@@ -8936,9 +8941,9 @@ stealthy-require@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
 
-storybook-router@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/storybook-router/-/storybook-router-0.3.3.tgz#a70a8e49baee4a2b54e8de8ab632d107d05fcc7b"
+storybook-router@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/storybook-router/-/storybook-router-0.3.4.tgz#27c0c0de5eafa03b9003a850ac40e2b0c2a3ee65"
   dependencies:
     "@storybook/addon-actions" "^3.2.10"
     prop-types "^15.5.10"
