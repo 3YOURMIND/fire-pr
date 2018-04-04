@@ -26,7 +26,7 @@
       </div>
     </div>
     <nuxt style="flex: 1;" />
-    <section class="container" style="margin-top: 5em;">
+    <section class="container footer">
       <div class="pure-g" style="width: 100%;">
         <div class="pure-u-sm-3-4" />
         <div class="pure-u-1 pure-u-sm-1-4" style="font-size: 14px; font-family: 'Roboto';">
@@ -59,6 +59,14 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/scss/layout.scss';
+
+.footer {
+	margin-top: 12em;
+
+	@media (min-width: 769px) {
+		margin-top: 5em;
+	}
+}
 
 .layout--default {
 	padding-bottom: 2vh;
