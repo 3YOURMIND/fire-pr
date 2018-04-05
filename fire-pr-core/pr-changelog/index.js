@@ -15,14 +15,22 @@ const renderMarkdown = changelogPayload => {
 		return validationResponse;
 	}
 	const headline = '## Changelog ##\n\n';
+	let closingMessage = '';
+	if (
+		changelogPayload.note.baseUrl &&
+		changelogPayload.note.projectAbbreviation &&
+		changelogPayload.note.issueNumber
+	) {
+		closingMessage = `, closes [#${changelogPayload.note.issueNumber}](${
+			changelogPayload.note.baseUrl
+		}/browse/${changelogPayload.note.projectAbbreviation}-${
+			changelogPayload.note.issueNumber
+		})`;
+	}
 
 	const note = `**Note**
 
-- ${changelogPayload.note.description}, closes [#${
-		changelogPayload.note.issueNumber
-	}](${changelogPayload.note.baseUrl}/browse/${
-		changelogPayload.note.projectAbbreviation
-	}-${changelogPayload.note.issueNumber})`;
+- ${changelogPayload.note.description}${closingMessage}`;
 	let pictures = '';
 	if (changelogPayload.pictures && changelogPayload.pictures.length > 0) {
 		const mappedPictureList = changelogPayload.pictures.map(picture => {

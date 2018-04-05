@@ -1,7 +1,7 @@
-const renderMarkdown = (payload) => {
-  return `${payload.heading} [${payload.issueNumber}]`;
+const renderMarkdown = ({ heading, issueNumber }) => {
+	return issueNumber ? `${heading} [${issueNumber}]` : heading;
 };
 
 export default {
-  renderMarkdown,
+	renderMarkdown,
 };
