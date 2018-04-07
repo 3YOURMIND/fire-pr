@@ -6,7 +6,6 @@ import Vuex from 'vuex';
 import StoryRouter from 'storybook-router';
 
 import PullRequestType from '../views/PullRequestType.vue';
-import PullRequestBreaking from '../views/PullRequestBreaking.vue';
 import TestingOptions from '../views/TestingOptions.vue';
 import ReviewOptions from '../views/ReviewOptions.vue';
 import PullRequestOtherInformation from '../views/PullRequestOtherInformation.vue';
@@ -15,6 +14,7 @@ import PullRequestChangelog from '../views/PullRequestChangelog.vue';
 import NoBitbucketSiteStories from './NoBitbucketSite.story';
 import PullRequestTitleStories from './PullRequestTitle.story';
 import PullRequestTypeStories from './PullRequestType.story';
+import PullRequestBreakingStories from './PullRequestBreakingChanges.story';
 
 import '../../../node_modules/purecss/build/pure.css';
 import '../../../node_modules/purecss/build/grids.css';
@@ -49,37 +49,8 @@ storiesOf('Pull Request Type', module)
 
 storiesOf('Pull Request Breaking Changes', module)
 	.addDecorator(StoryRouter())
-	.add('initial state', () => ({
-		components: {
-			PullRequestBreaking,
-		},
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-		<PullRequestBreaking />
-	</body>`,
-	}))
-	.add('predefined state', () => ({
-		components: {
-			PullRequestBreaking,
-		},
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-		<PullRequestBreaking />
-	</body>`,
-		store: new Vuex.Store({
-			state: {
-				options: {
-					breaking: {
-						breaking: true,
-						text: 'New dependency which will break a lot of stuff',
-					},
-				},
-			},
-			actions: {
-				saveBreakingOptions: (context, payload) => {
-					action('COMMIT TO STORE')(payload);
-				},
-			},
-		}),
-	}));
+	.add('initial state', PullRequestBreakingStories.initialState)
+	.add('predefined state', PullRequestBreakingStories.predefinedState);
 
 storiesOf('Pull Request Testing Options', module)
 	.addDecorator(StoryRouter())
