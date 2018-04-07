@@ -6,7 +6,6 @@ import Vuex from 'vuex';
 import StoryRouter from 'storybook-router';
 
 import PullRequestType from '../views/PullRequestType.vue';
-import TestingOptions from '../views/TestingOptions.vue';
 import ReviewOptions from '../views/ReviewOptions.vue';
 import PullRequestOtherInformation from '../views/PullRequestOtherInformation.vue';
 import PullRequestChangelog from '../views/PullRequestChangelog.vue';
@@ -15,6 +14,7 @@ import NoBitbucketSiteStories from './NoBitbucketSite.story';
 import PullRequestTitleStories from './PullRequestTitle.story';
 import PullRequestTypeStories from './PullRequestType.story';
 import PullRequestBreakingStories from './PullRequestBreakingChanges.story';
+import PullRequestTestingOptions from './PullRequestTestingOptions.story';
 
 import '../../../node_modules/purecss/build/pure.css';
 import '../../../node_modules/purecss/build/grids.css';
@@ -54,60 +54,15 @@ storiesOf('Pull Request Breaking Changes', module)
 
 storiesOf('Pull Request Testing Options', module)
 	.addDecorator(StoryRouter())
-	.add('initial state', () => ({
-		components: {
-			TestingOptions,
-		},
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-		<TestingOptions />
-	</body>`,
-	}))
-	.add('one test case - multiple steps', () => ({
-		components: {
-			TestingOptions,
-		},
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-		<TestingOptions />
-	</body>`,
-		store: new Vuex.Store({
-			state: {
-				options: {
-					testing: [['Test Scenario', 'Test Steps', 'Parameters']],
-				},
-			},
-			actions: {
-				saveTestingOptions: (context, payload) => {
-					action('COMMIT TO STORE')(payload);
-				},
-			},
-		}),
-	}))
-	.add('multiple test cases - multiple steps', () => ({
-		components: {
-			TestingOptions,
-		},
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-		<TestingOptions />
-	</body>`,
-		store: new Vuex.Store({
-			state: {
-				options: {
-					testing: [
-						['Test Scenario', 'Test Steps', 'Parameters'],
-						['Test Scenario'],
-						[
-							'Multiline is lorem ipsum hic forum est lorem ipsum hic forum est',
-						],
-					],
-				},
-			},
-			actions: {
-				saveTestingOptions: (context, payload) => {
-					action('COMMIT TO STORE')(payload);
-				},
-			},
-		}),
-	}));
+	.add('initial state', PullRequestTestingOptions.initialState)
+	.add(
+		'one test case - multiple steps',
+		PullRequestTestingOptions.oneTestCaseMultipleSteps,
+	)
+	.add(
+		'multiple test cases - multiple steps',
+		PullRequestTestingOptions.multipleTestCasesMultipleSteps,
+	);
 
 storiesOf('Pull Request Review Options', module)
 	.add('initial state', () => ({
