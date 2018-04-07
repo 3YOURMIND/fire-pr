@@ -30,6 +30,9 @@ export default {
 			const selectBox = document.querySelector(
 				'#id_source_group > div.branch-field-container > select',
 			);
+			if (selectBox === null) {
+				return 'error';
+			}
 			return selectBox.options[selectBox.selectedIndex].text;
 		}
 		chrome.tabs.executeScript(
@@ -38,6 +41,10 @@ export default {
 			},
 			branchTitle => {
 				this.isLoading = false;
+				if (branchTitle[0] === 'error') {
+					this.bitbucketPullRequestView = false;
+					return;
+				}
 				if (branchTitle) {
 					this.bitbucketPullRequestView = true;
 				}
