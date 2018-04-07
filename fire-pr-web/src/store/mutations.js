@@ -53,4 +53,7 @@ export default {
 			changelog: payload,
 		});
 	},
+	UPDATE_PLATFORM(state, payload) {
+		state.platform = payload;
+	},
 };

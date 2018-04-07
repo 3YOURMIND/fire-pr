@@ -86,12 +86,22 @@ export default {
 				heading: this.$store.state.title,
 				issueNumber: this.$store.state.jiraIssue,
 			});
-			let scriptToExecute = `document.getElementById('id_title').value = '${calculatedTitle}'`;
+			const titleIdDictionary = {
+				bitbucket: 'id_title',
+				github: 'pull_request_title',
+			};
+			const titleId = titleIdDictionary[this.$store.state.platform];
+			let scriptToExecute = `document.getElementById('${titleId}').value = '${calculatedTitle}'`;
 			chrome.tabs.executeScript({
 				code: scriptToExecute,
 			});
 			const markdown = CreateMarkdown.render(this.$store.state);
-			scriptToExecute = `document.getElementById('id_description').value = \`${markdown}\``;
+			const descriptionIdDictionary = {
+				bitbucket: 'id_description',
+				github: 'pull_request_body',
+			};
+			const descriptionId = descriptionIdDictionary[this.$store.state.platform];
+			scriptToExecute = `document.getElementById('${descriptionId}').value = \`${markdown}\``;
 			chrome.tabs.executeScript({
 				code: scriptToExecute,
 			});

@@ -17,6 +17,7 @@ export default new Vuex.Store({
 			text: '',
 			pictures: [],
 		},
+		platform: null,
 	},
 	getters,
 	mutations,

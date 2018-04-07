@@ -32,26 +32,35 @@ export default {
 			);
 			const githubSelectBox = document.querySelectorAll('.commitish-suggester');
 			if (bitbucketSelectBox) {
-				return bitbucketSelectBox.options[bitbucketSelectBox.selectedIndex]
-					.text;
+				return {
+					branchTitle:
+						bitbucketSelectBox.options[bitbucketSelectBox.selectedIndex].text,
+					platform: 'bitbucket',
+				};
 			}
 			if (githubSelectBox) {
-				return githubSelectBox[1].querySelector('.js-select-button').innerHTML;
+				return {
+					branchTitle: githubSelectBox[1].querySelector('.js-select-button')
+						.innerHTML,
+					platform: 'github',
+				};
 			}
-			return 'error';
+			return null;
 		}
 		chrome.tabs.executeScript(
 			{
 				code: '(' + getSelectedBranch + ')();',
 			},
-			branchTitle => {
-				const stringifiedBranchTitle = branchTitle.toString();
-				console.log(stringifiedBranchTitle);
+			branchResponse => {
 				this.isLoading = false;
-				if (stringifiedBranchTitle === 'error') {
+				if (branchResponse[0] === null) {
 					this.bitbucketPullRequestView = false;
 					return;
 				}
+				const platform = branchResponse[0].platform;
+				this.$store.dispatch('updatePlatform', platform);
+				const stringifiedBranchTitle = branchResponse[0].branchTitle.toString();
+
 				if (stringifiedBranchTitle) {
 					this.bitbucketPullRequestView = true;
 				}
@@ -59,12 +68,6 @@ export default {
 					.match(/(.)*-(\d)*-/gi)[0]
 					.slice(0, -1);
 				this.$store.dispatch('saveJiraIssue', jiraIssue);
-				chrome.storage.sync.get([`${jiraIssue}-breaking-options`], data => {
-					console.log(data[`${jiraIssue}-breaking-options`]);
-				});
-				chrome.storage.sync.get([`${jiraIssue}-testing-options`], data => {
-					console.log(data[`${jiraIssue}-testing-options`]);
-				});
 			},
 		);
 	},

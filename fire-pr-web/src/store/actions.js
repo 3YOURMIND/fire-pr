@@ -23,4 +23,7 @@ export default {
 	saveChangelog(context, payload) {
 		context.commit('UPDATE_CHANGELOG', payload);
 	},
+	updatePlatform(context, payload) {
+		context.commit('UPDATE_PLATFORM', payload);
+	},
 };
