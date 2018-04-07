@@ -27,29 +27,35 @@ export default {
 		});
 
 		function getSelectedBranch() {
-			const selectBox = document.querySelector(
+			const bitbucketSelectBox = document.querySelector(
 				'#id_source_group > div.branch-field-container > select',
 			);
-			if (selectBox === null) {
-				return 'error';
+			const githubSelectBox = document.querySelectorAll('.commitish-suggester');
+			if (bitbucketSelectBox) {
+				return bitbucketSelectBox.options[bitbucketSelectBox.selectedIndex]
+					.text;
 			}
-			return selectBox.options[selectBox.selectedIndex].text;
+			if (githubSelectBox) {
+				return githubSelectBox[1].querySelector('.js-select-button').innerHTML;
+			}
+			return 'error';
 		}
 		chrome.tabs.executeScript(
 			{
 				code: '(' + getSelectedBranch + ')();',
 			},
 			branchTitle => {
+				const stringifiedBranchTitle = branchTitle.toString();
+				console.log(stringifiedBranchTitle);
 				this.isLoading = false;
-				if (branchTitle[0] === 'error') {
+				if (stringifiedBranchTitle === 'error') {
 					this.bitbucketPullRequestView = false;
 					return;
 				}
-				if (branchTitle) {
+				if (stringifiedBranchTitle) {
 					this.bitbucketPullRequestView = true;
 				}
-				const jiraIssue = branchTitle
-					.toString()
+				const jiraIssue = stringifiedBranchTitle
 					.match(/(.)*-(\d)*-/gi)[0]
 					.slice(0, -1);
 				this.$store.dispatch('saveJiraIssue', jiraIssue);
