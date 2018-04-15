@@ -6,7 +6,6 @@ import Vuex from 'vuex';
 import StoryRouter from 'storybook-router';
 
 import PullRequestType from '../views/PullRequestType.vue';
-import ReviewOptions from '../views/ReviewOptions.vue';
 import PullRequestOtherInformation from '../views/PullRequestOtherInformation.vue';
 import PullRequestChangelog from '../views/PullRequestChangelog.vue';
 
@@ -15,6 +14,7 @@ import PullRequestTitleStories from './PullRequestTitle.story';
 import PullRequestTypeStories from './PullRequestType.story';
 import PullRequestBreakingStories from './PullRequestBreakingChanges.story';
 import PullRequestTestingOptions from './PullRequestTestingOptions.story';
+import PullRequestReviewOptionsStories from './PullRequestReviewOptions.story';
 
 import '../../../node_modules/purecss/build/pure.css';
 import '../../../node_modules/purecss/build/grids.css';
@@ -65,37 +65,8 @@ storiesOf('Pull Request Testing Options', module)
 	);
 
 storiesOf('Pull Request Review Options', module)
-	.add('initial state', () => ({
-		components: {
-			ReviewOptions,
-		},
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-		<ReviewOptions />
-	</body>`,
-	}))
-	.add('predefined state', () => ({
-		components: {
-			ReviewOptions,
-		},
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-		<ReviewOptions />
-	</body>`,
-		store: new Vuex.Store({
-			state: {
-				options: {
-					merge: {
-						merger: 'last',
-						mergeTime: 'all',
-					},
-				},
-			},
-			actions: {
-				saveMergeOptions: (context, payload) => {
-					action('COMMIT TO STORE')(payload);
-				},
-			},
-		}),
-	}));
+	.add('initial state', PullRequestReviewOptionsStories.initialState)
+	.add('predefined state', PullRequestReviewOptionsStories.predefinedState);
 
 storiesOf('Pull Request Other Information', module)
 	.add('initial state', () => ({
