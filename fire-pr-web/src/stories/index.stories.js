@@ -5,7 +5,6 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import StoryRouter from 'storybook-router';
 
-import PullRequestType from '../views/PullRequestType.vue';
 import PullRequestOtherInformation from '../views/PullRequestOtherInformation.vue';
 import PullRequestChangelog from '../views/PullRequestChangelog.vue';
 
