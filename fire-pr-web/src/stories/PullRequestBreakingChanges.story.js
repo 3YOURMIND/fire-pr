@@ -8,16 +8,13 @@ Vue.use(Vuex);
 const DEFAULT_BODY_STYLE =
 	'width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;';
 
-const initialState = () => ({
-	components: {
-		PullRequestBreaking,
-	},
-	store: new Vuex.Store({
+const createStore = ({ breaking = false, text = null }) =>
+	new Vuex.Store({
 		state: {
 			options: {
 				breaking: {
-					breaking: false,
-					text: null,
+					breaking,
+					text,
 				},
 			},
 		},
@@ -26,7 +23,13 @@ const initialState = () => ({
 				action('COMMIT TO STORE')(payload);
 			},
 		},
-	}),
+	});
+
+const initialState = () => ({
+	components: {
+		PullRequestBreaking,
+	},
+	store: createStore({}),
 	template: `<body style="${DEFAULT_BODY_STYLE}">
 		<PullRequestBreaking />
 	</body>`,
@@ -39,20 +42,9 @@ const predefinedState = () => ({
 	template: `<body style="${DEFAULT_BODY_STYLE}">
 	<PullRequestBreaking />
 </body>`,
-	store: new Vuex.Store({
-		state: {
-			options: {
-				breaking: {
-					breaking: true,
-					text: 'New dependency which will break a lot of stuff',
-				},
-			},
-		},
-		actions: {
-			saveBreakingOptions: (context, payload) => {
-				action('COMMIT TO STORE')(payload);
-			},
-		},
+	store: createStore({
+		breaking: true,
+		text: 'New dependency which will break a lot of stuff',
 	}),
 });
 
