@@ -1,11 +1,7 @@
 import { storiesOf } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
-import Vue from 'vue';
-import Vuex from 'vuex';
 import StoryRouter from 'storybook-router';
-
-import PullRequestChangelog from '../views/PullRequestChangelog.vue';
 
 import NoBitbucketSiteStories from './NoBitbucketSite.story';
 import PullRequestTitleStories from './PullRequestTitle.story';
@@ -14,15 +10,11 @@ import PullRequestBreakingStories from './PullRequestBreakingChanges.story';
 import PullRequestTestingOptions from './PullRequestTestingOptions.story';
 import PullRequestReviewOptionsStories from './PullRequestReviewOptions.story';
 import PullRequestOtherInformationStories from './PullRequestOtherInformation.story';
+import PullRequestChangelogStories from './PullRequestChangelog.story';
 
 import '../../../node_modules/purecss/build/pure.css';
 import '../../../node_modules/purecss/build/grids.css';
 import '../assets/css/fonts.css';
-
-Vue.use(Vuex);
-
-const DEFAULT_BODY_STYLE =
-	'width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;';
 
 storiesOf('No Bitbucket site', module).add(
 	'initial state',
@@ -72,31 +64,5 @@ storiesOf('Pull Request Other Information', module)
 	.add('predefined state', PullRequestOtherInformationStories.predefinedState);
 
 storiesOf('Pull Request Changelog', module)
-	.add('initial state', () => ({
-		components: {
-			PullRequestChangelog,
-		},
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-		<PullRequestChangelog />
-	</body>`,
-	}))
-	.add('predefined state', () => ({
-		components: {
-			PullRequestChangelog,
-		},
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-	<PullRequestChangelog />
-</body>`,
-		store: new Vuex.Store({
-			state: {
-				changelog: {
-					text: 'ref: allow ref key to be zero',
-				},
-			},
-			actions: {
-				saveChangelog: (context, payload) => {
-					action('COMMIT TO STORE')(payload);
-				},
-			},
-		}),
-	}));
+	.add('initial state', PullRequestChangelogStories.initialState)
+	.add('predefined state', PullRequestChangelogStories.predefinedState);
