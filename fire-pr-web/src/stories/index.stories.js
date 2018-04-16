@@ -5,7 +5,6 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import StoryRouter from 'storybook-router';
 
-import PullRequestOtherInformation from '../views/PullRequestOtherInformation.vue';
 import PullRequestChangelog from '../views/PullRequestChangelog.vue';
 
 import NoBitbucketSiteStories from './NoBitbucketSite.story';
@@ -14,6 +13,7 @@ import PullRequestTypeStories from './PullRequestType.story';
 import PullRequestBreakingStories from './PullRequestBreakingChanges.story';
 import PullRequestTestingOptions from './PullRequestTestingOptions.story';
 import PullRequestReviewOptionsStories from './PullRequestReviewOptions.story';
+import PullRequestOtherInformationStories from './PullRequestOtherInformation.story';
 
 import '../../../node_modules/purecss/build/pure.css';
 import '../../../node_modules/purecss/build/grids.css';
@@ -68,35 +68,8 @@ storiesOf('Pull Request Review Options', module)
 	.add('predefined state', PullRequestReviewOptionsStories.predefinedState);
 
 storiesOf('Pull Request Other Information', module)
-	.add('initial state', () => ({
-		components: {
-			PullRequestOtherInformation,
-		},
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-		<PullRequestOtherInformation />
-	</body>`,
-	}))
-	.add('predefined state', () => ({
-		components: {
-			PullRequestOtherInformation,
-		},
-		template: `<body style="${DEFAULT_BODY_STYLE}">
-		<PullRequestOtherInformation />
-	</body>`,
-		store: new Vuex.Store({
-			state: {
-				otherInformations: [
-					"I'm developing some editor extension which can highlight styles",
-					'I have no idea why the template option is not padded',
-				],
-			},
-			actions: {
-				saveOtherInformations: (context, payload) => {
-					action('COMMIT TO STORE')(payload);
-				},
-			},
-		}),
-	}));
+	.add('initial state', PullRequestOtherInformationStories.initialState)
+	.add('predefined state', PullRequestOtherInformationStories.predefinedState);
 
 storiesOf('Pull Request Changelog', module)
 	.add('initial state', () => ({
