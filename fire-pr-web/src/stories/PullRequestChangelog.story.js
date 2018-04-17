@@ -14,6 +14,18 @@ const initialState = () => ({
 	template: `<body style="${DEFAULT_BODY_STYLE}">
 	<PullRequestChangelog />
 </body>`,
+	store: new Vuex.Store({
+		state: {
+			changelog: {
+				text: '',
+			},
+		},
+		actions: {
+			saveChangelog: (context, payload) => {
+				action('COMMIT TO STORE')(payload);
+			},
+		},
+	}),
 });
 
 const predefinedState = () => ({
