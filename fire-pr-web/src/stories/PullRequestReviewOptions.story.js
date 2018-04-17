@@ -1,17 +1,15 @@
 import ReviewOptions from '../views/ReviewOptions.vue';
+import defaultBodyStyle from './DefaultBodyStyle';
 import Vue from 'vue';
 import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-const DEFAULT_BODY_STYLE =
-	'width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;';
-
 const initialState = () => ({
 	components: {
 		ReviewOptions,
 	},
-	template: `<body style="${DEFAULT_BODY_STYLE}">
+	template: `<body style="${defaultBodyStyle}">
 	<ReviewOptions />
 </body>`,
 	store: new Vuex.Store({
@@ -35,7 +33,7 @@ const predefinedState = () => ({
 	components: {
 		ReviewOptions,
 	},
-	template: `<body style="${DEFAULT_BODY_STYLE}">
+	template: `<body style="${defaultBodyStyle}">
 	<ReviewOptions />
 </body>`,
 	store: new Vuex.Store({

@@ -1,15 +1,13 @@
 import Vuex from 'vuex';
 import { action } from '@storybook/addon-actions';
 import PullRequestType from '../views/PullRequestType.vue';
-
-const DEFAULT_BODY_STYLE =
-	'width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;';
+import defaultBodyStyle from './DefaultBodyStyle';
 
 const initialState = () => ({
 	components: {
 		PullRequestType,
 	},
-	template: `<body style="${DEFAULT_BODY_STYLE}">
+	template: `<body style="${defaultBodyStyle}">
 		<PullRequestType />
 	</body>`,
 	store: new Vuex.Store({
@@ -30,7 +28,7 @@ const predefinedStateWithoutDescription = () => ({
 	components: {
 		PullRequestType,
 	},
-	template: `<body style="${DEFAULT_BODY_STYLE}">
+	template: `<body style="${defaultBodyStyle}">
 		<PullRequestType />
 	</body>`,
 	store: new Vuex.Store({
@@ -53,7 +51,7 @@ const predefinedStateWitDescription = () => ({
 	components: {
 		PullRequestType,
 	},
-	template: `<body style="${DEFAULT_BODY_STYLE}">
+	template: `<body style="${defaultBodyStyle}">
 		<PullRequestType />
 	</body>`,
 	store: new Vuex.Store({

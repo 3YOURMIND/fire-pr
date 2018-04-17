@@ -2,11 +2,9 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import { action } from '@storybook/addon-actions';
 import PullRequestBreaking from '../views/PullRequestBreaking.vue';
+import defaultBodyStyle from './DefaultBodyStyle';
 
 Vue.use(Vuex);
-
-const DEFAULT_BODY_STYLE =
-	'width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;';
 
 const createStore = ({ breaking = false, text = null }) =>
 	new Vuex.Store({
@@ -30,7 +28,7 @@ const initialState = () => ({
 		PullRequestBreaking,
 	},
 	store: createStore({}),
-	template: `<body style="${DEFAULT_BODY_STYLE}">
+	template: `<body style="${defaultBodyStyle}">
 		<PullRequestBreaking />
 	</body>`,
 });
@@ -39,7 +37,7 @@ const predefinedState = () => ({
 	components: {
 		PullRequestBreaking,
 	},
-	template: `<body style="${DEFAULT_BODY_STYLE}">
+	template: `<body style="${defaultBodyStyle}">
 	<PullRequestBreaking />
 </body>`,
 	store: createStore({

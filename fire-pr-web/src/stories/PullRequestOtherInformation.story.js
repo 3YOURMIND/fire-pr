@@ -1,17 +1,15 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import PullRequestOtherInformation from '../views/PullRequestOtherInformation.vue';
+import defaultBodyStyle from './DefaultBodyStyle';
 
 Vue.use(Vuex);
-
-const DEFAULT_BODY_STYLE =
-	'width: 375px; height: 580px; background-color: #F4F4F9; position: absolute; top: 8px; left: 8px;';
 
 const initialState = () => ({
 	components: {
 		PullRequestOtherInformation,
 	},
-	template: `<body style="${DEFAULT_BODY_STYLE}">
+	template: `<body style="${defaultBodyStyle}">
 	<PullRequestOtherInformation />
 </body>`,
 	store: new Vuex.Store({
@@ -30,7 +28,7 @@ const predefinedState = () => ({
 	components: {
 		PullRequestOtherInformation,
 	},
-	template: `<body style="${DEFAULT_BODY_STYLE}">
+	template: `<body style="${defaultBodyStyle}">
 	<PullRequestOtherInformation />
 </body>`,
 	store: new Vuex.Store({
