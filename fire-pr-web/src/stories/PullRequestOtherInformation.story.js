@@ -14,6 +14,16 @@ const initialState = () => ({
 	template: `<body style="${DEFAULT_BODY_STYLE}">
 	<PullRequestOtherInformation />
 </body>`,
+	store: new Vuex.Store({
+		state: {
+			otherInformations: [],
+		},
+		actions: {
+			saveOtherInformations: (context, payload) => {
+				action('COMMIT TO STORE')(payload);
+			},
+		},
+	}),
 });
 
 const predefinedState = () => ({
