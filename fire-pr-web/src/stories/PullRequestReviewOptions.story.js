@@ -14,6 +14,21 @@ const initialState = () => ({
 	template: `<body style="${DEFAULT_BODY_STYLE}">
 	<ReviewOptions />
 </body>`,
+	store: new Vuex.Store({
+		state: {
+			options: {
+				merge: {
+					merger: null,
+					mergeTime: null,
+				},
+			},
+		},
+		actions: {
+			saveMergeOptions: (context, payload) => {
+				action('COMMIT TO STORE')(payload);
+			},
+		},
+	}),
 });
 
 const predefinedState = () => ({
