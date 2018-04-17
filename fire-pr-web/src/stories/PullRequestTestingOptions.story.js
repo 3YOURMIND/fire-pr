@@ -18,7 +18,7 @@ const initialState = () => ({
 	store: new Vuex.Store({
 		state: {
 			options: {
-				testing: null,
+				testing: [],
 			},
 		},
 		actions: {
