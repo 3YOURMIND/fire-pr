@@ -11,7 +11,7 @@ const renderMarkdown = configuration => {
 				'If there is a breaking change a description for this error should be provided.',
 			);
 		}
-		result += `* [✔] Yes: ${configuration.description}`;
+		result += `* [✔] Yes: ${configuration.description.replace('`', '`')}`;
 	}
 	return result;
 };

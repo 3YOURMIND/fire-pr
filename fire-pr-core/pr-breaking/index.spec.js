@@ -49,4 +49,16 @@ describe('Test pr-breaking', () => {
 * [✖] Yes`;
 		expect(PrBreakingModule.renderMarkdown(payload)).toBe(expectedResult);
 	});
+
+	it('test description with backtick', () => {
+		const payload = {
+			exists: true,
+			description: 'This is a cool description `var test = 1`',
+		};
+		const expectedResult = `## Does this PR introduce a breaking change? ##
+
+* [✖] No
+* [✔] Yes: This is a cool description \`var test = 1\``;
+		expect(PrBreakingModule.renderMarkdown(payload)).toBe(expectedResult);
+	});
 });
