@@ -30,7 +30,7 @@ const renderMarkdown = changelogPayload => {
 
 	const note = `**Note**
 
-- ${changelogPayload.note.description}${closingMessage}`;
+- ${changelogPayload.note.description.replace('`', '`')}${closingMessage}`;
 	let pictures = '';
 	if (changelogPayload.pictures && changelogPayload.pictures.length > 0) {
 		const mappedPictureList = changelogPayload.pictures.map(picture => {
