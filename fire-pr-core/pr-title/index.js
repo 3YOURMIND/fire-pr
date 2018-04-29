@@ -1,5 +1,8 @@
 const renderMarkdown = ({ heading, issueNumber }) => {
-	return issueNumber ? `${heading} [${issueNumber}]` : heading;
+	const normalizedHeading = heading.replace('`', '`');
+	return issueNumber
+		? `${normalizedHeading} [${issueNumber}]`
+		: normalizedHeading;
 };
 
 export default {
