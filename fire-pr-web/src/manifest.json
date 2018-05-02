@@ -8,7 +8,7 @@
 	},
 	"short_name": "Fire PR",
 	"description": "The official fire-pr extension for Chrome",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"author": "3YOURMIND GmbH",
 	"content_security_policy":
 		"script-src 'self' http://localhost:8098; object-src 'self'",
