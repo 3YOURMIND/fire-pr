@@ -9,7 +9,7 @@
       </div>
       <div class="pure-u-1 why-fire-pr__text" style="padding-left: 0.6em; margin-top: 0.6em;">
         <p>We spent more time reading code than writing code. Therefore it is important to have some kind of code review process so only the good code gets into the code base.</p>
-        <p>With this goal in mind, it is also important to have a nice experience when reviewing the code. This tools exists to make this easier. We can also save a lot of time designing the Pull Request.</p>
+        <p>With this goal in mind, it is also important to have a nice experience when reviewing the code. This tool exists to make this easier. We can also save a lot of time designing the Pull Request.</p>
       </div>
       <div class="pure-u-1">
         <h2 class="why-fire-pr__heading--second">How does Fire PR make creating Pull Requests so fast?</h2>

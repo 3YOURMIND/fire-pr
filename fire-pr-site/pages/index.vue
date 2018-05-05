@@ -267,7 +267,7 @@ export default {
 .content__button-description {
 	color: #b8dbd9;
 	font-weight: 500;
-	margin-left: 14px;
+	margin-left: 32px;
 	font-size: 16px;
 	margin-top: 0.6em;
 	font-family: 'Roboto';
