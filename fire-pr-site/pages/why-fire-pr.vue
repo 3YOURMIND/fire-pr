@@ -48,7 +48,7 @@
 export default {
 	name: 'WhyFirePrPage',
 	head: {
-		title: 'Why to use Fire PR',
+		title: 'Why use Fire PR',
 		meta: [
 			{
 				hid: 'description',
