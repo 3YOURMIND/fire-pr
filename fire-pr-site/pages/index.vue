@@ -9,7 +9,7 @@
             </h1>
             <span class="pure-u-1 content__description">
               Optimize the developer experience by generating pull requests more
-              quickly and more reliant.
+              quickly and reliably.
             </span>
             <div class="pure-u-1 content__button-container">
               <a
@@ -82,7 +82,7 @@
             <div class="pure-g">
               <div class="pure-u-1">
                 <span class="content__description" style="line-height: 1.6em;">
-                  Create awesome Pull Requests that makes everyone happy.
+                  Create awesome Pull Requests that make everyone happy.
                 </span>
               </div>
               <div class="pure-u-1" style="margin-top: 0.6em;">
@@ -112,7 +112,7 @@ export default {
 				hid: 'description',
 				name: 'description',
 				content:
-					'Fire PR is a browser extension trying to streamline the pull request workflow for developers by providing an interface to create those in an easy way. The tool is trying to optimize the work flows.',
+					'Fire PR is a browser extension trying to streamline the pull request workflow for developers by providing an interface to create them in an easy way. The tool is trying to optimize work flows.',
 			},
 		],
 	},
@@ -267,7 +267,7 @@ export default {
 .content__button-description {
 	color: #b8dbd9;
 	font-weight: 500;
-	margin-left: 14px;
+	margin-left: 32px;
 	font-size: 16px;
 	margin-top: 0.6em;
 	font-family: 'Roboto';
