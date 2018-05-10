@@ -8,22 +8,22 @@
         <h2 class="about__heading--second">What is Fire PR?</h2>
       </div>
       <div class="pure-u-1 text__container">
-        <p>Fire PR is an opinionated browser extension to easily create Pull Requests. Right now it is limited to Bitbucket in combination with JIRA but we plan to support other platforms like GitHub or Gitlab really soon.</p>
+        <p>Fire PR is an opinionated browser extension for easily creating Pull Requests. Right now it is limited to Bitbucket in combination with JIRA but we plan to support other platforms like GitHub or Gitlab really soon.</p>
       </div>
       <div class="pure-u-1">
-        <h2 class="about__heading--second">Why you should use Fire PR?</h2>
+        <h2 class="about__heading--second">Why should you use Fire PR?</h2>
       </div>
       <div class="pure-u-1 text__container">
-        <p>Fire PR is directly aimed at companies. It should streamline the Pull Request review by normalizing it. It adds the right amount of value which a reviewer needs to complete the Pull Request review.</p>
-        <p>In this review, different steps are required which are featured in Fire PR which includes:</p>
+        <p>Fire PR is directly aimed at companies. It should streamline the Pull Request review by normalizing it. It adds just the right amount of value which a reviewer needs to complete their Pull Request review.</p>
+        <p>In this review, different steps are required and feature in Fire PR. These include:</p>
         <ul>
           <li>A proper title with links to the JIRA issue so people can check requirements easily</li>
           <li>The type of the change to focus on an easier review</li>
-          <li>If the pr is breaking to inform the reviewers beforehand if they need to be careful about merging this Pull Request</li>
-          <li>Testing instructions to validate if E2E tests, integration tests, and unit tests are covering the requirements</li>
+          <li>Whether the pr is breaking, to inform the reviewers beforehand if they need to be careful about merging this Pull Request</li>
+          <li>Testing instructions to validate if E2E tests, integration tests, and unit tests cover the requirements</li>
           <li>Who should merge it to avoid confusion about the merge</li>
           <li>A changelog message to make it easier for tools or project managers to write a release log</li>
-          <li>And other information if needed 🤷</li>
+          <li>Plus other information if needed 🤷</li>
         </ul>
       </div>
       <div class="pure-u-1">
@@ -31,8 +31,8 @@
       </div>
       <div class="pure-u-1 text__container">
         <p>The application was built with modern web technologies and is a fully open source application.</p>
-        <p>The company 3YOURMIND behind this product is embracing open source a lot. And we wanted to give something back to the community.</p>
-        <p>Here is a list of used technologies:</p>
+        <p>The company 3YOURMIND behind this product is embracing open source a lot, and we wanted to give something back to the community.</p>
+        <p>Here is a list of technologies we used:</p>
         <TechnologyList :technologies="technologies" />
       </div>
     </div>
